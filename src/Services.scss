@@ -1,0 +1,74 @@
+@import "./base.scss";
+
+section#services {
+     
+     background-color: $orange-1;
+     
+     z-index: 5;
+     margin-bottom: -50px;
+     div#servicesList {
+        position: relative;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-content: space-between;
+        
+        transform: translateY(-80px);
+        z-index: 6;
+        .serviceItem {
+            display: flex;
+            flex-grow: 1.2;
+            flex-direction: column;
+            cursor: pointer;
+            
+            min-height: min-content;
+            width: 13%;
+            min-width: min-content;
+            background-color: $orange-3;
+            margin: 5px;
+            color: $blue-4;
+            &:hover {
+                background-color: $orange-4;
+                color: $orange-1;
+                p {
+                    color: $blue-4;
+                }
+            }
+            >div.serviceIcon {
+                display: block;
+                position: relative;
+             //  top: 20px;
+                width: 40px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 15px;
+                margin-bottom: 8px;
+                .st0{fill:$orange-4;}
+            }
+            h5 {
+                display: block;
+                position: relative;
+                font-family: 'Bitter', serif;
+                font-size: 0.9em;
+                font-weight: 400;
+                margin: 0 15px;
+                margin-top: 3px;
+                margin-bottom: 5px;
+                bottom: 0;
+            }
+            p {
+                font-size: 0.8em;
+                color: rgb(100, 100, 100);
+                margin: 8px 12px;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+        }
+
+    }
+}

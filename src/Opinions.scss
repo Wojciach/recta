@@ -1,0 +1,51 @@
+@import "./base.scss";
+
+section#opinions {
+    @include flexCenter;
+    position: relative;
+    width: 100%;
+    ;
+    background-color: $orange-2;
+    margin-top: 10px;
+    
+    >div {
+        width: 80%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        >div {
+            width: 49%;
+            @include flexCenter;
+            font-family: 'Bitter', serif;
+            >p.opinion {
+                
+                font-family: 'Bitter', serif;
+                color: $blue-4;
+
+                &::before, &::after {
+                    
+                    position: relative;
+                    font-size: 4em;
+                    content: "\"";
+                    
+                }
+                &::before {
+                    top: 0;
+                    left: 0;
+                }
+                &::after {
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+            
+        }
+        >.qLogo {
+            font-size: 1.6em;
+            color: $orange-5;
+        }
+
+    }
+}

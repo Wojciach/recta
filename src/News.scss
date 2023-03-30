@@ -1,0 +1,83 @@
+@import "./base.scss";
+
+section#news {
+    width: 100%;
+    >div {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        >h2 { 
+            text-align: left;
+            font-family: 'Bitter', serif;
+            color: $blue-4;
+            
+        }
+        >article {
+            display: flex;
+            flex-direction: column;
+            >div {
+            display: flex;
+           // flex-direction: column;
+            justify-content: space-between;
+          //  height: 200px;
+                >.column {
+                    display: flex;
+                //  align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    height: 150px;
+                    width:49%;
+                    
+                    >div.arPhoto {
+                        display: flex;
+                        justify-content: center;
+                        position: relative;
+
+                        >img {
+                        
+                            height: 80%;
+                            
+                        }
+                    }
+                    >div.arContent {
+                        
+                        text-align: left;
+                        margin-bottom: 20px;
+                        >h4 {
+                            margin: 0;
+                        }
+                        >p{
+                            font-size: 0.8em;
+                            color: rgb(50, 50, 50);
+                        }
+                        
+                        
+                    }
+                }
+
+            }
+            >div.arFoot {
+                
+                display: flex;
+                position: relative;
+               // right: 0;
+                margin-bottom: 30px;
+                width: 49%;
+                margin-left: 51%;
+                flex-direction: row;
+                justify-content: space-between;
+                border-bottom: solid 1px rgb(120, 120, 120);
+                font-size: 0.7em;
+                bottom: 0;
+                padding-bottom: 15px;
+                >div.arDate {
+                    color: rgb(120, 120, 120);
+                }
+                >div.arLink {
+                    color:  $orange-5;
+                }
+            }
+
+        }
+    }
+}
