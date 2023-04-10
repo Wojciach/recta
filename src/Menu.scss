@@ -67,7 +67,7 @@ section#menu {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            align-items: flex-end;
+           // align-items: flex-end;
             align-content: baseline;
           
             justify-content: space-between;
@@ -79,15 +79,18 @@ section#menu {
             border-top: 2px solid $orange-1;
             
             li {
-                
+                width: 100px;
                 cursor: pointer;
                 padding-top: 10px;
+                padding-bottom: 7px;
+                padding-left: 15px;
+                padding-right: 15px;
                 border-top: solid 5px transparent;
                 transform: translateY(-4px);
                 white-space: nowrap;
                 letter-spacing: 0.1em;
-                margin-left: 4px;
-                margin-right: 4px;
+              //  margin-left: 4px;
+              //  margin-right: 4px;
                
                 &:hover {
                     font-weight: 700;

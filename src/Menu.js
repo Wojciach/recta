@@ -1,15 +1,13 @@
 
-//import React from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
 import "./Menu.scss";
 
 import { ReactComponent as MyIcon } from "./svg/RECTA_logo_granat.svg";
+import  {mItems} from "./navData.js";
+
 
 function Menu() {
 
-    const items = ["Home", "Oferta", "Realizacje", "Referencje", "Aktualności", "Kontakt"];
-
-    const mItems = items.map((item, index) => { return <li key={index}><Link to={item}>{item}</Link></li>; });
+  
         
     
 

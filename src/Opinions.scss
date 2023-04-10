@@ -4,7 +4,7 @@ section#opinions {
     @include flexCenter;
     position: relative;
     width: 100%;
-    ;
+    
     background-color: $orange-2;
     margin-top: 10px;
     
@@ -16,28 +16,40 @@ section#opinions {
         justify-content: space-between;
         
         >div {
-            width: 49%;
+            width: 100%;
             @include flexCenter;
             font-family: 'Bitter', serif;
+            padding: 35px;
             >p.opinion {
+                position: relative;
                 
                 font-family: 'Bitter', serif;
+                font-style: italic;
                 color: $blue-4;
 
                 &::before, &::after {
-                    
-                    position: relative;
+                    display: block;
+                    width: 30px;
+                    height: 30px;
+
+                    background-image: url('./svg/dor/cudzyslow.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-origin: border-box;
+
+                    position: absolute;
                     font-size: 4em;
-                    content: "\"";
-                    
+                    content: "";
+
                 }
                 &::before {
-                    top: 0;
-                    left: 0;
+                    top: -30px;
+                    left: -30px;
                 }
                 &::after {
-                    bottom: 0;
-                    right: 0;
+                    bottom: -30px;
+                    right: -30px;
                 }
             }
             
@@ -45,6 +57,9 @@ section#opinions {
         >.qLogo {
             font-size: 1.6em;
             color: $orange-5;
+            img {
+                width: 40%;
+            }
         }
 
     }

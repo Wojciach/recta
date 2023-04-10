@@ -3,8 +3,8 @@ font-family: 'Bitter', serif;
 font-family: 'Nunito Sans', sans-serif;
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Nunito+Sans:wght@400;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:wght@400;700&display=swap');
 
 $blue-4: hsl(198, 93%, 16%);
 $blue-3: hsl(198, 93%, 22%);
@@ -16,6 +16,18 @@ $orange-4: hsl(23, 82%, 65%);
 $orange-3: hsl(23, 70%, 83%);
 $orange-2: hsl(24, 50%, 90%);
 $orange-1: hsl(21, 7%, 99%);
+
+$colapse: 660px;
+
+@mixin colapseRow {
+    @media screen and (max-width: $colapse) {
+      flex-direction: column !important;
+  }
+}
+
+.colapseRow {
+  @include colapseRow;
+}
 
 html {
     font-size: 15px;

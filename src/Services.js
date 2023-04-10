@@ -2,19 +2,26 @@ import React, { useRef, useEffect } from 'react';
 
 import "./Services.scss";
 import oferta from "./oferta.js";
-import { ReactComponent as Icon } from "./svg/ChatkaPuchatka_icon.svg"
+
+import { ReactComponent as Icon1 } from "./svg/ChatkaPuchatka_icon.svg";
+import { ReactComponent as Icon2 } from "./svg/dor/wykonczenie_icon.svg";
+import { ReactComponent as Icon3 } from "./svg/dor/nadzor_icon.svg";
+import { ReactComponent as Icon4 } from "./svg/dor/systemy_icon.svg";
+import { ReactComponent as Icon5 } from "./svg/ChatkaPuchatka_icon.svg";
 
 
 
 
 function Services() {
 
+  const icons = [Icon1, Icon2, Icon3, Icon4, Icon5] ;
+
   const serTit = [
-    "Budowa Domów",
-    "Prace Wykończeniowe",
-    "Nadzór Budowlany",
-    "Instalacje i Systemy",
-    "Modernizacja Energetyczna",
+    "Budowa<br> Domów",
+    "Prace<br> Wykończeniowe",
+    "Nadzór<br> Budowlany",
+    "Instalacje<br> i Systemy",
+    "Modernizacja<br> Energetyczna",
 
   ]
 
@@ -36,10 +43,13 @@ function Services() {
         <div id="servicesList">
           
               {oferta.map((item, index)=>{
+
+                const Icon = icons[index];
+
                 return(
                   <div key={index} className='serviceItem'>
                     <div className='serviceIcon'> <Icon /> </div>
-                    <h5>{serTit[index]}</h5>
+                    <h5 dangerouslySetInnerHTML={{__html: serTit[index]}}></h5>
                     <p>{serDesc[index]}</p>
                   </div>
                   )

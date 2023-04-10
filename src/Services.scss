@@ -25,24 +25,34 @@ section#services {
             flex-direction: column;
             cursor: pointer;
             
-            min-height: min-content;
-            width: 13%;
+          //  min-height: min-content;
+            width: 15%;
             min-width: min-content;
             background-color: $orange-3;
             margin: 5px;
             color: $blue-4;
+          //  width: 45%;
+            flex-grow: 0;
+
+          //  flex-basis: 25%;
+            @media screen and (max-width: 800px) {
+                flex-basis: 45%;
+            }
+
             &:hover {
                 background-color: $orange-4;
                 color: $orange-1;
+                transform: scale(1.05);
                 p {
                     color: $blue-4;
                 }
             }
             >div.serviceIcon {
-                display: block;
+                display: flex;
                 position: relative;
              //  top: 20px;
                 width: 40px;
+                height: 20%;
                 margin-left: auto;
                 margin-right: auto;
                 margin-top: 15px;
@@ -53,15 +63,17 @@ section#services {
                 display: block;
                 position: relative;
                 font-family: 'Bitter', serif;
+                height: 20%;
                 font-size: 0.9em;
                 font-weight: 400;
                 margin: 0 15px;
-                margin-top: 3px;
+                margin-top: 10px;
                 margin-bottom: 5px;
                 bottom: 0;
+                
             }
             p {
-                font-size: 0.8em;
+                font-size: 0.7em;
                 color: rgb(100, 100, 100);
                 margin: 8px 12px;
                 text-align: center;
