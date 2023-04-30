@@ -124,7 +124,7 @@ function App() {
     <main className="App">
 
       <header>
-        <Menu />
+        <Menu passed={viz} />
         <Header />
       </header>
     
