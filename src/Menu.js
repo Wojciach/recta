@@ -2,6 +2,7 @@
 import "./Menu.scss";
 
 import { ReactComponent as MyIcon } from "./svg/RECTA_logo_granat.svg";
+import { Link } from "react-router-dom";
 import  {mItems} from "./navData.js";
 
 
@@ -21,7 +22,7 @@ function Menu() {
               <div className="topRow">
 
                   <div id="rectaLogoHome">
-                      <MyIcon />
+                  <Link to={"/"}  ><MyIcon /></Link>
                   </div>
 
                   <div id="langLink">

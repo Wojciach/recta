@@ -57,6 +57,9 @@ section#opinions {
         >.qLogo {
             font-size: 1.6em;
             color: $orange-5;
+            @media screen and (max-width: $colapse) {
+               padding-bottom: 10px;
+            } 
             img {
                 width: 40%;
             }

@@ -1,5 +1,6 @@
 import "./Map.scss";
 
+
 const Map = () => {
 
     const address = encodeURIComponent("Kościuszki 20, 55-100 Trzebnica");

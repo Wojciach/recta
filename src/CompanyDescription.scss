@@ -4,8 +4,9 @@ section#companyDescription {
     display: block;
     position: relative;
     width: 100%;
-    
+    overflow: hidden;
     z-index: 8;
+   
     p {
         font-size: 0.8em;
         text-align: left;
@@ -55,16 +56,30 @@ section#companyDescription {
 
         }
         >#opis2 {
+            position: relative;
+            align-items: center;
             display: flex;
             flex-direction: row;
+            
             @include colapseRow;
             
             #contactLink {
-                position: relative;
+                position: absolute;
+                left: 52%;
+                width: 61%;
+                height: 100%;
                 @include flexCenter;
                 background-color: $orange-4;
                 border: 3px solid $orange-1;
                 outline: 1px solid $orange-4;
+
+                @media screen and (max-width: $colapse) {
+                    position: relative;
+                    width: 100%;
+                    left: 0;
+                    margin-top: 15px;
+                    
+                }
 
                 >.contactBacground {
 
@@ -113,7 +128,7 @@ section#companyDescription {
                     }
                 }
                 >p {
-                    width: 75%;
+                    width: 65%;
                     text-align: center;
                     color: $blue-4;
                     font-size: 0.7em;

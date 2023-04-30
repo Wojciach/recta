@@ -77,7 +77,7 @@ const Projects = () => {
     
 
     useEffect(()=>{
-      console.log(currentImageIndex);
+      
       if (currentImageIndex < 3) {
         document.getElementsByClassName("slider")[0].classList.remove("trCenter");
         document.getElementsByClassName("slider")[0].classList.remove("trRight");

@@ -104,6 +104,9 @@ section#news {
                     }
                     >div.arLink {
                         color:  $orange-5;
+                            &:hover {
+                                font-weight: 700;
+                            }
                     }
                 }
             }

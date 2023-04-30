@@ -1,11 +1,24 @@
+import { Link } from "react-router-dom";
 import "./CompanyDescription.scss";
 
 import HaGallery from "./haGallery";
+import React, { useRef } from 'react';
 
 import { ReactComponent as ContactIcon } from "./svg/Project_icon.svg";
 import { ReactComponent as ContactBacgroundSVG } from "./svg/RECTA_logo_granat.svg";
 
+function scrollToElement(ref) {
+    ref.scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
+  
+
 const CompanyDescription = () => {
+
+   
+    
+
     return(
         <section id="companyDescription">
 
@@ -55,7 +68,7 @@ const CompanyDescription = () => {
                     <div id="contactLink">
                         <div className="contactBacground"> <ContactBacgroundSVG /> </div>
                         <div className="contactIcon"> <ContactIcon /> </div>
-                        <button>Skontaktuj się</button>
+                        <button onClick={() => scrollToElement(document.getElementById("contactForm"))}>Skontaktuj się</button> 
                         <p>
                             Skontaktuj się z nami, aby poznać więcej szczegółów 
                             lub uzyskać bezpłatną wycenę.

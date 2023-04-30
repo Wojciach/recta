@@ -3,38 +3,18 @@ import React, { useRef, useEffect } from 'react';
 import "./Services.scss";
 import oferta from "./oferta.js";
 
-import { ReactComponent as Icon1 } from "./svg/ChatkaPuchatka_icon.svg";
-import { ReactComponent as Icon2 } from "./svg/dor/wykonczenie_icon.svg";
-import { ReactComponent as Icon3 } from "./svg/dor/nadzor_icon.svg";
-import { ReactComponent as Icon4 } from "./svg/dor/systemy_icon.svg";
-import { ReactComponent as Icon5 } from "./svg/ChatkaPuchatka_icon.svg";
+import {ReactComponent as Decor } from "./svg/dor/btnR.svg";
+
+
+import {icons, serTit, serDesc} from "./servicesData";
+
 
 
 
 
 function Services() {
 
-  const icons = [Icon1, Icon2, Icon3, Icon4, Icon5] ;
-
-  const serTit = [
-    "Budowa<br> Domów",
-    "Prace<br> Wykończeniowe",
-    "Nadzór<br> Budowlany",
-    "Instalacje<br> i Systemy",
-    "Modernizacja<br> Energetyczna",
-
-  ]
-
-  
-  const serDesc = [
-    "Od decyzji, poprzez projekt, stan surowy, wykończenie i odbiór",
-    "Czuwamy by efekt budowy był zgodny z Państwa projektem w najwyższym standardzie",
-    "Przygotowujemy dokumentację i zgłaszamy budynek do odbioru.",
-    "Instalujemy systemy elektryczne, grzewcze, sieci komputerowe i systemy ochrony",
-    "Instalujemy systemy elektryczne, grzewcze, sieci komputerowe i systemy ochrony",
-  ]
-
-
+  /* <h5> {serTit[index].split(" ")[0]} <br/> {serTit[index].split(" ").slice(1).map((item) => " " + item)}  </h5> */ 
 
     return (
       <section id="services">
@@ -49,8 +29,9 @@ function Services() {
                 return(
                   <div key={index} className='serviceItem'>
                     <div className='serviceIcon'> <Icon /> </div>
-                    <h5 dangerouslySetInnerHTML={{__html: serTit[index]}}></h5>
+                    <h5> {serTit[index]}  </h5>
                     <p>{serDesc[index]}</p>
+                    <div className='decor'> <Decor /> </div>
                   </div>
                   )
               })}

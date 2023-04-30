@@ -1,5 +1,27 @@
-import { Link, animateScroll as scroll } from "react-scroll";
+
+import { Link } from "react-router-dom";
+
+function scrollToTarget(address) {
+
+    setTimeout(()=>{
+      const targetElement = document.querySelector(address);
+  
+      if(targetElement) {
+          window.scrollTo({ top: targetElement.offsetTop, behavior: "smooth" });
+      }
+    }, 100);
+
+
+  }
+  
 
 export const items = ["Home", "Oferta", "Realizacje", "Referencje", "Aktualności", "Kontakt"];
 
-export const mItems = items.map((item, index) => { return <li key={index}><Link to={item}>{item}</Link></li>; });
+export const links = ["/", "/services#serDetails", "#projects", "/#opinions", "/#news", "#footer"];
+
+export const hashes = ["#header", "#serDetails", "#projects", "#opinions", "#news", "#footer"];
+
+export const mItems = items.map((item, index) => {
+     return <li key={index}>
+                <Link to={links[index]} onClick={() => scrollToTarget(hashes[index])} >{item}</Link>
+            </li>; });
