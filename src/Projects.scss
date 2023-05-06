@@ -30,9 +30,9 @@ section#projects {
             border-bottom: 2px solid $orange-5;
             transition: transform 0.3s ease-in-out;
         }
-        .trLeft {transform: translateX(-100%);}
-        .trCenter {transform: translateX(0);}
-        .trRight {transform: translateX(100%);}
+     //   .trLeft {transform: translateX(-100%);}
+     //   .trCenter {transform: translateX(0);}
+      //  .trRight {transform: translateX(100%);}
 
         .slideLeft, .slideRight {
             animation-duration: 0.2s;

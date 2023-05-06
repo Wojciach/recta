@@ -1,7 +1,9 @@
 import "./Map.scss";
+import React, { memo } from 'react';
 
 
-const Map = () => {
+const Map = memo(() => {
+    console.log("MAP COMPONENT RE-RENDERED!!!!");
 
     const address = encodeURIComponent("Kościuszki 20, 55-100 Trzebnica");
 
@@ -16,6 +18,6 @@ const Map = () => {
 
         </section>
     )
-}
+})
 
 export default Map;

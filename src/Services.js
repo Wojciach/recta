@@ -14,6 +14,8 @@ import {icons, serTit, serDesc} from "./servicesData";
 
 function Services() {
 
+  console.log("SERVICES COMPONENT RE-RENDERED!!!!");
+
   /* <h5> {serTit[index].split(" ")[0]} <br/> {serTit[index].split(" ").slice(1).map((item) => " " + item)}  </h5> */ 
 
     return (

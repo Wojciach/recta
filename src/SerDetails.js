@@ -7,7 +7,7 @@ import { icons, serTit, serDesc, serBullets } from "./servicesData";
 
 const SerDetails = () => {
 
-    
+    console.log("SER_DETAILS COMPONENT RE-RENDERED!!!!");
 
     return (
         <section id="serDetails">

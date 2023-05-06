@@ -16,7 +16,7 @@ function scrollToElement(ref) {
 
 const CompanyDescription = () => {
 
-   
+    console.log("COMPANY DESCRIPTION COMPONENT RE-RENDERED!!!!");
     
 
     return(

@@ -9,7 +9,7 @@ import whatsapp_icon from "./svg/dor/whatsapp_icon.svg";
 
 const Footer = () => {
 
-    
+    console.log("FOOTER COMPONENT RE-RENDERED!!!!");
 
     return (
         <section id="footer">

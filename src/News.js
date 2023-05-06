@@ -58,6 +58,9 @@ const Article = (props) => {
 
 
 const News = () => {
+
+    console.log("NEWS COMPONENT RE-RENDERED!!!!");
+
     return (
         <section id="news">
             

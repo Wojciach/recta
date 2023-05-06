@@ -1,6 +1,9 @@
 import "./ContactForm.scss";
 
 const ContactForm = () => {
+
+    console.log("CONTACT FORM COMPONENT RE-RENDERED!!!!");
+
     return (
         <section id="contactForm">
             <div id="content">
