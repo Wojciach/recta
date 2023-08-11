@@ -10,7 +10,6 @@ section#news {
             text-align: left;
             font-family: 'Bitter', serif;
             color: $blue-4;
-            
         }
         >article {
             display: flex;
@@ -27,27 +26,20 @@ section#news {
                     position: relative;
                     height: 150px;
                     width: 100%;
-                    
                     >div.arPhoto {
                         display: flex;
                         justify-content: center;
                         position: relative;
                         overflow: hidden;
                         margin-right: 10px;
-                        
-                        
                         >img {
-                        
                             height: 100%;
-                        
                         }
                     }
-                    >div.arContent {
-                        
+                    >div.arContent {            
                         text-align: left;
                         margin-bottom: 20px;
-                    
-                        
+
                         >h4 {
                             margin: 0;
                             white-space: nowrap;
@@ -78,22 +70,18 @@ section#news {
                 width: 100%;
                 justify-content: right;
                 margin-top: 10px;
-                
-                
                 >div {
                     display: flex;
                     position: relative;
                     justify-content: space-between;
                     align-content: flex-end;
                     margin-bottom: 30px;
-                    
                     width: 50%;
                     @media screen and (max-width: $colapse) {
                         width: 100%;
                     }
                     
                     flex-direction: row;
-                    
                     border-bottom: solid 1px rgb(120, 120, 120);
                     font-size: 0.7em;
                     bottom: 0;

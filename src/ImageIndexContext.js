@@ -8,7 +8,18 @@ export const useImageIndex = () => {
 
 export const ImageIndexProvider = ({ children }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(3);
-  const value = { currentImageIndex, setCurrentImageIndex };
+  const [transformValue, setTransformValue] = useState("100");
+
+  const updateTransform = (value) => {
+    setTransformValue(value);
+  };
+
+  const value = {
+    currentImageIndex,
+    setCurrentImageIndex,
+    transformValue,
+    updateTransform,
+  };
 
   return (
     <ImageIndexContext.Provider value={value}>

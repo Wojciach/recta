@@ -7,56 +7,25 @@ import  { mItems } from "./navData.js";
 import React from "react";
 import { useEffect } from "react";
 
-
-function Menu({passed}) {
+function Menu() {
   console.log("MENU COMPONENT RE-RENDERED!!!!");
-
-  console.log("from menu1: " + passed.size);
-
-  for (let value of passed) {
-    console.log("XXXX: " + value);
-  }
-
-  useEffect(
-
-    () => {
-      for (let value of passed) {
-        console.log(value);
-      }
-    }, [passed]
-  )
-   // const passed = {passed};
     
-   
-    
-
-   
-
     return (
-      <section id="menu">
-         
-
+      <section id="menu"> 
         <nav>
-      
-    
-              <div className="topRow">
-
-                  <div id="rectaLogoHome">
-                  <Link to={"/"}  ><MyIcon /></Link>
-                  </div>
-
-                  <div id="langLink">
-                    <div className="lang" id="en">EN</div>
-                    <div className="lang" in="pl">PL</div>
-                  </div>
-
+          <div className="topRow">
+              <div id="rectaLogoHome">
+              <Link to={"/"}  ><MyIcon /></Link>
               </div>
-
-              <ul>
-                {mItems}
-              </ul>
+              <div id="langLink">
+                <div className="lang" id="en">EN</div>
+                <div className="lang" in="pl">PL</div>
+              </div>
+          </div>
+          <ul>
+            {mItems}
+          </ul>
         </nav>
-       
       </section>
     );
   }

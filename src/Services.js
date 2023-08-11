@@ -1,16 +1,12 @@
 import React, { useRef, useEffect } from 'react';
-
+import { Link } from "react-router-dom";
 import "./Services.scss";
 import oferta from "./oferta.js";
 
 import {ReactComponent as Decor } from "./svg/dor/btnR.svg";
 
-
-import {icons, serTit, serDesc} from "./servicesData";
-
-
-
-
+import {icons, serTit, serDesc, serHash} from "./servicesData";
+import  {items} from "./navData.js";
 
 function Services() {
 
@@ -28,13 +24,15 @@ function Services() {
 
                 const Icon = icons[index];
 
-                return(
-                  <div key={index} className='serviceItem'>
-                    <div className='serviceIcon'> <Icon /> </div>
-                    <h5> {serTit[index]}  </h5>
-                    <p>{serDesc[index]}</p>
-                    <div className='decor'> <Decor /> </div>
-                  </div>
+                  return (
+                    <Link to={`/services/#${serHash[index]}`}>
+                      <div key={index} className='serviceItem'>
+                        <div className='serviceIcon'> <Icon /> </div>
+                        <h5> {serTit[index]}  </h5>
+                        <p>{serDesc[index]}</p>
+                        <div className='decor'> <Decor /> </div>
+                      </div>
+                    </Link>
                   )
               })}
 

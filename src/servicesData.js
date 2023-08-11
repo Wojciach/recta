@@ -6,6 +6,14 @@ import { ReactComponent as Icon5 } from "./svg/dor/modernizacja_energetyczna.svg
 
 export const icons = [Icon1, Icon2, Icon3, Icon4, Icon5] ;
 
+export const serHash = [
+    "prace-budowlane-i-konstrukcyjne",
+    "prace-wykonczeniowe",
+    "prace-zewnetrzne-i-drogowe",
+    "instalacje-i-systemy",
+    "modernizacja-energetyczna",
+] ;
+
 export const serTit = [
     "Prace Budowlane i Konstrukcyjne",
     "Prace Wykończeniowe",

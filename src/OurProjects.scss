@@ -1,0 +1,110 @@
+@import "./base.scss";
+
+section#ourProjects {
+    margin:auto;
+    width: 80%;
+    position: relative;
+    display: block;
+    background-color: $orange-1;
+    margin-bottom: 30px;
+    >h2 {
+      width: 80%;
+      text-align: left;
+      font-family: 'Bitter', serif;
+      color: $blue-4;
+    }
+    h4 {
+      font-family: 'Bitter', serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .tint {
+      position: relative;
+      img {
+        position: relative;
+      //  width: 200px;
+        height: 140px;  
+        background-color: green;
+        margin: auto;
+        z-index: 10;
+      }
+      .overlay {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 11;
+        
+      }
+
+    }
+    .my-div.selected {
+      .tint {
+        
+        .overlay {
+          background-color: rgba($blue-4, 0.5);
+        }
+      }
+      h4 {
+        color: $orange-4;
+        font-weight: 700;
+      }
+    }
+    .slick-slide {
+      &:hover {
+        h4 {
+          font-weight: 700;
+        }
+      }
+    }
+
+    
+  
+  .custom-prev-arrow,
+  .custom-next-arrow {
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    &:hover {
+      background-color: #000;
+      color: red;
+    }
+  }
+  .custom-prev-arrow {
+    background-image: url("./svg/dor/btnL.svg");
+    left: 0;
+    transform: translateX(-50%) translateY(-50%);
+    &:hover {
+        background-image: url("./svg/dor/btnLhover.svg");
+    }
+  }
+  .custom-next-arrow {
+    background-image: url("./svg/dor/btnR.svg");
+    right: 0;
+    transform: translateX(50%) translateY(-50%);
+    &:hover {
+        background-image: url("./svg/dor/btnRhover.svg");
+    }
+  }
+}
+
+
+
+
+
+
+
+

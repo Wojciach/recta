@@ -8,34 +8,30 @@ import Menu from "./Menu.js";
 import Services from "./Services.js";
 import CompanyDescription from './CompanyDescription';
 import Opinions from "./Opinions.js";
-import Projects from './Projects.js';
+import OurProjects from './OurProjects.js';
 import News from './News.js';
 import ContactForm from './ContactForm.js';
 import Map from './Map.js';
 import Footer from './Footer';
 import SerDetails from './SerDetails.js';
+import MassGallery from './MassGallery';
 
-import hadnleScroll from './handleScroll.js';
+// import hadnleScroll from './handleScroll.js';
 import { ProjectsProvider } from './ProjectsContext';
 import { ImageIndexProvider } from './ImageIndexContext';
+import SliderWindow from './SliderWindow';
 
 function App() {
   console.log("APP COMPONENT RE-RENDERED!!!!");
-  const [viz, setViz] = useState(new Set([]));
 
-  useEffect(() => {
-    window.addEventListener('scroll', () => {
-      hadnleScroll([viz, setViz]);
-    });
-
-    return () => {
-      window.removeEventListener('scroll', () => {
-        hadnleScroll([viz, setViz]);
-      });
-    };
-  }, []);
-
+  const [selected, setSelected] = useState('gal_1');
   const currentLocation = useLocation();
+  const [sliderWindowActive, setSliderWindowActive] = useState(false);
+  const [startSiderFrom, setStartSiderFrom] = useState(1);
+
+  function selectThis(event) {
+    setSelected(event.currentTarget.id);
+  }
 
   const HomeScreen = React.memo(() => {
     console.log("HOME_SCREEN COMPONENT RE-RENDERED!!!!");
@@ -45,7 +41,8 @@ function App() {
         <Services />
         <CompanyDescription />
         <Opinions />
-        <Projects />
+        <OurProjects selected={selected} selectThis={selectThis}/>
+        <MassGallery gallery={selected} setSliderWindowActive={setSliderWindowActive} setStartSiderFrom={setStartSiderFrom} />
         <News />
       </ProjectsProvider>
     );
@@ -57,7 +54,8 @@ function App() {
     return (
       <ProjectsProvider>
         <SerDetails />
-        <Projects />
+        <OurProjects selected={selected} selectThis={selectThis} />
+        <MassGallery gallery={selected} setSliderWindowActive={setSliderWindowActive} setStartSiderFrom={setStartSiderFrom} />
       </ProjectsProvider>
     );
   });
@@ -65,7 +63,7 @@ function App() {
   return (
     <main className="App">
       <header>
-        <Menu passed={viz} />
+        <Menu />
         <Header />
       </header>
       <ImageIndexProvider>
@@ -78,6 +76,7 @@ function App() {
       <Map />
       <footer>
         <Footer />
+        {sliderWindowActive && <SliderWindow setSliderWindowActive={setSliderWindowActive} startSiderFrom={startSiderFrom} /> }
       </footer>
     </main>
   );

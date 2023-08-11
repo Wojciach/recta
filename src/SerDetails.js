@@ -1,9 +1,5 @@
 import "./SerDetails.scss";
-
-import { icons, serTit, serDesc, serBullets } from "./servicesData";
-
-
-
+import { icons, serTit, serDesc, serBullets, serHash } from "./servicesData";
 
 const SerDetails = () => {
 
@@ -20,7 +16,7 @@ const SerDetails = () => {
                    const Icon = icons[index];
                    const bullets = serBullets[index].map((item) => "<li>" + item + "</li>").join("<br/>");
                    return (
-                    <article className="innerArticle">
+                    <article id={serHash[index]} className="innerArticle">
 
                         <div className="iconColumn">
                              <Icon key={index} /> 

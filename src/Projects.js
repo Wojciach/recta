@@ -17,23 +17,18 @@ const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, 
 
 const Projects = memo(() => {
 
+  const {
+    currentImageIndex,
+    setCurrentImageIndex,
+    transformValue,
+    updateTransform,
+  } = useImageIndex();
 
-
-  const { currentImageIndex, setCurrentImageIndex } = useImageIndex();
-
- // const [transformValue, setTransformValue] = useState("100");
-  const [transformValue, setTransformValue] = useState("100");
 
   const style = {
     transform: `translateX(${transformValue}%)`,
-    transition: 'transform 1s'
+    transition: 'transform 0.3s'
   };
-
-  const updateTransform = (value) => {
-    setTransformValue(value);
-  };
-  
-  
 
   // Save currentImageIndex in session storage
   useEffect(() => {

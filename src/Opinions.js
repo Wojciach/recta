@@ -1,8 +1,6 @@
 import "./Opinions.scss";
 import icon from "./svg/dor/Recta_logo_komentarze.svg";
 
-
-
 const Opinions = () => {
 
     console.log("OPINIONS COMPONENT RE-RENDERED!!!!");

@@ -11,11 +11,7 @@ const Map = memo(() => {
 
     return (
         <section id="map">
-
-
-                <iframe id="gMap" src={url} width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-
+            <iframe id="gMap" src={url} width="600" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     )
 })
