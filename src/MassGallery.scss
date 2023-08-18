@@ -38,6 +38,18 @@ section#massGallery {
         top: 10px;
         height: 30px;
         z-index: 10;
+        background-color: $blue-3;
+        color: $orange-1;
+        font-family: 'Nunito Sans', sans-serif;
+        box-shadow: none;
+        border: none;
+        outline: 4px white solid;
+        color: $orange-1;
+        &:hover {
+            background-color: $orange-2;
+            color: $blue-4;
+            font-weight: 700;
+        }
     }
    
     

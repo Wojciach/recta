@@ -6,6 +6,9 @@ import "./OurProjects.scss";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+ import Button from './buttons/Button.js';
+ import { ReactComponent as ButtonSvg } from './buttons/button2.svg';
+ import './buttons/Button.scss';
 
 import photo1 from "./photos/MassGalleries/Fundamenty40/20221027_142832.jpg";
 import photo2 from "./photos/MassGalleries/Moniuszki40/20220617_163422.jpg";
@@ -14,7 +17,11 @@ import photo3 from "./photos/MassGalleries/Taczow40/20200529_170847.jpg";
 const OurProjects = memo(({selected, selectThis}) => {
   
   const CustomPrevArrow = (props) => (
-    <button {...props} className="custom-prev-arrow"></button>
+    <button {...props} className="universalBtn custom-prev-arrow">
+      <div style={{transform: `rotate(0}deg)`}}>
+        <ButtonSvg />
+      </div>
+    </button>
   );
 
   const CustomNextArrow = (props) => (

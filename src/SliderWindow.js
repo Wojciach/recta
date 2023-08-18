@@ -1,21 +1,31 @@
 import React, { useState, useEffect, memo } from 'react';
 
 import Slider from 'react-slick';
-import {moniuszki, taczow, fundamenty} from "./PhotoContext.js";
+import { bring } from "./PhotoContext.js";
 
 import "./SliderWindow.scss";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+import { ReactComponent as MySvg } from './svg/dor/X.svg';
+
 const SliderWindow = memo( (props) => {
 
     const setSliderWindowActive = props.setSliderWindowActive;
     const startSiderFrom = props.startSiderFrom;
-    const photoUrls = taczow();
+    const selected = props.selected;
+
+    const photoUrlsArray = {
+        gal_1: bring("taczow"), 
+        gal_2: bring("fundamenty"), 
+        gal_3: bring("moniuszki")
+    };
+
+    const photoUrls = photoUrlsArray[selected];
+
     const CustomPrevArrow = (props) => (
         <button {...props} className="custom-prev-arrow"></button>
     );
-
     const CustomNextArrow = (props) => (
         <button {...props} className="custom-next-arrow"></button>
     );
@@ -58,8 +68,8 @@ const SliderWindow = memo( (props) => {
 
     return (
         <section id="sliderWindow">
-          <h2>Galeria</h2>
-          <button onClick={ () => {setSliderWindowActive(false)}}>X</button>
+          <h2>Galeria</h2>  
+          <button onClick={ () => {setSliderWindowActive(false)}}><MySvg /></button>
             <Slider {...settings}>
                 {photoUrls.map((image, index) => (
                     <div className='cont'><img key={index} src={photoUrls[index]} alt={`Image ${image}`} /></div>

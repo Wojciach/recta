@@ -15,6 +15,7 @@ import Map from './Map.js';
 import Footer from './Footer';
 import SerDetails from './SerDetails.js';
 import MassGallery from './MassGallery';
+import Button from './buttons/Button.js';
 
 // import hadnleScroll from './handleScroll.js';
 import { ProjectsProvider } from './ProjectsContext';
@@ -27,7 +28,7 @@ function App() {
   const [selected, setSelected] = useState('gal_1');
   const currentLocation = useLocation();
   const [sliderWindowActive, setSliderWindowActive] = useState(false);
-  const [startSiderFrom, setStartSiderFrom] = useState(1);
+  const [startSiderFrom, setStartSiderFrom] = useState(0);
 
   function selectThis(event) {
     setSelected(event.currentTarget.id);
@@ -76,8 +77,10 @@ function App() {
       <Map />
       <footer>
         <Footer />
-        {sliderWindowActive && <SliderWindow setSliderWindowActive={setSliderWindowActive} startSiderFrom={startSiderFrom} /> }
+        {sliderWindowActive && <SliderWindow setSliderWindowActive={setSliderWindowActive} startSiderFrom={startSiderFrom} selected={selected} /> }
       </footer>
+      <Button angle={45} />
+      <Button angle={45} />
     </main>
   );
 }

@@ -1,0 +1,32 @@
+@import "../base.scss";
+
+button.universalBtn {
+    background-color: $blue-35;
+    border: none;
+    padding: 0;
+    >div {
+        border: none;
+        padding: 0;
+        width: 62.5px;
+        height: 62.5px;
+        .st1 {
+            fill:none;
+            stroke:#FFFFFF;
+            stroke-width:2;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            stroke-miterlimit:10;
+        }
+    }
+    &:hover {
+        background-color: $orange-2;
+        .st1 {
+            fill:none;
+            stroke: $orange-4;
+            stroke-width:2;
+            stroke-linecap:round;
+            stroke-linejoin:round;
+            stroke-miterlimit:10;
+        }
+    }
+}

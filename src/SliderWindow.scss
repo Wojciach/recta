@@ -17,6 +17,27 @@ section#sliderWindow {
       font-family: 'Bitter', serif;
       color: $blue-4;
     }
+    >button {
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+      border: none;
+      >svg {
+        width: 40px;
+        height: 40px;
+        display: block;
+        fill: $blue-4;
+        padding: 0;
+        margin: 0;
+        &:hover {
+          fill: $orange-2;
+         .x {
+            stroke: $orange-4;
+          }
+        }
+      }
+
+    }
     h4 {
       font-family: 'Bitter', serif;
       font-style: italic;
@@ -29,7 +50,7 @@ section#sliderWindow {
      // height: 100%;
     // overflow: hidden;
       margin: auto;
-      background-color: red;
+      background-color: $orange-15;
       img {
           position: relative;
           margin: auto;
@@ -49,7 +70,7 @@ section#sliderWindow {
   .custom-prev-arrow,
   .custom-next-arrow {
     z-index: 10;
-    position: fixed;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 40px;

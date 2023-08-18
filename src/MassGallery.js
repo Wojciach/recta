@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./MassGallery.scss";
-import { fundamenty40, moniuszki40, taczow40 } from './PhotoContext';
+import { bring } from './PhotoContext';
 
 const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
 
@@ -10,9 +10,9 @@ const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
     }
 
     const photoUrlsArray = {
-        gal_1: taczow40(), 
-        gal_2: fundamenty40(), 
-        gal_3: moniuszki40()
+        gal_1: bring("taczow40"), 
+        gal_2: bring("fundamenty40"), 
+        gal_3: bring("moniuszki40")
     };
     const photoUrls = photoUrlsArray[gallery];
     const [isRolledUp, setIsRolledUp] = useState(false);

@@ -16,15 +16,11 @@ const HaGallery = () => {
 
     return(
         <section id="haGallery">
-
             <div>
-
                 <div id="ph1" onClick={imgSwap}></div>
                 <div id="ph2" onClick={imgSwap}></div>
                 <div id="ph3" onClick={imgSwap}></div>
-
             </div>
-
         </section>
     )
 }
