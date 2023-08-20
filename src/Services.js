@@ -8,11 +8,13 @@ import {ReactComponent as Decor } from "./svg/dor/btnR.svg";
 import {icons, serTit, serDesc, serHash} from "./servicesData";
 import  {items} from "./navData.js";
 
-function Services() {
+function Services({setSelectedHash}) {
 
   console.log("SERVICES COMPONENT RE-RENDERED!!!!");
 
-  /* <h5> {serTit[index].split(" ")[0]} <br/> {serTit[index].split(" ").slice(1).map((item) => " " + item)}  </h5> */ 
+  function handleHashRef(index) {
+    setSelectedHash(index);
+  }
 
     return (
       <section id="services">
@@ -25,7 +27,7 @@ function Services() {
                 const Icon = icons[index];
 
                   return (
-                    <Link to={`/services/#${serHash[index]}`}>
+                    <Link to={`/services/#${serHash[index]}`} onClick={() => handleHashRef(index)}>
                       <div key={index} className='serviceItem'>
                         <div className='serviceIcon'> <Icon /> </div>
                         <h5> {serTit[index]}  </h5>

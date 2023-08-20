@@ -5,7 +5,7 @@ import { ReactComponent as MyIcon } from "./svg/RECTA_logo_granat.svg";
 import { Link } from "react-router-dom";
 import  { mItems } from "./navData.js";
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, memo } from "react";
 
 function Menu() {
   console.log("MENU COMPONENT RE-RENDERED!!!!");
@@ -30,5 +30,5 @@ function Menu() {
     );
   }
   
-  export default Menu;
+  export default memo(Menu);
   

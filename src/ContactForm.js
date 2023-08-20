@@ -1,6 +1,7 @@
 import "./ContactForm.scss";
+import { memo } from "react";
 
-const ContactForm = () => {
+const ContactForm = memo(() => {
 
     console.log("CONTACT FORM COMPONENT RE-RENDERED!!!!");
 
@@ -38,6 +39,6 @@ const ContactForm = () => {
 
         </section>
     )
-}
+})
 
 export default ContactForm;

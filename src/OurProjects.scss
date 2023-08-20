@@ -61,43 +61,20 @@ section#ourProjects {
       }
     }
 
-    
-  
   .custom-prev-arrow,
   .custom-next-arrow {
     z-index: 10;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    border: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    font-size: 1.5rem;
-    color: #000;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    &:hover {
-      background-color: #000;
-      color: red;
-    }
   }
   .custom-prev-arrow {
-    background-image: url("./svg/dor/btnL.svg");
     left: 0;
     transform: translateX(-50%) translateY(-50%);
-    &:hover {
-        background-image: url("./svg/dor/btnLhover.svg");
-    }
   }
   .custom-next-arrow {
-    background-image: url("./svg/dor/btnR.svg");
     right: 0;
     transform: translateX(50%) translateY(-50%);
-    &:hover {
-        background-image: url("./svg/dor/btnRhover.svg");
-    }
   }
 }
 

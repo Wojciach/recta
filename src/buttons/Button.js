@@ -7,7 +7,7 @@ const Button = (props) => {
 
 
     return (
-    <button {...props} className={"universalBtn " + props.clName}>
+    <button {...props} className={"universalBtn"}>
         <div style={{transform: `rotate(${props.angle}deg)`}}>
             <ButtonSvg />
         </div>

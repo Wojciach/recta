@@ -4,6 +4,8 @@ import { bring } from './PhotoContext';
 
 const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
 
+    console.log("MASS-GALLERY COMPONENT RE-RENDERED!!!!");
+
     const setSlidergallery = (event) => {
         setSliderWindowActive(true);
         setStartSiderFrom(parseInt(event.currentTarget.getAttribute('data-index')));

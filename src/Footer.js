@@ -1,4 +1,5 @@
 import "./Footer.scss";
+import { memo } from "react";
 
 import  {mItems} from "./navData.js";
 import twatter_icon from "./svg/dor/twatter_icon.svg";
@@ -7,7 +8,7 @@ import linkedin_icon from "./svg/dor/linkedin_icon.svg";
 import messenger_icon from "./svg/dor/messenger_icon.svg";
 import whatsapp_icon from "./svg/dor/whatsapp_icon.svg";
 
-const Footer = () => {
+const Footer = memo(() => {
 
     console.log("FOOTER COMPONENT RE-RENDERED!!!!");
 
@@ -67,6 +68,6 @@ const Footer = () => {
 
         </section>
     )
-}
+})
 
 export default Footer;

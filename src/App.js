@@ -26,6 +26,7 @@ function App() {
   console.log("APP COMPONENT RE-RENDERED!!!!");
 
   const [selected, setSelected] = useState('gal_1');
+  const [selectedHash, setSelectedHash] = useState(2);
   const currentLocation = useLocation();
   const [sliderWindowActive, setSliderWindowActive] = useState(false);
   const [startSiderFrom, setStartSiderFrom] = useState(0);
@@ -34,12 +35,14 @@ function App() {
     setSelected(event.currentTarget.id);
   }
 
+
+
   const HomeScreen = React.memo(() => {
     console.log("HOME_SCREEN COMPONENT RE-RENDERED!!!!");
 
     return (
       <ProjectsProvider>
-        <Services />
+        <Services setSelectedHash={setSelectedHash} />
         <CompanyDescription />
         <Opinions />
         <OurProjects selected={selected} selectThis={selectThis}/>
@@ -54,7 +57,7 @@ function App() {
 
     return (
       <ProjectsProvider>
-        <SerDetails />
+        <SerDetails selectedHash={selectedHash} />
         <OurProjects selected={selected} selectThis={selectThis} />
         <MassGallery gallery={selected} setSliderWindowActive={setSliderWindowActive} setStartSiderFrom={setStartSiderFrom} />
       </ProjectsProvider>
@@ -79,8 +82,8 @@ function App() {
         <Footer />
         {sliderWindowActive && <SliderWindow setSliderWindowActive={setSliderWindowActive} startSiderFrom={startSiderFrom} selected={selected} /> }
       </footer>
-      <Button angle={45} />
-      <Button angle={45} />
+      <Button angle={0} />
+      <Button angle={180} />
     </main>
   );
 }
