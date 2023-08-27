@@ -1,27 +1,13 @@
 import { useEffect, useState, memo, useRef } from "react";
 import "./SerDetails.scss";
 import { icons, serTit, serDesc, serBullets, serHash } from "./servicesData";
+import {scrollToTarget} from "./navData.js";
 
-const SerDetails = memo(({selectedHash}) => {
-    const refs = useRef([]);
-    const sh = useRef(selectedHash);
+const SerDetails = memo(({refArr}) => {
+
     console.log("SER_DETAILS COMPONENT RE-RENDERED!!!!");
-    //console.log("window location: " + window.location.hash);
-  //  const [hash, setHash] = useState(window.location.hash);
-    
-   /* useEffect(() => {
-        const scrollToRef = () => {
-            if (refs.current[sh.current]) {
-              refs.current[sh.current].scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-                inline: "center"
-              });
-            }
-          };
-          scrollToRef();
-      console.log("USE EFFECT RANNED!!!!" + sh.current);
-    }, [sh.current]); */
+   // console.log(refArr);
+
     return (
         <section id="serDetails">
 
@@ -33,7 +19,7 @@ const SerDetails = memo(({selectedHash}) => {
                    const Icon = icons[index];
                    const bullets = serBullets[index].map((item) => "<li>" + item + "</li>").join("<br/>");
                    return (
-                    <article id={serHash[index]} className="innerArticle" ref={(el) => (refs.current[index] = el)}>
+                    <article id={serHash[index]} className="innerArticle" ref={(re) => {refArr.current[index] = re}}>
 
                         <div className="iconColumn">
                              <Icon key={index} /> 

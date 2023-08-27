@@ -38,23 +38,20 @@ const Article = (props) => {
                     <p>
                         {props.desc}
                     </p>
-
                 </div>
             </div>
         </div>
         <div className="arFoot">
-                <div>
-                    <div className="arDate">{props.date}</div>
-                    <div className="arLink">
-                        <a target="_blank" href={props.link} rel="noopener noreferrer">Czytaj Więcej</a>
-                    </div>
+            <div>
+                <div className="arDate">{props.date}</div>
+                <div className="arLink">
+                    <a target="_blank" href={props.link} rel="noopener noreferrer">Czytaj Więcej</a>
                 </div>
+            </div>
         </div>
     </article>
     )
 }
-
-
 
 
 const News = () => {
@@ -63,17 +60,14 @@ const News = () => {
 
     return (
         <section id="news">
-            
             <div>
                 <h2>Aktualnosci</h2>
 
-                {data.map((item, index)=>{return(
-
-                    <Article key={index} img={item.img} title={item.title} desc={item.desc} date={item.date} link={item.link} />
-
-                )})}
-                
-                
+                {data.map((item, index)=>{
+                    return (
+                        <Article key={index} img={item.img} title={item.title} desc={item.desc} date={item.date} link={item.link} />
+                    )
+                })}
             </div>
         </section>
     )

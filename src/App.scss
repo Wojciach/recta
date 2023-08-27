@@ -1,3 +1,5 @@
+@import "base.scss";
+
 .App {
   text-align: center;
 }
@@ -34,5 +36,30 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+#top-scroller {
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+  z-index: 999;
+  button {
+    width: 35px;
+    height: 35px;
+    background-color: $grey-5;
+    transition: transform 0.1s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }

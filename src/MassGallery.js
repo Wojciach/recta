@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "./MassGallery.scss";
 import { bring } from './PhotoContext';
 
 const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
 
     console.log("MASS-GALLERY COMPONENT RE-RENDERED!!!!");
+    const navigate = useNavigate();
 
     const setSlidergallery = (event) => {
         setSliderWindowActive(true);
         setStartSiderFrom(parseInt(event.currentTarget.getAttribute('data-index')));
+        navigate('/photo-slider');
     }
 
     const photoUrlsArray = {

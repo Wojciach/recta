@@ -1,7 +1,6 @@
-import { Route, Routes, useLocation } from 'react-router-dom';
-import React, { useEffect, useRef, useState } from 'react';
-import './App.css';
-import './base.scss';
+import { Route, Routes } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
+import './App.scss';
 
 import Header from "./Header.js";
 import Menu from "./Menu.js";
@@ -15,34 +14,34 @@ import Map from './Map.js';
 import Footer from './Footer';
 import SerDetails from './SerDetails.js';
 import MassGallery from './MassGallery';
-import Button from './buttons/Button.js';
+import { TopScrollBtn } from './TopScrollBtn.js';
 
-// import hadnleScroll from './handleScroll.js';
 import { ProjectsProvider } from './ProjectsContext';
 import { ImageIndexProvider } from './ImageIndexContext';
 import SliderWindow from './SliderWindow';
+
+
 
 function App() {
   console.log("APP COMPONENT RE-RENDERED!!!!");
 
   const [selected, setSelected] = useState('gal_1');
-  const [selectedHash, setSelectedHash] = useState(2);
-  const currentLocation = useLocation();
   const [sliderWindowActive, setSliderWindowActive] = useState(false);
   const [startSiderFrom, setStartSiderFrom] = useState(0);
+
+  const refArr = useRef([]);
 
   function selectThis(event) {
     setSelected(event.currentTarget.id);
   }
-
-
+  
 
   const HomeScreen = React.memo(() => {
     console.log("HOME_SCREEN COMPONENT RE-RENDERED!!!!");
 
     return (
       <ProjectsProvider>
-        <Services setSelectedHash={setSelectedHash} />
+        <Services refArr={refArr}/>
         <CompanyDescription />
         <Opinions />
         <OurProjects selected={selected} selectThis={selectThis}/>
@@ -57,7 +56,7 @@ function App() {
 
     return (
       <ProjectsProvider>
-        <SerDetails selectedHash={selectedHash} />
+        <SerDetails refArr={refArr}/>
         <OurProjects selected={selected} selectThis={selectThis} />
         <MassGallery gallery={selected} setSliderWindowActive={setSliderWindowActive} setStartSiderFrom={setStartSiderFrom} />
       </ProjectsProvider>
@@ -66,24 +65,29 @@ function App() {
 
   return (
     <main className="App">
-      <header>
-        <Menu />
-        <Header />
-      </header>
+      { sliderWindowActive === false &&
+          <header>
+            <Menu />
+            <Header />
+          </header> 
+      }
       <ImageIndexProvider>
-      <Routes>
-        <Route exact path="/" element={<HomeScreen />} />
-        <Route path="/services" element={<ServicesScreen />} />
-      </Routes>
+        <Routes>
+          <Route exact path="/" element={<HomeScreen />} />
+          <Route path="/services" element={<ServicesScreen />} />
+          <Route path="/photo-slider" element={<SliderWindow setSliderWindowActive={setSliderWindowActive} startSiderFrom={startSiderFrom} selected={selected} />} />
+        </Routes>
       </ImageIndexProvider>
-      <ContactForm />
-      <Map />
-      <footer>
-        <Footer />
-        {sliderWindowActive && <SliderWindow setSliderWindowActive={setSliderWindowActive} startSiderFrom={startSiderFrom} selected={selected} /> }
-      </footer>
-      <Button angle={0} />
-      <Button angle={180} />
+      
+      { sliderWindowActive === false && <ContactForm /> }
+      { sliderWindowActive === false && <Map /> }
+
+      { sliderWindowActive === false &&
+        <footer>
+          <Footer />
+        </footer> 
+      }
+      <TopScrollBtn />
     </main>
   );
 }
