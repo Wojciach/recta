@@ -45,11 +45,11 @@ const Footer = memo(() => {
                         <p>Znajdziesz nas również na:</p>
                         <div>
                             <ul>
-                                <li><img src={fb_icon}/></li>
-                                <li><img src={twatter_icon}/></li>
-                                <li><img src={linkedin_icon}/></li>
-                                <li><img src={messenger_icon}/></li>
-                                <li><img src={whatsapp_icon}/></li>
+                                <li><img alt="facebook" src={fb_icon}/></li>
+                                <li><img alt="twitter" src={twatter_icon}/></li>
+                                <li><img alt="linkedin" src={linkedin_icon}/></li>
+                                <li><img alt="messenger" src={messenger_icon}/></li>
+                                <li><img alt="watsapp" src={whatsapp_icon}/></li>
                             </ul>
                         </div>
                     </div>

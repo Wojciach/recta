@@ -20,7 +20,15 @@ export const TopScrollBtn = () => {
 
     useEffect(() => {
         function handleVisibility() {
-          window.scrollY > window.innerHeight/2 ? setVisibility(1) : setVisibility(0);
+          if( window.scrollY > window.innerHeight/2 &&
+              window.scrollY < document.documentElement.scrollHeight - window.innerHeight*1.2) 
+          {
+            setVisibility(1);
+          } else {
+            setVisibility(0);
+          }
+  
+         
         }
 
         window.addEventListener('scroll', handleVisibility);

@@ -12,24 +12,23 @@ section#services {
     margin-bottom: -30px;
      div#servicesList {
         display: flex;
-        flex-direction: row;
         justify-content: center;
+        flex-flow: row wrap;
+        width: 100%; 
         align-content: space-between;
         justify-items: center;
         align-items: center;
-        align-items: stretch;
             a {
                 position: relative;
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-                justify-content: center;
+                display: block;
                 align-content: space-between;
                 align-items: stretch;
-                max-width: 80%;
+                max-width: 50%;
+                flex-basis: 20%;
                 margin-left: auto;
                 margin-right: auto;
                 z-index: 6;
+                flex-grow: 1;
                 .serviceItem {
                     transform: translateY(-80px);
                     display: flex;
@@ -43,11 +42,12 @@ section#services {
                     background-color: $orange-3;
                     margin: 5px;   
                     color: $blue-4;
-                //  width: 45%;
-                    flex-grow: 0;
+                  //    width: 45%;
+                 //   flex-grow: 0;
                     transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out , opacity 0.5s ease-in-out;
-                //  flex-basis: 25%;
-
+                   flex-basis: 25%;
+                    z-index: 5;
+                    .decor {z-index: 20;}
                     @media screen and (max-width: 800px) {
                         flex-basis: 45%;
                     }
@@ -56,7 +56,7 @@ section#services {
                         background-color: $orange-4;
                         color: $orange-1;
                         transform: scale(1.05) translateY(-80px);
-                        z-index: 10;
+                        z-index: 20;
 
                         >div.serviceIcon {
                             display: flex;
@@ -72,9 +72,11 @@ section#services {
                             transform: translateY(0);
                         }
                         .decor {
+                            position: absolute;
                             transform: translate(50%, 50%);
                             visibility: visible;
                             opacity: 1;
+                            z-index: -20;
                         }
                     }
                     >div.serviceIcon {
@@ -136,6 +138,7 @@ section#services {
                         opacity: 0;
                         transform: translate(50%, 100%) rotateX(120deg);
                         transition: transform 0.6s ease-in-out, opacity 0.5s ease-in-out;
+                        z-index: 20;
                     }
             }
         }

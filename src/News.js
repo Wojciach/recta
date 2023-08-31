@@ -1,22 +1,21 @@
 import "./News.scss";
-import img1 from "./photos/ronnie-george-z11gbBo13ro-unsplash.jpg"
-import img2 from "./photos/Osiedle-domow-blizniaczych-przy-ul.-Czechoslowackiej-w-Lodzi-2-800x450.jpg"
+import energySVG from "./svg/energy.svg";
 
 const data = [
 
     {
         title: "Projekt Goliat",
-        desc: "Rozpoczynamy budowę nowego osiedla domków jednorodzinnych na Psim Polu pod Wrocławiem. Inwestycja będzie zajmować powierzchnię 300 hetarów i będzie oferować spokojne zacisze z dala od miasta dla 80 rodzin. Projekt został zainicjowany z myślą o młodych małżeństwach o ograniczonych możliwościach budżetowych...",
-        img: img1,
-        link: "http://www.02.pl",
-        date: "20.02.2023"
+        desc: "Aktualnie realizowana inwestycja mieści się w okolicach Zawonii, w powiecie trzebnickim. To urokliwe miejsce, emanujące pięknem przyrody, wkrótce zyska dodatkowy walor w postaci interesująco zaprojektowanego domu w stylu Telimach, stworzonego przez pracownię Archon. Projekt tego domu w Telimach to zadanie fascynujące i wymagające rozległej wiedzy w dziedzinie budownictwa. Budynek ten zawiera wiele skomplikowanych elementów żelbetowych, które nadają mu imponujący, monumentalny charakter. Już w najbliższych tygodniach rozpoczniemy prace instalacyjne. <br> Zgodnie z duchem XXI wieku, projektowany dom zostanie wyposażony w zaawansowane systemy elektroniczne. Rozwiązania te, skrojone na miarę indywidualnych potrzeb klienta, obejmą szeroki wachlarz obecnie dostępnych technologii smart home. Ich głównym celem będzie wzbogacenie jakości życia rodziny inwestora poprzez usprawnienie różnych aspektów codziennego funkcjonowania. Kolejna aktualizacja informacji już niedługo, oczywiście wzbogacona o fotorelację z postępu prac.",
+        img: "https://cdn1.archon.pl/images/products/m71f25058f23bc/i/projekt-dom-w-telimach-g2e-e4f54d3e3ba22157447530643fdaa24a__38193.jpg",
+        link: "https://www.archon.pl/projekty-domow/projekt-dom-w-telimach-g2e-m71f25058f23bc",
+        date: "20.07.2023"
     },
     {
-        title: "Projekt Salomon - otwarcie",
-        desc: "Project Salomon juest już na ukończeniu. Jesteśmy dumni, że możemy już wkrótce oddać w Państwa ręce luksusowe osiedle domków jedno i wielorodzinnnych w Leśnicy. Projekt oferuje domy o wysokim standardzie z dużą powierzchnią ogrodową. Ulokowany blisko Wrocławia oferuje łatwy dojazd do pracy obwonicą wrocławską oraz...",
-        img: img2,
+        title: "Audyty Energetyczne",
+        desc: "Nasza firma dba o najwyższe standardy usług, dlatego podnosimy obecnie swoje kwalifikacje w zakresie przeprowadzania audytów energetycznych.",
+        img: energySVG,
         link: "",
-        date: "23.05.2022"
+        date: "15.08.2023"
     },
 
 ]
@@ -29,7 +28,7 @@ const Article = (props) => {
         <div className="arContainer colapseRow">
             <div className="column">
                 <div className="arPhoto">
-                     <img src={props.img} />
+                     <img alt="" src={props.img} />
                 </div>
             </div>
             <div className="column">
@@ -62,7 +61,6 @@ const News = () => {
         <section id="news">
             <div>
                 <h2>Aktualnosci</h2>
-
                 {data.map((item, index)=>{
                     return (
                         <Article key={index} img={item.img} title={item.title} desc={item.desc} date={item.date} link={item.link} />

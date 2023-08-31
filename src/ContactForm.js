@@ -28,7 +28,7 @@ const ContactForm = memo(() => {
                                 </p>
 
                             </div>
-                            <button>Wyślij</button>
+                            <button onClick={() => alert("Strona w budowie. Przepraszamy. Prosimy o kontakt telefoniczny.")}>Wyślij</button>
                         </div>
                     </div>
 
