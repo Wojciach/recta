@@ -18,82 +18,80 @@ section#contactForm {
             font-family: 'Bitter', serif;
             color: $blue-4;
         }
-        >#bothColumns {
-            
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            box-sizing: border-box;
-            
-            
-            
-            input {
-                font-size: 0.7em;
-                padding: 7px;
-                margin-bottom: 10px;
-                border: 1px solid $blue-3;
-                &::placeholder {
-                    color:rgb(150, 150, 150);
-                }
-            }
-
-            >#column1 {
-                width: 35%;
+        form { 
+            width: 100%;
+            >#bothColumns {
+                position: relative;
+                width: 100%;
                 display: flex;
-                flex-direction: column;
-                margin: auto;
-                @media screen and  (max-width: $colapse) {
-                    width: 80%;                    
-                }
-
-            }
-
-            >#column2 {
-                display: flex;
-                flex-direction: column;
-                margin: auto;
-                width: 60%;
-                height: 100%;
-                @media screen and  (max-width: $colapse) {
-                    width: 80%;                    
-                }
-                textarea {
-                    font-family: 'Nunito Sans', sans-serif;
+                flex-direction: row;
+                justify-content: space-between;
+                box-sizing: border-box;
+                input {
+                    font-size: 0.7em;
+                    padding: 7px;
+                    margin-bottom: 10px;
                     border: 1px solid $blue-3;
-                    min-height: 100px;
+                    &::placeholder {
+                        color:rgb(150, 150, 150);
+                    }
                 }
-                >#footerSender {
+                >#column1 {
+                    position: relative;
+                    width: 36%;
                     display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    align-items: center;
-                    
-                    >div#privPoli {
-                        width: 60%;
-                        font-size: 0.6em;
+                    flex-direction: column;
+                    margin: auto;
+                    margin-left: 0;
+                    @media screen and  (max-width: $colapse) {
+                        width: 80%;                    
+                    }
+                }
+                >#column2 {
+                    display: flex;
+                    flex-direction: column;
+                    margin: auto;
+                    margin-right: 0;
+                    width: 61%;
+                    height: 100%;
+                    @media screen and  (max-width: $colapse) {
+                        width: 80%;                    
+                    }
+                    textarea {
+                        font-family: 'Nunito Sans', sans-serif;
+                        border: 1px solid $blue-3;
+                        min-height: 100px;
+                    }
+                    >#footerSender {
                         display: flex;
                         flex-direction: row;
-                    }
-                    >button {
- 
-                        cursor: pointer;
-                        font-family: 'Bitter', serif;
-                        font-size: 0.8em;
-                        padding: 7px 40px;
-                        margin-left: 20px;
-                        color: $orange-1;
-                        border: 1px solid rgb(226, 226, 226);
-                        outline: 1px solid $orange-4;
-                        background-color: $orange-4;
-                        z-index: 1;
-                        &:hover {
-                        color: $orange-1;
-                        background-color: $orange-5;
-                    }
+                        justify-content: space-between;
+                        align-items: center;
+                        >div#privPoli {
+                            width: 70%;
+                            font-size: 0.6em;
+                            display: flex;
+                            flex-direction: row;
+                        }
+                        >button {
+                            cursor: pointer;
+                            font-family: 'Bitter', serif;
+                            font-size: 0.8em;
+                            padding: 7px 40px;
+                            margin-left: 20px;
+                            color: $orange-1;
+                            border: 1px solid rgb(226, 226, 226);
+                            outline: 1px solid $orange-4;
+                            background-color: $orange-4;
+                            z-index: 1;
+                            &:hover {
+                            color: $orange-1;
+                            background-color: $orange-5;
+                            }
+                        }
                     }
                 }
             }
-        }
-
+        }   
     }
 }

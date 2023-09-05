@@ -35,7 +35,6 @@ function App() {
     setSelected(event.currentTarget.id);
   }
   
-
   const HomeScreen = React.memo(() => {
     console.log("HOME_SCREEN COMPONENT RE-RENDERED!!!!");
 

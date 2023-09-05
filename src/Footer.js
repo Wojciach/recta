@@ -42,7 +42,7 @@ const Footer = memo(() => {
                         </p>
                     </div>
                     <div id="socialMedia">
-                        <p>Znajdziesz nas również na:</p>
+                        <p>Wkrótce znajdziesz nas również na:</p>
                         <div>
                             <ul>
                                 <li><img alt="facebook" src={fb_icon}/></li>

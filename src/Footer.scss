@@ -11,7 +11,6 @@ section#footer {
         padding-bottom: 10px;
        
     }
-
     div#content {
         display: flex;
         flex-direction: row;
@@ -22,7 +21,6 @@ section#footer {
         border-bottom: 2px solid $blue-3;
         @media screen and (max-width: $colapse) {
             border-bottom: none;
-           
         }
        div#left {
             width: 50%;
@@ -50,7 +48,6 @@ section#footer {
                 
                 @media screen and (max-width: $colapse) {
                     flex-direction: column;
-
                 }
                 nav {
                     
@@ -64,9 +61,7 @@ section#footer {
                         @media screen and (max-width: $colapse) {  
                             border-bottom: 2px solid $blue-3;
                         }
-
                     }
-                    
                     >ul {
                         display: flex;
                         padding: 0;
@@ -81,13 +76,11 @@ section#footer {
                             justify-content: center;
                             flex-wrap: wrap;
                         }
-                        
                             li {
                                 cursor: pointer;
                                 margin: 6px;
                                 font-size: 0.7em;
                                 padding-left: 4px;
-                                
                                 &:hover {
                                     color: white;
                                     &::marker {
@@ -97,7 +90,6 @@ section#footer {
                                         
                                     }
                                 }
-
                                 
                             }
                         }
@@ -113,8 +105,6 @@ section#footer {
             width: 40%;
             text-align: left;
             font-size: 0.7em;
-            
-            
             @media screen and (max-width: $colapse) {
                 order: 0;
                 width: 100%;
@@ -135,7 +125,6 @@ section#footer {
                     white-space: nowrap;
                     color: $orange-4;
                     font-size: 2em;
-                    
                 }
                 #address {
                     line-height: 2em;
@@ -148,8 +137,6 @@ section#footer {
                 align-items: baseline;
                 align-content: baseline;
                 margin-top: 30px;
-                
-                
                 div {
                     display: flex;
                     bottom: 0;
@@ -161,15 +148,11 @@ section#footer {
                         padding: 0;
                         width: 100%;
                         list-style: none;
-                        
-                       
                         li {
                             padding: 5px;
-                            
                             img {
                                 width: 20px;
                                 height: 20px;
-                                
                             }
                          
                         }
