@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./CompanyDescription.scss";
 
 import HaGallery from "./haGallery";
@@ -13,12 +12,10 @@ function scrollToElement(ref) {
     });
   }
   
-
 const CompanyDescription = () => {
 
     console.log("COMPANY DESCRIPTION COMPONENT RE-RENDERED!!!!");
     
-
     return(
         <section id="companyDescription">
 

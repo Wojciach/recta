@@ -5,21 +5,35 @@ import CustomAlert from "./CustomAlert";
 const ContactForm = memo(() => {
     console.log("CONTACT FORM COMPONENT RE-RENDERED!!!!");
 
-    const [alert, setAlert] = useState(true);
+    const [alert, setAlert] = useState(false);
+    const [alertStatus, setAlertStatust] = useState('ok');
 
     const handleSubmit = (event) => {
         event.preventDefault();
     
         const formData = new FormData(event.target);
-     //'https://recta.website/php/sendForm.php'
-    //'http://192.168.1.246/recta2/recta2/public/php/sendForm.php'
+     //'./php/sendForm.php' <-- for production
+    //'http://192.168.1.246/recta2/recta2/public/php/sendForm.php' <-- for development
         fetch('http://192.168.1.246/recta2/recta2/public/php/sendForm.php', {  //maybe " ../ " instead of " ./ " but for development i may need localhost php interpreter
           method: 'POST',
           body: formData
         })
-        .then(response => response.text())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log(data);
+            setAlertStatust('ok');
+            setAlert(true);
+        })
+        .catch(error => {
+            console.log(error.message);
+            setAlertStatust('error');
+            setAlert(true);
+        });
     };
 
     return (
@@ -49,7 +63,7 @@ const ContactForm = memo(() => {
                     </div>
                 </form>
             </div>
-            {alert && <CustomAlert setAlert={setAlert} alertStatus={"ok"}/>}
+            {alert && <CustomAlert setAlert={setAlert} alertStatus={alertStatus}/>}
         </section>
     )
 })

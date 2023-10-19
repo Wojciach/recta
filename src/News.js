@@ -20,8 +20,6 @@ const data = [
 
 ]
 
-
-
 const Article = (props) => {
     return(
     <article>

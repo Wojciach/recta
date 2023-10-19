@@ -3,14 +3,11 @@
 section#header {
     position: relative;
     @include flexCenter;
-    overflow: hidden;
+  //  overflow: hidden;
     margin: 0;
     height: 450px;
-    z-index: 2;
-   
+    z-index: 5;   
     .st2{color:$orange-1;}
-    
-   // align-items: baseline;
     >div#slogan {
         position: relative;
         margin: 20px;
@@ -28,19 +25,46 @@ section#header {
             color: $orange-2;
         }
     }
-    input {
-        font-size: 0.7em;
-        width: 200px;
-        margin-top: 15px;
-        text-align: center;
-        background-color: $orange-2;
-        background-image: url("./svg/svgsearch.svg");
-        background-position: 0px 0px; /* Position the search icon */
-        background-repeat: no-repeat; /* Do not repeat the icon image */
-        padding: 7px 10px 7px 20px; /* Add some padding */
-
+    #searchBar {
+        position: relative;
+        width: 80%;
+        margin-right: auto; 
+        margin-left: auto;
+            input {
+            font-size: 0.7em;
+            width: 200px;
+            margin-top: 15px;
+            text-align: center;
+            background-color: $orange-2;
+            background-image: url("./svg/svgsearch.svg");
+            background-position: 0px 0px; /* Position the search icon */
+            background-repeat: no-repeat; /* Do not repeat the icon image */
+            padding: 7px 10px 7px 20px; /* Add some padding */
+        }
+        #searchList {
+            list-style: none;
+            position: absolute;
+            z-index: 10;
+            padding: 0;
+            background-color: red;
+            width: 100%;
+            margin-right: auto; 
+            margin-left: auto;
+            li {
+                background-color: $orange-2;
+                border: 1px solid $orange-4;
+                border-top: none;
+                margin-left: 0;
+              //  width: 200px;
+                padding: 5px;
+                text-align: center;
+                &:hover {
+                    background-color: $orange-4;
+                    color: $orange-2;
+                }
+            }
+        }
     }
-
 
     .sBackground {
         top: 0;

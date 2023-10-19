@@ -10,7 +10,7 @@ section#services {
     align-items: center;
     margin: auto;
     margin-bottom: -30px;
-     div#servicesList {
+    div#servicesList {
         display: flex;
         justify-content: center;
         flex-flow: row wrap;
@@ -51,18 +51,15 @@ section#services {
                     @media screen and (max-width: 800px) {
                         flex-basis: 45%;
                     }
-
                     &:hover {
                         background-color: $orange-4;
                         color: $orange-1;
                         transform: scale(1.05) translateY(-80px);
                         z-index: 20;
-
                         >div.serviceIcon {
                             display: flex;
                             opacity: 1;
                             transform: scale(1) translateY(0);
-                            
                         }
                         h5 {
                             transform: translateY(0);
@@ -84,13 +81,9 @@ section#services {
                         opacity : 0 ;
                         position: relative;
                         transform: scale(0.5) translateY(-100px);
-                        
                         transition-property: scale, transform, opacity;
                         transition-duration: 0.5s, 0.2s, 0.4s;
                         transition-timing-function: ease-in-out;
-                        
-                        
-                    //  top: 20px;
                         width: 35px;
                         height: 20%;
                         margin-left: auto;
@@ -98,7 +91,6 @@ section#services {
                         margin-top: 15px;
                         margin-bottom: 0px;
                         .st0{fill:$orange-5;}
-                    
                     }
                     h5 {
                         display: block;
@@ -114,7 +106,6 @@ section#services {
                         bottom: 0;
                         transform: translateY(-30px);
                         transition: transform 0.5s ease-in-out;
-                        
                     }
                     p {
                         font-size: 0.7em;

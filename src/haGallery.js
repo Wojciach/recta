@@ -1,9 +1,5 @@
 import "./haGallery.scss";
 
-// import photo1 from "./photos/annie-gray-WEWTGkPUVT0-unsplash_edit.jpg";
-// import photo2 from "./photos/avel-chuklanov-a0BEHFMKqTE-unsplash.jpg";
-// import photo3 from "./photos/milivoj-kuhar-Te48TPzdcU8-unsplash_edit.jpg";
-
 const HaGallery = () => {
 
     function imgSwap(e) {

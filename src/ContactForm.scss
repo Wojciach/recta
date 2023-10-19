@@ -42,7 +42,7 @@ section#contactForm {
                     margin: auto;
                     margin-left: 0;
                     @media screen and  (max-width: $colapse) {
-                        width: 80%;                    
+                        width: 100%;                    
                     }
                 }
                 >#column2 {
@@ -53,7 +53,7 @@ section#contactForm {
                     width: 61%;
                     height: 100%;
                     @media screen and  (max-width: $colapse) {
-                        width: 80%;                    
+                        width: 100%;                    
                     }
                     textarea {
                         font-family: 'Nunito Sans', sans-serif;

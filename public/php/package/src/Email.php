@@ -40,16 +40,10 @@ class Email {
             $this->mail->Body = $body;
            // $this->mail->send();
             return $this->mail;
-
-
     }
 
     public function send() {
         $this->mail->send();
-    }
-
-    public function getErrorInfo() {
-        $this->mail->getErrorInfo();
     }
 
 }

@@ -13,9 +13,9 @@ try  {
     $body = new Body();
     $email = new Email($body->getBody());
     $email->send();
-    echo 'Message has been sent, Thank you!';
+    echo 'ok';
 } catch (Exception $e) {
-    $er = $email->getErrorInfo();
-    $exErr = $e->getMessage();
-    echo "Message could not be sent. Mailer Error: $er . Exveption Message: $exErr";
+   // $exErr = $e->getMessage();
+    http_response_code(500);
+    echo "error";
 }

@@ -4,14 +4,14 @@ const CustomAlert = ({setAlert, alertStatus}) => {
 
     const alertData = {
         ok : {
-            title: "THANKS!",
-            header: "THANK YOU FOR YOUR MESSAGE",
-            text: "We will contact you as soon as possible.",
+            title: "OK!",
+            header: "DZIĘKUJEMY! ZA WIADOMOŚĆ",
+            text: "Skontaktujemy się z Tobą wkrótce.",
         },
         error : {
-            title: "ERROR!",
-            header: "SOMETHING WENT WRONG",
-            text: "Please contact us directly via phone."
+            title: "BŁĄD!",
+            header: "Coś poszło nie tak...",
+            text: "Prosimy o kontakt telefoniczny. +48 728 482 639"
         }
     }
 
@@ -21,7 +21,7 @@ const CustomAlert = ({setAlert, alertStatus}) => {
             <h5>{alertData[alertStatus].title}</h5>
                     <h6>{alertData[alertStatus].header}</h6>
                     <p>{alertData[alertStatus].text}</p>
-                    <button onClick={() => setAlert(false)}>take me back</button>
+                    <button onClick={() => setAlert(false)}>Powrót</button>
             </div>
         </article>
     )
