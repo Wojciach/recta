@@ -5,7 +5,7 @@ const CustomAlert = ({setAlert, alertStatus}) => {
     const alertData = {
         ok : {
             title: "OK!",
-            header: "DZIĘKUJEMY! ZA WIADOMOŚĆ",
+            header: "THANK YOU FOR YOUR MESSAGE!",
             text: "Skontaktujemy się z Tobą wkrótce.",
         },
         error : {
