@@ -26,8 +26,8 @@ export const serDesc = [
     "Od decyzji, poprzez projekt, stan surowy, wykończenie i odbiór",
     "Czuwamy by efekt budowy był zgodny z Państwa projektem w najwyższym standardzie",
     "Przygotowujemy dokumentację i zgłaszamy budynek do odbioru.",
-    "Instalujemy systemy elektryczne, grzewcze, sieci komputerowe i systemy ochrony",
-    "Instalujemy systemy elektryczne, grzewcze, sieci komputerowe i systemy ochrony",
+    "Zakładamy sieci komputerowe i systemy ochrony",
+    "Instalujemy systemy elektryczne oraz systemy grzewcze",
   ] ;
 
 export const serBullets = [

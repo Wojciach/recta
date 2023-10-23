@@ -25,7 +25,7 @@ class Email {
             $this->mail->Port       = 465;
             $this->mail->SMTPOptions = array(
                 'ssl' => array(
-                   'verify_peer' => false,  //false for local dev true for production
+                   'verify_peer' => true,  //false for local dev true for production
                    'verify_peer_name' => true,
                    'allow_self_signed' => true
                 )

@@ -12,8 +12,7 @@ const oferta = [
             "Budowa hal i magazynów",
             "Prace konserwatorskie i renowacyjne obiektów zabytkowych"
         ]
-    },
-                           
+    },              
     {
         "Prace wykończeniowe" :
                         
@@ -27,7 +26,16 @@ const oferta = [
             "Układanie wykładzin dywanowych, paneli podłogowych kontaktowych, PCV, podłogi drewniane"
         ]
     },
-                                    
+    {
+        "Prace zewnętrzne i drogowe" :
+
+        [
+            "Układanie kostki brukowej i chodników",
+            "Wykonanie ogrodzeń, bram i furt",
+            "Demontaż oraz rozbiórka konstrukcji budowlanych",
+            "Wykonywanie prac ziemnych i drogowych, w tym budowa dróg i parkingów"
+        ]
+    },                   
     {
         "Instalacje i systemy" :
                             
@@ -39,7 +47,6 @@ const oferta = [
             "Montaż systemów wentylacyjnych i klimatyzacyjnych"
         ]
     },
-                            
     {
         "Prace związane z modernizacją energetyczną" :
                             
@@ -50,17 +57,6 @@ const oferta = [
             "Wykonanie elewacji"
         ]
     },
-                    
-    {
-        "Prace zewnętrzne i drogowe" :
-
-        [
-            "Układanie kostki brukowej i chodników",
-            "Wykonanie ogrodzeń, bram i furt",
-            "Demontaż oraz rozbiórka konstrukcji budowlanych",
-            "Wykonywanie prac ziemnych i drogowych, w tym budowa dróg i parkingów"
-        ]
-    }
 ]
 
 export default oferta;

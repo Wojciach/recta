@@ -38,6 +38,9 @@ section#menu {
                     padding: 1px;
                     margin: 5px;
                     &:hover {
+                        background-color: $orange-5;
+                    }
+                    &.marked {
                         background-color: $orange-4;
                     }
                 }

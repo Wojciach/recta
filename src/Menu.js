@@ -9,6 +9,16 @@ import { memo } from "react";
 
 function Menu() {
   console.log("MENU COMPONENT RE-RENDERED!!!!");
+  console.log("WINDOW LOCATION:" + window.location.hostname);
+
+  const firstTwoLetters = window.location.hostname.substring(0, 2);
+
+  const handleRedirect = (event) => {
+    if (event.target.id === "en") { 
+      window.location.href = "https://en.recta.website/";
+    } else if (event.target.id === "pl")
+      window.location.href = "https://pl.recta.website/";
+  };
     
     return (
       <section id="menu"> 
@@ -18,8 +28,8 @@ function Menu() {
               <Link to={"/"}  ><MyIcon /></Link>
               </div>
               <div id="langLink">
-                <div className="lang" id="en">EN</div>
-                <div className="lang" in="pl">PL</div>
+                <div className={"lang" + (firstTwoLetters === "en" ? " marked" : "")} id="en" onClick={handleRedirect}>EN</div>
+                <div className={"lang" + (firstTwoLetters !== "en" ? " marked" : "")} id="pl" onClick={handleRedirect}>PL</div>
               </div>
           </div>
           <ul>

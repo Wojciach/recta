@@ -14,7 +14,7 @@ const ContactForm = memo(() => {
         const formData = new FormData(event.target);
      //'./php/sendForm.php' <-- for production
     //'http://192.168.1.246/recta2/recta2/public/php/sendForm.php' <-- for development
-        fetch('http://192.168.1.246/recta2/recta2/public/php/sendForm.php', {  //maybe " ../ " instead of " ./ " but for development i may need localhost php interpreter
+        fetch('./php/sendForm.php', {  //maybe " ../ " instead of " ./ " but for development i may need localhost php interpreter
           method: 'POST',
           body: formData
         })
