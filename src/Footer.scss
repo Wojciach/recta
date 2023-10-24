@@ -25,7 +25,6 @@ section#footer {
        div#left {
             width: 50%;
             order: 0;
-            
             @media screen and (max-width: $colapse) {
                 order: 1;
                 width: 100%;
@@ -45,12 +44,10 @@ section#footer {
             div#navs {
                 display: flex;
                 flex-direction: row;
-                
                 @media screen and (max-width: $colapse) {
                     flex-direction: column;
                 }
                 nav {
-                    
                     display: flex;
                     flex-direction: row;
                     width: 50%;
@@ -115,7 +112,6 @@ section#footer {
                     font-size: 2.2em;
                     text-align: left;
                     font-family: 'Bitter', serif;
-                    
                     display: none;
                     @media screen and (max-width: $colapse) {
                         display: block;
@@ -140,7 +136,6 @@ section#footer {
                 div {
                     display: flex;
                     bottom: 0;
-                    
                     ul {
                         display: flex;
                         flex-direction: row;
@@ -154,9 +149,7 @@ section#footer {
                                 width: 20px;
                                 height: 20px;
                             }
-                         
                         }
-
                     }
                 }
             }

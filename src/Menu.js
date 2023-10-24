@@ -8,11 +8,10 @@ import React from "react";
 import { memo } from "react";
 
 function Menu() {
-  console.log("MENU COMPONENT RE-RENDERED!!!!");
-  console.log("WINDOW LOCATION:" + window.location.hostname);
+
+  //console.log("MENU COMPONENT RE-RENDERED!!!!");
 
   const firstTwoLetters = window.location.hostname.substring(0, 2);
-
   const handleRedirect = (event) => {
     if (event.target.id === "en") { 
       window.location.href = "https://en.recta.website/";

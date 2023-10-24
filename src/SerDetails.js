@@ -5,13 +5,12 @@ import hashtags from "./hashtags";
 
 const SerDetails = memo(({refArr}) => {
 
-    console.log("SER_DETAILS COMPONENT RE-RENDERED!!!!");
-   // console.log(refArr);
+    //console.log("SER_DETAILS COMPONENT RE-RENDERED!!!!");
 
     return (
         <section id="serDetails">
             <div id="content">
-                <h2>Nasza Oferta <br/>i jak możemy pomóc</h2>
+                <h2>Our Services <br/>and how can we help?</h2>
                 {icons.map( (icon, index) => {
                    const Icon = icons[index];
                    const bullets = serBullets[index].map((item) => "<li>" + item + "</li>").join("<br/>");

@@ -3,7 +3,6 @@ import "./haGallery.scss";
 const HaGallery = () => {
 
     function imgSwap(e) {
-
         for (const element of e.target.parentNode.childNodes) {
             element.style.zIndex = 0;
         } 

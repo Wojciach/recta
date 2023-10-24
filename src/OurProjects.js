@@ -1,20 +1,17 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { memo } from 'react';
 import Slider from 'react-slick';
-
 import "./OurProjects.scss";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
- import { ReactComponent as ButtonSvg } from './buttons/button2.svg';
- import './buttons/Button.scss';
-
+import { ReactComponent as ButtonSvg } from './buttons/button2.svg';
+import './buttons/Button.scss';
 import photo1 from "./photos/MassGalleries/Fundamenty40/20221027_142832.jpg";
 import photo2 from "./photos/MassGalleries/Moniuszki40/20220617_163422.jpg";
 import photo3 from "./photos/MassGalleries/Taczow40/20200529_170847.jpg";
 
 const OurProjects = memo( ({selected, selectThis}) => {
 
-  console.log("OUR-PROJECTS COMPONENT RE-RENDERED!!!!");
+  //console.log("OUR-PROJECTS COMPONENT RE-RENDERED!!!!");
   
   const CustomPrevArrow = (props) => (
     <button {...props} className="universalBtn custom-prev-arrow">
@@ -66,11 +63,9 @@ const settings = {
     ], 
   }; 
 
-
-
     return (
         <section id="ourProjects">
-          <h2>Nasze Realizacje</h2>
+          <h2>Our Projects</h2>
             <Slider {...settings}>
                 <div id='gal_1' className={`my-div ${"gal_1" === selected ? 'selected' : ''}`} 
                       onClick={selectThis}>
@@ -78,7 +73,7 @@ const settings = {
                       <img src={photo1} alt="Image 1" />
                       <div className='overlay'></div>
                     </div>
-                    <h4>Budowa Taczów</h4>
+                    <h4>Taczów Construction</h4>
                 </div>
                 <div id='gal_2' className={`my-div ${"gal_2" === selected ? 'selected' : ''}`} 
                       onClick={selectThis}>
@@ -86,7 +81,7 @@ const settings = {
                       <img src={photo2} alt="Image 2" />
                       <div className='overlay'></div>
                     </div>
-                    <h4>Fundamenty</h4>
+                    <h4>Foundations</h4>
                 </div>
                 <div id='gal_3' className={`my-div ${"gal_3" === selected ? 'selected' : ''}`} 
                       onClick={selectThis}>
@@ -94,7 +89,7 @@ const settings = {
                       <img src={photo3} alt="Image 3" />
                       <div className='overlay'></div>
                     </div>
-                    <h4>Budowa Moniuszki</h4>
+                    <h4>Moniuszki Construction</h4>
                 </div>
             </Slider>
         </section>

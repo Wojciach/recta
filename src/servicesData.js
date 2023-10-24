@@ -4,72 +4,69 @@ import { ReactComponent as Icon3 } from "./svg/dor/nadzor_icon.svg";
 import { ReactComponent as Icon4 } from "./svg/dor/systemy_icon.svg";
 import { ReactComponent as Icon5 } from "./svg/dor/modernizacja_energetyczna.svg";
 
-export const icons = [Icon1, Icon2, Icon3, Icon4, Icon5] ;
+export const icons = [Icon1, Icon2, Icon3, Icon4, Icon5];
 
 export const serHash = [
-    "prace-budowlane-i-konstrukcyjne",
-    "prace-wykonczeniowe",
-    "prace-zewnetrzne-i-drogowe",
-    "instalacje-i-systemy",
-    "modernizacja-energetyczna",
-] ;
+    "construction-and-structural-work",
+    "finishing-work",
+    "external-and-roadwork",
+    "installations-and-systems",
+    "energy-modernization",
+];
 
 export const serTit = [
-    "Prace Budowlane i Konstrukcyjne",
-    "Prace Wykończeniowe",
-    "Prace Zewnętrzne i Drogowe",
-    "Instalacje i Systemy",
-    "Modernizacja Energetyczna",
-  ] ;
+    "Construction and Structural Work",
+    "Finishing Work",
+    "External and Roadwork",
+    "Installations and Systems",
+    "Energy Modernization",
+];
 
 export const serDesc = [
-    "Od decyzji, poprzez projekt, stan surowy, wykończenie i odbiór",
-    "Czuwamy by efekt budowy był zgodny z Państwa projektem w najwyższym standardzie",
-    "Przygotowujemy dokumentację i zgłaszamy budynek do odbioru.",
-    "Zakładamy sieci komputerowe i systemy ochrony",
-    "Instalujemy systemy elektryczne oraz systemy grzewcze",
-  ] ;
+    "From decision-making through design, rough construction, finishing, and acceptance",
+    "We ensure that the construction result aligns with your project in the highest standards",
+    "We prepare documentation and submit the building for acceptance",
+    "We establish computer networks and security systems",
+    "We install electrical and heating systems",
+];
 
 export const serBullets = [
-
-  [
-    "Budowa domów jednorodzinnych",
-    "Zabudowa i termoizolacja poddaszy domów jednorodzinnych",
-    "Prace ciesielskie, dekarskie, w tym budowa i remont dachów",
-    "Tynki tradycyjne i maszynowe, elewacje",
-    "Wykonanie fundamentów, ścian nośnych i innych konstrukcji budowlanych",
-    "Budowa hal i magazynów",
-    "Prace konserwatorskie i renowacyjne obiektów zabytkowych"
-  ],
-  [
-    "Montaż ścianek i sufitów gipsowo-kartonowych",
-    "Montaż sufitów podwieszanych listowych i kasetonowych",
-    "Malowanie tradycyjne i natryskowe",
-    "Tapetowanie, prace przygotowawcze oraz szpachlowanie",
-    "Prace glazurnicze, w tym układanie glazury i terakoty",
-    "Usługi związane z wykańczaniem wnętrz, takie jak zabudowy meblowe, sufity podwieszane i ścianki działowe",
-    "Układanie wykładzin dywanowych, paneli podłogowych kontaktowych, PCV, podłogi drewniane"
-  ],
-  [
-    "Układanie kostki brukowej i chodników",
-    "Wykonanie ogrodzeń, bram i furt",
-    "Demontaż oraz rozbiórka konstrukcji budowlanych",
-    "Wykonywanie prac ziemnych i drogowych, w tym budowa dróg i parkingów"
-  ],
-  [
-    "Instalacje elektryczne",
-    "Sieci komputerowe i systemy alarmowe",
-    "Instalacje wodnokanalizacyjne oraz instalacje ogrzewania podłogowego",
-    "Montaż drzwi i okien, w tym stolarki aluminiowej i PCV",
-    "Montaż systemów wentylacyjnych i klimatyzacyjnych"
-  ],
-  [
-    "Prace związane z termomodernizacją budynków",
-    "Izolacja termiczna",
-    "Montaż okien energooszczędnych",
-    "Wykonanie elewacji"
-  ]
-  
-] ;
-
-  
+    [
+        "Construction of single-family homes",
+        "Insulation and finishing of attics in single-family homes",
+        "Carpentry and roofing work, including roof construction and repair",
+        "Traditional and machine plastering, facades",
+        "Foundation, load-bearing walls, and other structural construction",
+        "Construction of halls and warehouses",
+        "Conservation and restoration work on historical buildings",
+    ],
+    [
+        "Installation of gypsum board walls and ceilings",
+        "Installation of suspended ceilings (linear and cassette)",
+        "Traditional and spray painting",
+        "Wallpapering, preparatory work, and plastering",
+        "Tiling, including the laying of ceramic and terracotta tiles",
+        "Interior finishing services, such as custom cabinetry, suspended ceilings, and partition walls",
+        "Installation of carpet, click-lock flooring, PVC flooring, and wooden flooring",
+    ],
+    [
+        "Installation of paving stones and sidewalks",
+        "Fence, gate, and gate construction",
+        "Dismantling and demolition of building structures",
+        "Earthworks and road construction, including road and parking lot construction",
+    ],
+    [
+        "Electrical installations",
+        "Computer networks and alarm systems",
+        "Plumbing installations and underfloor heating systems",
+        "Installation of doors and windows, including aluminum and PVC joinery",
+        "Installation of ventilation and air conditioning systems",
+    ],
+    [
+        "Work Related to Energy Modernization",
+        "Building thermal modernization",
+        "Thermal insulation",
+        "Installation of energy-efficient windows",
+        "Exterior renovation",
+    ],
+];

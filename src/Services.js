@@ -2,13 +2,12 @@ import React  from 'react';
 import { Link } from "react-router-dom";
 import "./Services.scss";
 import oferta from "./oferta.js";
-
 import {ReactComponent as Decor } from "./svg/dor/btnR.svg";
 import {icons, serTit, serDesc, serHash} from "./servicesData";
 
-
 function Services({refArr}) {
-  console.log("SERVICES COMPONENT RE-RENDERED!!!!");
+
+  //console.log("SERVICES COMPONENT RE-RENDERED!!!!");
 
   function scrollToRef(index) {
       setTimeout(() => {
@@ -22,13 +21,9 @@ function Services({refArr}) {
     return (
       <section id="services">
         <div className="sBackground"></div>
-        
         <div id="servicesList">
-          
               {oferta.map((item, index)=>{
-
                 const Icon = icons[index];
-
                   return (
                     <Link to={`/services/#${serHash[index]}`} key={index} onClick={()=>{scrollToRef(index)}}>
                       <div className='serviceItem'>
@@ -40,12 +35,9 @@ function Services({refArr}) {
                     </Link>
                   )
               })}
-
         </div>
-       
       </section>
     );
   }
   
   export default Services;
-  

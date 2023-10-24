@@ -1,60 +1,55 @@
 
 const oferta = [
     {
-        "Prace budowlane i konstrukcyjne" : 
-                            
+        "Construction and Structural Work" :                
         [
-            "Budowa domów jednorodzinnych",
-            "Zabudowa i termoizolacja poddaszy domów jednorodzinnych",
-            "Prace ciesielskie, dekarskie, w tym budowa i remont dachów",
-            "Tynki tradycyjne i maszynowe, elewacje",
-            "Wykonanie fundamentów, ścian nośnych i innych konstrukcji budowlanych",
-            "Budowa hal i magazynów",
-            "Prace konserwatorskie i renowacyjne obiektów zabytkowych"
+            "Construction of single-family homes",
+            "Insulation and finishing of attics in single-family homes",
+            "Carpentry and roofing work, including roof construction and repair",
+            "Traditional and machine plastering, facades",
+            "Foundation, load-bearing walls, and other structural construction",
+            "Construction of halls and warehouses",
+            "Conservation and restoration work on historical buildings"
         ]
     },              
     {
-        "Prace wykończeniowe" :
-                        
+        "Finishing Works" :         
         [   
-            "Montaż ścianek i sufitów gipsowo-kartonowych",
-            "Montaż sufitów podwieszanych listowych i kasetonowych",
-            "Malowanie tradycyjne i natryskowe",
-            "Tapetowanie, prace przygotowawcze oraz szpachlowanie",
-            "Prace glazurnicze, w tym układanie glazury i terakoty",
-            "Usługi związane z wykańczaniem wnętrz, takie jak zabudowy meblowe, sufity podwieszane i ścianki działowe",
-            "Układanie wykładzin dywanowych, paneli podłogowych kontaktowych, PCV, podłogi drewniane"
+            "Installation of gypsum board walls and ceilings",
+            "Installation of suspended ceilings (linear and cassette)",
+            "Traditional and spray painting",
+            "Wallpapering, preparatory work, and plastering",
+            "Tiling, including the laying of ceramic and terracotta tiles",
+            "Interior finishing services, such as custom cabinetry, suspended ceilings, and partition walls",
+            "Installation of carpet, click-lock flooring, PVC flooring, and wooden flooring"
         ]
     },
     {
-        "Prace zewnętrzne i drogowe" :
-
+        "Exterior and Roadwork" :
         [
-            "Układanie kostki brukowej i chodników",
-            "Wykonanie ogrodzeń, bram i furt",
-            "Demontaż oraz rozbiórka konstrukcji budowlanych",
-            "Wykonywanie prac ziemnych i drogowych, w tym budowa dróg i parkingów"
+            "Installation of cobblestone and sidewalks",
+            "Fence, gate, and gate construction",
+            "Dismantling and demolition of building structures",
+            "Earthworks and road construction, including road and parking lot construction"
         ]
     },                   
     {
-        "Instalacje i systemy" :
-                            
+        "Installations and Systems" :               
         [
-            "Instalacje elektryczne",
-            "Sieci komputerowe i systemy alarmowe",
-            "Instalacje wodnokanalizacyjne oraz instalacje ogrzewania podłogowego",
-            "Montaż drzwi i okien, w tym stolarki aluminiowej i PCV",
-            "Montaż systemów wentylacyjnych i klimatyzacyjnych"
+            "Electrical installations",
+            "Computer networks and alarm systems",
+            "Plumbing installations and underfloor heating systems",
+            "Installation of doors and windows, including aluminum and PVC joinery",
+            "Installation of ventilation and air conditioning systems"
         ]
     },
     {
-        "Prace związane z modernizacją energetyczną" :
-                            
+        "Work Related to Energy Modernization" :                 
         [   
-            "Termomodernizacja budynków",
-            "Izolacja termiczna",
-            "Montaż okien energooszczędnych",
-            "Wykonanie elewacji"
+            "Building thermal modernization",
+            "Thermal insulation",
+            "Installation of energy-efficient windows",
+            "Exterior renovation"
         ]
     },
 ]

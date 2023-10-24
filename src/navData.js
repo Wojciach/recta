@@ -13,7 +13,7 @@ function scrollDelayed(index) {
     }, 30);
 }
   
-export const items = ["Home", "Oferta", "Realizacje", "Referencje", "Aktualności", "Kontakt"];
+export const items = ["Home", "Services", "Projects", "Opinions", "News", "Contact"];
 export const links = ["/", "/services", "/#ourProjects", "/#opinions", "/#news", "/#footer"];
 export const hashes = ["header", "serDetails", "ourProjects", "opinions", "news", "footer", "contactForm"];
 
@@ -24,5 +24,5 @@ export const mItems = items.map((item, index) => {
 
 export const wyceny = 
             <li>
-                <Link to={links[0]}  onClick={ () => {scrollDelayed(6)}}>Wyceny</Link>
-            </li>; 
+                <Link to={links[0]}  onClick={ () => {scrollDelayed(6)}}>Quotes</Link>
+            </li>;

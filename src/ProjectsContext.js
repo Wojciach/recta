@@ -12,7 +12,6 @@ function useProjects() {
 
 function ProjectsProvider({ children }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(3);
-
   const value = {
     currentImageIndex,
     setCurrentImageIndex,

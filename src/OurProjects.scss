@@ -18,7 +18,6 @@ section#ourProjects {
       font-style: italic;
       font-weight: 400;
     }
-
     .tint {
       position: relative;
       img {
@@ -37,13 +36,10 @@ section#ourProjects {
         width: 100%;
         height: 100%;
         z-index: 11;
-        
       }
-
     }
     .my-div.selected {
       .tint {
-        
         .overlay {
           background-color: rgba($blue-4, 0.5);
         }
@@ -60,7 +56,6 @@ section#ourProjects {
         }
       }
     }
-
   .custom-prev-arrow,
   .custom-next-arrow {
     z-index: 10;
@@ -77,11 +72,3 @@ section#ourProjects {
     transform: translateX(50%) translateY(-50%);
   }
 }
-
-
-
-
-
-
-
-

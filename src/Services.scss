@@ -37,13 +37,10 @@ section#services {
                     cursor: pointer;
                     height: 200px;
                     min-height: min-content;
-                  //  width: 100%;
                     min-width: min-content;
                     background-color: $orange-3;
                     margin: 5px;   
                     color: $blue-4;
-                  //    width: 45%;
-                 //   flex-grow: 0;
                     transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out , opacity 0.5s ease-in-out;
                    flex-basis: 25%;
                     z-index: 5;
@@ -134,5 +131,4 @@ section#services {
             }
         }
     }
-    
 }

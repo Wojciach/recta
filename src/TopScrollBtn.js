@@ -4,7 +4,6 @@ import Button from "./buttons/Button";
 export const TopScrollBtn = () => {
 
     const [visibility, setVisibility] = useState(0);
-
     const style = {
         visibility: "visible",
         transition: "opacity 0.7s ease-in-outm",
@@ -27,10 +26,8 @@ export const TopScrollBtn = () => {
           } else {
             setVisibility(0);
           }
-  
-         
         }
-
+        
         window.addEventListener('scroll', handleVisibility);
 
         return () => {
@@ -38,11 +35,9 @@ export const TopScrollBtn = () => {
         };
     }, []);
 
-
     return (
         <div style={style} id="top-scroller"> 
             <Button onClick={scrollToTop} angle={90} /> 
         </div>
     );
   }
-//style={{backgroundColor:"grey", width:"35px", height:"35px"}}
