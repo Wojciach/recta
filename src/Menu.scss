@@ -37,7 +37,7 @@ section#menu {
                     height: 20px;
                     padding: 1px;
                     margin: 5px;
-                    &:hover {
+                    &:hover, &.marked:hover {
                         background-color: $orange-5;
                     }
                     &.marked {
