@@ -3,7 +3,8 @@ import { memo, useState } from "react";
 import CustomAlert from "./CustomAlert";
 
 const ContactForm = memo(() => {
-    console.log("CONTACT FORM COMPONENT RE-RENDERED!!!!");
+    
+    //console.log("CONTACT FORM COMPONENT RE-RENDERED!!!!");
 
     const [alert, setAlert] = useState(false);
     const [alertStatus, setAlertStatust] = useState('ok');
@@ -12,9 +13,9 @@ const ContactForm = memo(() => {
         event.preventDefault();
     
         const formData = new FormData(event.target);
-     //'./php/sendForm.php' <-- for production
-    //'http://192.168.1.246/recta2/recta2/public/php/sendForm.php' <-- for development
-        fetch('./php/sendForm.php', {  //maybe " ../ " instead of " ./ " but for development i may need localhost php interpreter
+        //'./php/sendForm.php' <-- for production
+        //'http://192.168.1.246/recta2/recta2/public/php/sendForm.php' <-- for development
+        fetch('./php/sendForm.php', {
           method: 'POST',
           body: formData
         })
@@ -39,7 +40,7 @@ const ContactForm = memo(() => {
     return (
         <section id="contactForm">
             <div id="content">
-                <h2>Poproś o Wycenę</h2>
+                <h2>Request a Quote</h2>
                 <form onSubmit={handleSubmit}>
                     <div id="bothColumns" className="colapseRow">
                         <div id="column1">
@@ -54,10 +55,10 @@ const ContactForm = memo(() => {
                                 <div id="privPoli">
                                     <input type="checkbox" required/>
                                     <p>
-                                        Dane wpisane w formularzu kontaktowym będą przetwarzane w celu udzielenia odpowiedzi na przesłane zapytanie zgodnie z naszą Polityką Prywatności.
+                                        The data entered in the contact form will be processed to provide a response to the submitted inquiry in accordance with our Privacy Policy.
                                     </p>
                                 </div>
-                                <button type="submit">Wyślij</button>
+                                <button type="submit">Send</button>
                             </div>
                         </div>
                     </div>

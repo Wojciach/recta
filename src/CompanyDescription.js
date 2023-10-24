@@ -1,8 +1,6 @@
 import "./CompanyDescription.scss";
-
 import HaGallery from "./haGallery";
 import React from 'react';
-
 import { ReactComponent as ContactIcon } from "./svg/Project_icon.svg";
 import { ReactComponent as ContactBacgroundSVG } from "./svg/RECTA_logo_granat.svg";
 
@@ -12,16 +10,14 @@ function scrollToElement(ref) {
     });
   }
   
-const CompanyDescription = () => {
+    const CompanyDescription = () => {
 
-    console.log("COMPANY DESCRIPTION COMPONENT RE-RENDERED!!!!");
+    //console.log("COMPANY DESCRIPTION COMPONENT RE-RENDERED!!!!");
     
     return(
         <section id="companyDescription">
-
             <h2>Construction company <b>Recta</b></h2>
             <h2>why you should trust us</h2>
-
             <div id="gOpis">
                 <div id="opis1" className="sec">
                     <div id="unsortedGallery">
@@ -34,7 +30,6 @@ const CompanyDescription = () => {
                     </div>
                 </div>
                 <div id="opis2" className="sec">
-                
                     <div>
                         <p> 
                             Our company employs qualified workers who have the necessary qualifications and experience in the construction industry to ensure the highest quality of services for our clients.
@@ -46,7 +41,6 @@ const CompanyDescription = () => {
                             We invite you to use our construction and renovation services.
                         </p>
                     </div>
-
                     <div id="contactLink">
                         <div className="contactBacground"> <ContactBacgroundSVG /> </div>
                         <div className="contactIcon"> <ContactIcon /> </div>
@@ -54,12 +48,9 @@ const CompanyDescription = () => {
                         <p>
                             Contact us to learn more details or to get a free estimate.
                         </p>
-
                     </div>
-
                 </div>
             </div>
-
         </section>
     )
 }

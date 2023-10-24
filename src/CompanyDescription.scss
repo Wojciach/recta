@@ -6,7 +6,6 @@ section#companyDescription {
     width: 100%;
     overflow: hidden;
     z-index: 4;
-   
     p {
         font-size: 0.8em;
         text-align: left;
@@ -20,7 +19,6 @@ section#companyDescription {
         text-align: left;
         font-family: 'Bitter', serif;
         font-weight: 400;
-        
     }
     >#gOpis {
         @include flexCenter;
@@ -32,7 +30,6 @@ section#companyDescription {
             justify-content: space-between;
             width: 100%;
             margin: 10px;
-            
         }
         >div>div {
             width: 48%;
@@ -53,16 +50,13 @@ section#companyDescription {
                     margin-bottom: 0;
                 }
             }
-
         }
         >#opis2 {
             position: relative;
             align-items: center;
             display: flex;
             flex-direction: row;
-            
             @include colapseRow;
-            
             #contactLink {
                 position: absolute;
                 left: 52%;
@@ -72,38 +66,29 @@ section#companyDescription {
                 background-color: $orange-4;
                 border: 3px solid $orange-1;
                 outline: 1px solid $orange-4;
-
                 @media screen and (max-width: $colapse) {
                     position: relative;
                     width: 100%;
                     left: 0;
                     margin-top: 15px;
-                    
                 }
-
                 >.contactBacground {
-
                     position: absolute;
                     display: flex;
                     justify-content: center;
                     overflow: hidden;
                     width: 100%;
                     height: 100%;
-       
                     z-index: 0;
-
                     .st0, .st1 {
                         fill: $orange-3;
                         opacity: 0.3;
                     }
-
                     #Layer_1 {
                         position: absolute;
                         display: block;
                         height: 100%;
-                        
                     }
-
                 }
                 >.contactIcon {
                     margin: 10px;
@@ -133,9 +118,7 @@ section#companyDescription {
                     color: $blue-4;
                     font-size: 0.7em;
                     z-index: 1;
-                    
                 }
-                
             }
         }
     }
