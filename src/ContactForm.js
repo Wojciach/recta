@@ -44,13 +44,13 @@ const ContactForm = memo(() => {
                 <form onSubmit={handleSubmit}>
                     <div id="bothColumns" className="colapseRow">
                         <div id="column1">
-                            <input type="text" name="name" placeholder="Imię i nazwisko" required/>
+                            <input type="text" name="name" placeholder="Name and surname" required/>
                             <input type="email" name="email" placeholder="E-mail" required/>
-                            <input type="tel" name="phone" placeholder="Telefon kontaktowy" required/>
-                            <input type="text" name="company" placeholder="Firma" />
+                            <input type="tel" name="phone" placeholder="Phone" required/>
+                            <input type="text" name="company" placeholder="Company" />
                         </div>
                         <div id="column2">
-                            <textarea name="message" placeholder="Wiadomść..." required></textarea>
+                            <textarea name="message" placeholder="Message..." required></textarea>
                             <div id="footerSender">
                                 <div id="privPoli">
                                     <input type="checkbox" required/>
