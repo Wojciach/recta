@@ -82,40 +82,6 @@
                 }
             ],
             "install-path": "../phpmailer/phpmailer"
-        },
-        {
-            "name": "yourvendor/mylibrary",
-            "version": "1.0.0",
-            "version_normalized": "1.0.0.0",
-            "dist": {
-                "type": "path",
-                "url": "./package",
-                "reference": "56b7ff3391ca162192d702ef70537f6120abd97e"
-            },
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "yourvendor\\mylibrary\\": "src/"
-                },
-                "classmap": [
-                    "src/BodyClass.php"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Your Name",
-                    "email": "your.email@example.com"
-                }
-            ],
-            "description": "Your library's description",
-            "transport-options": {
-                "relative": true
-            },
-            "install-path": "../yourvendor/mylibrary"
         }
     ],
     "dev": true,

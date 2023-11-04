@@ -12,9 +12,9 @@ const ContactForm = memo(() => {
         event.preventDefault();
     
         const formData = new FormData(event.target);
-        //'./php/sendForm.php' <-- for production
-        //'http://localhost/recta2/recta2/public/php/sendForm.php' <-- for development
-        fetch('http://localhost/recta2/recta2/public/php/sendForm.php', {
+        const production = "./php/sendForm.php";
+        const development = "http://localhost/recta2/recta2/public/php/sendForm.php";
+        fetch(development, {
           method: 'POST',
           body: formData
         })

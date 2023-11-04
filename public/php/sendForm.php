@@ -1,20 +1,36 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header('Content-Type: text/plain');
+
+//quiet errors meesages
+//include_once('err.php');
 
 require 'vendor/autoload.php';
 
-use yourvendor\mylibrary\Body;
-use yourvendor\mylibrary\Email;
+use Wojciach\Wojciach\PHPMailerEmail;
+use Wojciach\Wojciach\RequestDatabase;
+use Wojciach\Wojciach\EmailBody;
 
-try  {
-    $body = new Body();
-    $email = new Email($body->getBody());
-    $email->send();
-    echo 'ok';
-} catch (Exception $e) {
-   // $exErr = $e->getMessage();
-    http_response_code(500);
-    echo "error"; // . $e;
+$RequestDatabase = new RequestDatabase("db_passDev.php");
+
+if($RequestDatabase->howManyMessages() >= 5) {
+  echo 'tooMany';
+  exit();
 }
+
+if($RequestDatabase->howManyMessages() < 5) {
+  $emailBody = new EmailBody();
+  $RequestDatabase->sendData(
+    $emailBody->name,
+    $emailBody->phone,
+    $emailBody->email,
+    $emailBody->message
+  );
+  $email = new PHPMailerEmail($emailBody->getBody(), './passes/emailPass.php');
+  $email->send();
+  echo 'ok';
+  exit();
+}
+$RequestDatabase->close();

@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
-    'yourvendor\\mylibrary\\Body' => $vendorDir . '/yourvendor/mylibrary/src/BodyClass.php',
 );
