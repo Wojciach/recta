@@ -3,7 +3,6 @@ import { memo, useState } from "react";
 import CustomAlert from "./CustomAlert";
 
 const ContactForm = memo(() => {
-    
     //console.log("CONTACT FORM COMPONENT RE-RENDERED!!!!");
 
     const [alert, setAlert] = useState(false);
@@ -14,13 +13,14 @@ const ContactForm = memo(() => {
     
         const formData = new FormData(event.target);
         //'./php/sendForm.php' <-- for production
-        //'http://192.168.1.246/recta2/recta2/public/php/sendForm.php' <-- for development
-        fetch('./php/sendForm.php', {
+        //'http://localhost/recta2/recta2/public/php/sendForm.php' <-- for development
+        fetch('http://localhost/recta2/recta2/public/php/sendForm.php', {
           method: 'POST',
           body: formData
         })
         .then(response => {
             if (!response.ok) {
+                console.log(response);
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.text();
@@ -31,7 +31,7 @@ const ContactForm = memo(() => {
             setAlert(true);
         })
         .catch(error => {
-            console.log(error.message);
+            console.log(error);
             setAlertStatust('error');
             setAlert(true);
         });

@@ -15,7 +15,7 @@ class Email {
         $this->mail = new PHPMailer(true);
 
             //Server settings
-          //  $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
+            //$this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
             $this->mail->isSMTP();
             $this->mail->Host       = 'smtp.hostinger.com';
             $this->mail->SMTPAuth   = true;
@@ -25,7 +25,7 @@ class Email {
             $this->mail->Port       = 465;
             $this->mail->SMTPOptions = array(
                 'ssl' => array(
-                   'verify_peer' => true,  //false for local dev true for production
+                   'verify_peer' => false,  //false for local dev true for production
                    'verify_peer_name' => true,
                    'allow_self_signed' => true
                 )
@@ -41,11 +41,9 @@ class Email {
            // $this->mail->send();
             return $this->mail;
     }
-
     public function send() {
         $this->mail->send();
     }
-
 }
 
 
