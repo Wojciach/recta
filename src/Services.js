@@ -1,11 +1,14 @@
 import React  from 'react';
 import { Link } from "react-router-dom";
 import "./Services.scss";
-import oferta from "./oferta.js";
+import ofertaPL from "./functions/ofertaPL.js";
+import ofertaEN from "./functions/ofertaEN.js";
 import {ReactComponent as Decor } from "./svg/dor/btnR.svg";
 import {icons, serTit, serDesc, serHash} from "./servicesData";
 
 function Services({refArr}) {
+  const lang = document.documentElement.lang;
+  const oferta = (lang === "pl") ? ofertaPL : ofertaEN;
 
   //console.log("SERVICES COMPONENT RE-RENDERED!!!!");
 

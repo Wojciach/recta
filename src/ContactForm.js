@@ -5,6 +5,7 @@ import CustomAlert from "./CustomAlert";
 const ContactForm = memo(() => {
     //console.log("CONTACT FORM COMPONENT RE-RENDERED!!!!");
 
+    const lang = document.documentElement.lang;
     const [alert, setAlert] = useState(false);
     const [alertStatus, setAlertStatust] = useState('ok');
 
@@ -41,25 +42,58 @@ const ContactForm = memo(() => {
     return (
         <section id="contactForm">
             <div id="content">
-                <h2>Request a Quote</h2>
+                {(lang === "pl") && (<h2>Poproś o Wycenę</h2>)}
+                {(lang === "en") && (<h2>Request a Quote</h2>)}
                 <form onSubmit={handleSubmit}>
                     <div id="bothColumns" className="colapseRow">
                         <div id="column1">
-                            <input type="text" name="name" placeholder="Name and surname" required/>
-                            <input type="email" name="email" placeholder="E-mail" required/>
-                            <input type="tel" name="phone" placeholder="Phone" required/>
-                            <input type="text" name="company" placeholder="Company" />
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder={(lang === "pl") ? "Imię i nazwisko" : "Name and surname"}
+                                required
+                            />
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="E-mail"
+                                required
+                            />
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder={(lang === "pl") ? "Imię i nazwisko" : "Phone"}
+                                required
+                            />
+                            <input
+                                type="text"
+                                name="company"
+                                placeholder={(lang === "pl") ? "Firma" : "Company"}
+                            />
                         </div>
                         <div id="column2">
-                            <textarea name="message" placeholder="Message..." required></textarea>
+                            <textarea
+                                name="message"
+                                placeholder={(lang === "pl") ? "Wiadomość" : "Message"}
+                                required>
+                            </textarea>
                             <div id="footerSender">
                                 <div id="privPoli">
                                     <input type="checkbox" required/>
-                                    <p>
-                                        The data entered in the contact form will be processed to provide a response to the submitted inquiry in accordance with our Privacy Policy.
-                                    </p>
+                                    {(lang === "pl") && (
+                                        <p>
+                                            Dane wpisane w formularzu kontaktowym będą przetwarzane w celu udzielenia odpowiedzi na przesłane zapytanie zgodnie z naszą Polityką Prywatności.
+                                        </p>
+                                    )}
+                                    {(lang === "en") && (
+                                        <p>
+                                            The data entered in the contact form will be processed to provide a response to the submitted inquiry in accordance with our Privacy Policy.
+                                        </p>
+                                    )}
                                 </div>
-                                <button type="submit">Send</button>
+                                <button type="submit">
+                                    {(lang === "pl") ? "Wyślij" : "Send"}
+                                </button>
                             </div>
                         </div>
                     </div>

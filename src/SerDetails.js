@@ -1,11 +1,14 @@
 import { memo } from "react";
 import "./SerDetails.scss";
 import { icons, serTit, serDesc, serBullets, serHash } from "./servicesData";
-import hashtags from "./hashtags";
+import hashtagsPL from "./functions/hashtagsPL";
+import hashtagsEN from "./functions/hashtagsEN";
 
 const SerDetails = memo(({refArr}) => {
-
     //console.log("SER_DETAILS COMPONENT RE-RENDERED!!!!");
+
+    const lang = document.documentElement.lang;
+    const hashtags = (lang === "pl") ? hashtagsPL : hashtagsEN;
 
     return (
         <section id="serDetails">

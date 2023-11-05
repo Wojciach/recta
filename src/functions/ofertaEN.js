@@ -1,5 +1,5 @@
 
-const oferta = [
+const ofertaEN = [
     {
         "Construction and Structural Work" :                
         [
@@ -54,4 +54,4 @@ const oferta = [
     },
 ]
 
-export default oferta;
+export default ofertaEN;

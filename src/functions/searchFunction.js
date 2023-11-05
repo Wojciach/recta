@@ -1,10 +1,14 @@
 import normalize from "./normalise";
-import oferta from "../oferta.js";
-import hashtags from "../hashtags.js";
+import ofertaEN from "./ofertaEN.js";
+import ofertaPL from "./ofertaPL.js";
+import hashtagsEN from "./hashtagsEN.js";
+import hashtagsPL from "./hashtagsPL.js";
 
 const searchFunction = (searchPhrase) => {
-
-    console.log("UUSE SEARCH FUNCTION FIRREEED FIIIIREEEEE!!!!");
+  //console.log("UUSE SEARCH FUNCTION FIRREEED FIIIIREEEEE!!!!");
+    const lang = document.documentElement.lang;
+    const hashtags = (lang === "pl") ? hashtagsPL : hashtagsEN;
+    const oferta = (lang === "pl") ? ofertaPL : ofertaEN;
 
     var serviceList = [];
       //search in offers and add to serviceList

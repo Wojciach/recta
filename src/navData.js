@@ -27,5 +27,5 @@ export const mItems = items[document.documentElement.lang].map((item, index) => 
 
 export const wyceny = 
             <li>
-                <Link to={links[0]}  onClick={ () => {scrollDelayed(6)}}>Quotes</Link>
+                <Link to={links[0]}  onClick={ () => {scrollDelayed(6)}}>{(document.documentElement.lang === "pl") ? "Wyceny" : "Quotes"}</Link>
             </li>;

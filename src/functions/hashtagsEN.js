@@ -1,4 +1,4 @@
-const hashtags = [
+const hashtagsEN = [
     {
         "Construction and Structural Work" :           
         [
@@ -144,4 +144,4 @@ const hashtags = [
     },       
 ]
 
-export default hashtags;
+export default hashtagsEN;
