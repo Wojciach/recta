@@ -13,11 +13,14 @@ function scrollDelayed(index) {
     }, 30);
 }
   
-export const items = ["Home", "Services", "Projects", "Opinions", "News", "Contact"];
+export const items = { 
+    en: ["Home", "Services", "Projects", "Opinions", "News", "Contact"],
+    pl: ["Strona główna", "Usługi", "Projekty", "Opinie", "Aktualności", "Kontakt"]
+};
 export const links = ["/", "/services", "/#ourProjects", "/#opinions", "/#news", "/#footer"];
 export const hashes = ["header", "serDetails", "ourProjects", "opinions", "news", "footer", "contactForm"];
 
-export const mItems = items.map((item, index) => {
+export const mItems = items[document.documentElement.lang].map((item, index) => {
      return <li key={index}>
                 <Link to={links[index]}  onClick={ () => {scrollDelayed(index)}}  >{item}</Link>
             </li>; });
