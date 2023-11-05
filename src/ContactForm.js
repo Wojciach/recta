@@ -14,7 +14,8 @@ const ContactForm = memo(() => {
         const formData = new FormData(event.target);
         const production = "./php/sendForm.php";
         const development = "http://localhost/recta2/recta2/public/php/sendForm.php";
-        fetch(development, {
+        const experiment = "https://www.recta.website/newphp/php/sendForm.php";
+        fetch(experiment, {
           method: 'POST',
           body: formData
         })

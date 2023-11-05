@@ -9,7 +9,8 @@ import { memo } from "react";
 
 function Menu() {
 
-  //console.log("MENU COMPONENT RE-RENDERED!!!!");
+  console.log("MENU COMPONENT RE-RENDERED!!!!");
+  console.log(document.documentElement.lang);
 
   const firstTwoLetters = window.location.hostname.substring(0, 2);
   const handleRedirect = (event) => {
