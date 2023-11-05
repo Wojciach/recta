@@ -11,6 +11,7 @@ import './buttons/Button.scss';
 import { ReactComponent as MySvg } from './svg/dor/X.svg';
 
 const SliderWindow = memo( (props) => {
+    const lang = document.documentElement.lang;
     const navigate = useNavigate();
     const setSliderWindowActive = props.setSliderWindowActive;
     const startSiderFrom = props.startSiderFrom;
@@ -78,7 +79,7 @@ const SliderWindow = memo( (props) => {
 
     return (
         <section id="sliderWindow">
-          <h2>Galeria</h2>  
+          <h2>{(lang === "pl") ? "Galeria" : "Gallery"}</h2>  
           <button onClick={ () => {setSliderWindowActive(false); navigate('/');}}><MySvg /></button>
             <Slider {...settings}>
                 {photoUrls.map((image, index) => (

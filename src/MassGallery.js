@@ -4,9 +4,8 @@ import "./MassGallery.scss";
 import { bring } from './PhotoContext';
 
 const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
-
     //console.log("MASS-GALLERY COMPONENT RE-RENDERED!!!!");
-
+    const lang = document.documentElement.lang;
     const navigate = useNavigate();
     const setSlidergallery = (event) => {
         setSliderWindowActive(true);
@@ -28,11 +27,26 @@ const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
     
     return(
         <section id="massGallery">
-            <button onClick={handleRollUp}>{isRolledUp ? 'Show Gallery' : 'Hide Gallery'}</button>
+             {(lang === "pl") && (
+                <button onClick={handleRollUp}>
+                    {isRolledUp ? 'Pokaż Galerię' : 'Ukryj Glerię'}
+                </button>
+            )}
+            {(lang === "en") && (
+                <button onClick={handleRollUp}>
+                    {isRolledUp ? 'Show Gallery' : 'Hide Gallery'}
+                </button>
+            )}
             {!isRolledUp && 
                 <div>
                     {photoUrls.map((image, index) => (
-                        <img onClick={setSlidergallery} data-index={index} key={index} src={photoUrls[index]} alt={`Image ${image}`} />
+                        <img
+                            onClick={setSlidergallery}
+                            data-index={index}
+                            key={index}
+                            src={photoUrls[index]}
+                            alt={`Image ${image}`}
+                        />
                     ))}
                 </div>
             }    

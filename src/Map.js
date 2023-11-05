@@ -2,7 +2,6 @@ import "./Map.scss";
 import React, { memo } from 'react';
 
 const Map = memo(() => {
-    
    //console.log("MAP COMPONENT RE-RENDERED!!!!");
 
     const address = encodeURIComponent("Kościuszki 20, 55-100 Trzebnica");

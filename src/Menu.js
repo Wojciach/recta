@@ -3,16 +3,15 @@ import "./Menu.scss";
 
 import { ReactComponent as MyIcon } from "./svg/RECTA_logo_granat.svg";
 import { Link } from "react-router-dom";
-import  { mItems } from "./navData.js";
+import  { mItems } from "./functions/navData.js";
 import React from "react";
 import { memo } from "react";
 
 function Menu() {
+ // console.log("MENU COMPONENT RE-RENDERED!!!!");
 
-  console.log("MENU COMPONENT RE-RENDERED!!!!");
-  console.log(document.documentElement.lang);
+  const lang = document.documentElement.lang;
 
-  const firstTwoLetters = window.location.hostname.substring(0, 2);
   const handleRedirect = (event) => {
     if (event.target.id === "en") { 
       window.location.href = "https://en.recta.website/";
@@ -28,8 +27,8 @@ function Menu() {
               <Link to={"/"}  ><MyIcon /></Link>
               </div>
               <div id="langLink">
-                <div className={"lang" + (firstTwoLetters === "en" ? " marked" : "")} id="en" onClick={handleRedirect}>EN</div>
-                <div className={"lang" + (firstTwoLetters !== "en" ? " marked" : "")} id="pl" onClick={handleRedirect}>PL</div>
+                <div className={"lang" + (lang === "en" ? " marked" : "")} id="en" onClick={handleRedirect}>EN</div>
+                <div className={"lang" + (lang !== "en" ? " marked" : "")} id="pl" onClick={handleRedirect}>PL</div>
               </div>
           </div>
           <ul>

@@ -27,7 +27,6 @@ export const TopScrollBtn = () => {
             setVisibility(0);
           }
         }
-        
         window.addEventListener('scroll', handleVisibility);
 
         return () => {
@@ -41,3 +40,4 @@ export const TopScrollBtn = () => {
         </div>
     );
   }
+  

@@ -1,12 +1,4 @@
-import { ReactComponent as Icon1 } from "./svg/dor/ChatkaPuchatka_icon.svg";
-import { ReactComponent as Icon2 } from "./svg/dor/wykonczenie_icon.svg";
-import { ReactComponent as Icon3 } from "./svg/dor/nadzor_icon.svg";
-import { ReactComponent as Icon4 } from "./svg/dor/systemy_icon.svg";
-import { ReactComponent as Icon5 } from "./svg/dor/modernizacja_energetyczna.svg";
-
-export const icons = [Icon1, Icon2, Icon3, Icon4, Icon5];
-
-export const serHash = [
+export const serHashEN = [
     "construction-and-structural-work",
     "finishing-work",
     "external-and-roadwork",
@@ -14,7 +6,7 @@ export const serHash = [
     "energy-modernization",
 ];
 
-export const serTit = [
+export const serTitEN = [
     "Construction and Structural Work",
     "Finishing Work",
     "External and Roadwork",
@@ -22,7 +14,7 @@ export const serTit = [
     "Energy Modernization",
 ];
 
-export const serDesc = [
+export const serDescEN = [
     "From decision-making through design, rough construction, finishing, and acceptance",
     "We ensure that the construction result aligns with your project in the highest standards",
     "We prepare documentation and submit the building for acceptance",
@@ -30,7 +22,7 @@ export const serDesc = [
     "We install electrical and heating systems",
 ];
 
-export const serBullets = [
+export const serBulletsEN = [
     [
         "Construction of single-family homes",
         "Insulation and finishing of attics in single-family homes",

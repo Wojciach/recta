@@ -1,6 +1,6 @@
 import "./Footer.scss";
 import { memo } from "react";
-import  {mItems, wyceny} from "./navData.js";
+import  {mItems, wyceny} from "./functions/navData.js";
 import twatter_icon from "./svg/dor/twatter_icon.svg";
 import fb_icon from "./svg/dor/fb_icon.svg";
 import linkedin_icon from "./svg/dor/linkedin_icon.svg";

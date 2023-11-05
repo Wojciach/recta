@@ -32,8 +32,6 @@ const Header = () => {
       <section id="header">
         <div className="sBackground"></div>
         <div id="slogan">
-            <h1>Recta Construction Services</h1>
-            <h2>We are building a better future</h2>
             {(lang === "pl") && (
               <>
                 <h1>Usługi Budownane Recta</h1>
