@@ -5,6 +5,7 @@ import { bring } from './PhotoContext';
 
 const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
     //console.log("MASS-GALLERY COMPONENT RE-RENDERED!!!!");
+    
     const lang = document.documentElement.lang;
     const navigate = useNavigate();
     const setSlidergallery = (event) => {
