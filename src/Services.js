@@ -1,14 +1,22 @@
 import React  from 'react';
 import { Link } from "react-router-dom";
 import "./Services.scss";
-import oferta from "./oferta.js";
-
+import ofertaPL from "./functions/ofertaPL.js";
+import ofertaEN from "./functions/ofertaEN.js";
+import icons from "./functions/servicesIcons";
+import { serTitPL, serDescPL, serHashPL } from "./functions/servicesDataPL";
+import { serTitEN, serDescEN, serHashEN } from "./functions/servicesDataEN";
 import {ReactComponent as Decor } from "./svg/dor/btnR.svg";
-import {icons, serTit, serDesc, serHash} from "./servicesData";
-
 
 function Services({refArr}) {
-  console.log("SERVICES COMPONENT RE-RENDERED!!!!");
+//console.log("SERVICES COMPONENT RE-RENDERED!!!!");
+
+  const lang = document.documentElement.lang;
+
+  const oferta = (lang === "pl") ? ofertaPL : ofertaEN;
+  const serTit = (lang === "pl") ? serTitPL : serTitEN;
+  const serDesc = (lang === "pl") ? serDescPL : serDescEN;
+  const serHash = (lang === "pl") ? serHashPL : serHashEN;
 
   function scrollToRef(index) {
       setTimeout(() => {
@@ -22,13 +30,9 @@ function Services({refArr}) {
     return (
       <section id="services">
         <div className="sBackground"></div>
-        
         <div id="servicesList">
-          
               {oferta.map((item, index)=>{
-
                 const Icon = icons[index];
-
                   return (
                     <Link to={`/services/#${serHash[index]}`} key={index} onClick={()=>{scrollToRef(index)}}>
                       <div className='serviceItem'>
@@ -40,12 +44,9 @@ function Services({refArr}) {
                     </Link>
                   )
               })}
-
         </div>
-       
       </section>
     );
   }
   
-  export default Services;
-  
+export default Services;

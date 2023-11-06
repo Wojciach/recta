@@ -1,18 +1,17 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import { bring } from "./PhotoContext.js";
-
 import "./SliderWindow.scss";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
 import { ReactComponent as ButtonSvg } from './buttons/button2.svg';
 import './buttons/Button.scss';
 
 import { ReactComponent as MySvg } from './svg/dor/X.svg';
 
 const SliderWindow = memo( (props) => {
+    const lang = document.documentElement.lang;
     const navigate = useNavigate();
     const setSliderWindowActive = props.setSliderWindowActive;
     const startSiderFrom = props.startSiderFrom;
@@ -80,7 +79,7 @@ const SliderWindow = memo( (props) => {
 
     return (
         <section id="sliderWindow">
-          <h2>Galeria</h2>  
+          <h2>{(lang === "pl") ? "Galeria" : "Gallery"}</h2>  
           <button onClick={ () => {setSliderWindowActive(false); navigate('/');}}><MySvg /></button>
             <Slider {...settings}>
                 {photoUrls.map((image, index) => (

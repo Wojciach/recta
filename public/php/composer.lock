@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "16506d5b2f220c71314dcbfe7dcec69c",
+    "content-hash": "33cad13092641f81b77ea1ff6e1ca5db",
     "packages": [
         {
             "name": "phpmailer/phpmailer",
@@ -85,37 +85,6 @@
                 }
             ],
             "time": "2023-08-29T08:26:30+00:00"
-        },
-        {
-            "name": "yourvendor/mylibrary",
-            "version": "1.0.0",
-            "dist": {
-                "type": "path",
-                "url": "./package",
-                "reference": "56b7ff3391ca162192d702ef70537f6120abd97e"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "yourvendor\\mylibrary\\": "src/"
-                },
-                "classmap": [
-                    "src/BodyClass.php"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Your Name",
-                    "email": "your.email@example.com"
-                }
-            ],
-            "description": "Your library's description",
-            "transport-options": {
-                "relative": true
-            }
         }
     ],
     "packages-dev": [],

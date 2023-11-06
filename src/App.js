@@ -23,7 +23,7 @@ import SliderWindow from './SliderWindow';
 
 
 function App() {
-  console.log("APP COMPONENT RE-RENDERED!!!!");
+  //console.log("APP COMPONENT RE-RENDERED!!!!");
 
   const [selected, setSelected] = useState('gal_1');
   const [sliderWindowActive, setSliderWindowActive] = useState(false);

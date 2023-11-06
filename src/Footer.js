@@ -1,7 +1,6 @@
 import "./Footer.scss";
 import { memo } from "react";
-import  {mItems, wyceny} from "./navData.js";
-
+import  {mItems, wyceny} from "./functions/navData.js";
 import twatter_icon from "./svg/dor/twatter_icon.svg";
 import fb_icon from "./svg/dor/fb_icon.svg";
 import linkedin_icon from "./svg/dor/linkedin_icon.svg";
@@ -9,13 +8,15 @@ import messenger_icon from "./svg/dor/messenger_icon.svg";
 import whatsapp_icon from "./svg/dor/whatsapp_icon.svg";
 
 const Footer = memo(() => {
-    console.log("FOOTER COMPONENT RE-RENDERED!!!!");
+    //console.log("FOOTER COMPONENT RE-RENDERED!!!!");
+
+    const lang = document.documentElement.lang;
 
     return (
         <section id="footer">
             <div id="content" className="colapseRow">
                 <div id="left">
-                <h2>Kontakt</h2>
+                <h2>{(lang === "pl") ? "Kontakt" : "Contact"}</h2>
                     <div id="navs">
                         <nav>
                             <ul>
@@ -25,7 +26,7 @@ const Footer = memo(() => {
                         <nav>
                             <ul>
                                 {wyceny}
-                                <li>Polityka Prywatności</li>
+                                <li>{(lang === "pl") ? "Polityka Prywatności" : "Privacy Policy"}</li>
                                 <li>FAQ</li>
                             </ul>
                         </nav>
@@ -33,7 +34,7 @@ const Footer = memo(() => {
                 </div>   
                 <div id="contactData">
                     <div id="contactInfo">
-                        <h2>Kontakt</h2>
+                        <h2>{(lang === "pl") ? "Kontakt" : "Contact"}</h2>
                         <p id="telephone">+48 728 482 639</p>
                         <p id="address">
                             Recta <br/>
@@ -42,7 +43,8 @@ const Footer = memo(() => {
                         </p>
                     </div>
                     <div id="socialMedia">
-                        <p>Wkrótce znajdziesz nas również na:</p>
+                    {(lang === "pl") && (<p>Wkrótce znajdziesz nas również na:</p>)}
+                    {(lang === "en") && (<p>Shortly, you will also find us at:</p>)}
                         <div>
                             <ul>
                                 <li><img alt="facebook" src={fb_icon}/></li>

@@ -3,8 +3,9 @@ import { memo, useState } from "react";
 import CustomAlert from "./CustomAlert";
 
 const ContactForm = memo(() => {
-    console.log("CONTACT FORM COMPONENT RE-RENDERED!!!!");
+    //console.log("CONTACT FORM COMPONENT RE-RENDERED!!!!");
 
+    const lang = document.documentElement.lang;
     const [alert, setAlert] = useState(false);
     const [alertStatus, setAlertStatust] = useState('ok');
 
@@ -12,14 +13,16 @@ const ContactForm = memo(() => {
         event.preventDefault();
     
         const formData = new FormData(event.target);
-     //'./php/sendForm.php' <-- for production
-    //'http://192.168.1.246/recta2/recta2/public/php/sendForm.php' <-- for development
-        fetch('./php/sendForm.php', {  //maybe " ../ " instead of " ./ " but for development i may need localhost php interpreter
+        const production = "./php/sendForm.php";
+        const development = "http://localhost/recta2/recta2/public/php/sendForm.php";
+        const experiment = "https://www.recta.website/newphp/php/sendForm.php";
+        fetch(experiment, {
           method: 'POST',
           body: formData
         })
         .then(response => {
             if (!response.ok) {
+                console.log(response);
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             return response.text();
@@ -30,7 +33,7 @@ const ContactForm = memo(() => {
             setAlert(true);
         })
         .catch(error => {
-            console.log(error.message);
+            console.log(error);
             setAlertStatust('error');
             setAlert(true);
         });
@@ -39,25 +42,58 @@ const ContactForm = memo(() => {
     return (
         <section id="contactForm">
             <div id="content">
-                <h2>Poproś o Wycenę</h2>
+                {(lang === "pl") && (<h2>Poproś o Wycenę</h2>)}
+                {(lang === "en") && (<h2>Request a Quote</h2>)}
                 <form onSubmit={handleSubmit}>
                     <div id="bothColumns" className="colapseRow">
                         <div id="column1">
-                            <input type="text" name="name" placeholder="Imię i nazwisko" required/>
-                            <input type="email" name="email" placeholder="E-mail" required/>
-                            <input type="tel" name="phone" placeholder="Telefon kontaktowy" required/>
-                            <input type="text" name="company" placeholder="Firma" />
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder={(lang === "pl") ? "Imię i nazwisko" : "Name and surname"}
+                                required
+                            />
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="E-mail"
+                                required
+                            />
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder={(lang === "pl") ? "Imię i nazwisko" : "Phone"}
+                                required
+                            />
+                            <input
+                                type="text"
+                                name="company"
+                                placeholder={(lang === "pl") ? "Firma" : "Company"}
+                            />
                         </div>
                         <div id="column2">
-                            <textarea name="message" placeholder="Wiadomść..." required></textarea>
+                            <textarea
+                                name="message"
+                                placeholder={(lang === "pl") ? "Wiadomość" : "Message"}
+                                required>
+                            </textarea>
                             <div id="footerSender">
                                 <div id="privPoli">
                                     <input type="checkbox" required/>
-                                    <p>
-                                        Dane wpisane w formularzu kontaktowym będą przetwarzane w celu udzielenia odpowiedzi na przesłane zapytanie zgodnie z naszą Polityką Prywatności.
-                                    </p>
+                                    {(lang === "pl") && (
+                                        <p>
+                                            Dane wpisane w formularzu kontaktowym będą przetwarzane w celu udzielenia odpowiedzi na przesłane zapytanie zgodnie z naszą Polityką Prywatności.
+                                        </p>
+                                    )}
+                                    {(lang === "en") && (
+                                        <p>
+                                            The data entered in the contact form will be processed to provide a response to the submitted inquiry in accordance with our Privacy Policy.
+                                        </p>
+                                    )}
                                 </div>
-                                <button type="submit">Wyślij</button>
+                                <button type="submit">
+                                    {(lang === "pl") ? "Wyślij" : "Send"}
+                                </button>
                             </div>
                         </div>
                     </div>

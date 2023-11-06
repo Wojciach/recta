@@ -3,7 +3,6 @@
 section#header {
     position: relative;
     @include flexCenter;
-  //  overflow: hidden;
     margin: 0;
     height: 450px;
     z-index: 5;   
@@ -55,7 +54,6 @@ section#header {
                 border: 1px solid $orange-4;
                 border-top: none;
                 margin-left: 0;
-              //  width: 200px;
                 padding: 5px;
                 text-align: center;
                 &:hover {
@@ -65,7 +63,6 @@ section#header {
             }
         }
     }
-
     .sBackground {
         top: 0;
         height: 100%;

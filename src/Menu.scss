@@ -2,20 +2,16 @@
 
 section#menu {
     position: absolute;
-   // @include flexCenter;
     margin-top: 14px;
-    
     display: flex;
     align-content: center;
     align-items: center;
     justify-items: center;
     justify-content: center;
-
     text-transform: uppercase;
     color: $orange-1;
     font-weight: 400;
     z-index: 10;
-    
     nav {
         position: relative;
         display: flex;
@@ -37,7 +33,7 @@ section#menu {
                     height: 20px;
                     padding: 1px;
                     margin: 5px;
-                    &:hover {
+                    &:hover, &.marked:hover {
                         background-color: $orange-5;
                     }
                     &.marked {
@@ -45,22 +41,19 @@ section#menu {
                     }
                 }
             }
-
             >div#rectaLogoHome {
                 cursor: pointer;
                 height: 100%;
                 width: 100px;
                 margin: 0;
-            
-            .st0{fill:$orange-1;}
-            .st1{fill-rule:evenodd;clip-rule:evenodd;fill:$orange-1}
-            &:hover {
-                .st0{fill:$orange-4;}
-                .st1{fill-rule:evenodd;clip-rule:evenodd;fill:$orange-4}
-            } 
+                .st0{fill:$orange-1;}
+                .st1{fill-rule:evenodd;clip-rule:evenodd;fill:$orange-1}
+                &:hover {
+                    .st0{fill:$orange-4;}
+                    .st1{fill-rule:evenodd;clip-rule:evenodd;fill:$orange-4}
+                } 
             }
         }
-
         ul {
             margin: 0;
             padding: 0;
@@ -69,7 +62,6 @@ section#menu {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-           // align-items: flex-end;
             align-content: baseline;
             justify-content: space-between;
             justify-items: baseline;
@@ -77,31 +69,25 @@ section#menu {
             font-size: 0.7em;
             border-top: 2px solid $orange-1;
             li {
-            //    background-color: green;
-             //   margin-left: 15px;
-            //    margin-right: 15px;
                 width: 100px;
-              a {
-                position: relative;
-                display: block;
-                width: 100%;
-                height: 100%;
-                cursor: pointer;
-                padding-top: 10px;
-                padding-bottom: 7px;
-            //    padding-left: 25px;
-             //   padding-right: 25px;
-                border-top: solid 5px transparent;
-                transform: translateY(-4px);
-                white-space: nowrap;
-                letter-spacing: 0.1em;
-              //  background-color: red;
-                &:hover {
-                    font-weight: 700;
-                    border-top: solid 5px $orange-4;
-                    color: $orange-4;
+                a {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    padding-top: 10px;
+                    padding-bottom: 7px;
+                    border-top: solid 5px transparent;
+                    transform: translateY(-4px);
+                    white-space: nowrap;
+                    letter-spacing: 0.1em;
+                    &:hover {
+                        font-weight: 700;
+                        border-top: solid 5px $orange-4;
+                        color: $orange-4;
+                    }
                 }
-              }
             } 
         }
     }

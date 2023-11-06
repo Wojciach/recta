@@ -6,6 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'yourvendor\\mylibrary\\' => array($vendorDir . '/yourvendor/mylibrary/src'),
+    'Wojciach\\Wojciach\\' => array($baseDir . '/'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
 );
