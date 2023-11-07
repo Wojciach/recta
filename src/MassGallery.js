@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./MassGallery.scss";
 import { bring } from './PhotoContext';
 
-const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
+const MassGallery = ({galleryUrls, gallery, setSliderWindowActive, setStartSiderFrom}) => {
     //console.log("MASS-GALLERY COMPONENT RE-RENDERED!!!!");
-    
+
+    const[photos, setPhotos] = useState([]);
+    console.log(galleryUrls) ;
     const lang = document.documentElement.lang;
     const navigate = useNavigate();
     const setSlidergallery = (event) => {
@@ -40,12 +42,12 @@ const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
             )}
             {!isRolledUp && 
                 <div>
-                    {photoUrls.map((image, index) => (
+                    {(typeof galleryUrls !== 'undefined') && galleryUrls.map((image, index) => (
                         <img
                             onClick={setSlidergallery}
                             data-index={index}
                             key={index}
-                            src={photoUrls[index]}
+                            src={galleryUrls[index]}
                             alt={`Image ${image}`}
                         />
                     ))}
