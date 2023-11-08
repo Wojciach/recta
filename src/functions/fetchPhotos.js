@@ -1,4 +1,4 @@
-export function fetchPhotos(directoryName) {
+export function fetchPhotos() {
   const production = 'https://www.recta.website/php/getImagesURLs.php';
   const development = 'http://localhost/recta2/recta2/public/php/getImagesURLs.php';
   return fetch(development, {
@@ -9,6 +9,5 @@ export function fetchPhotos(directoryName) {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },
-    body: JSON.stringify({ directory: directoryName })
   })
 } 

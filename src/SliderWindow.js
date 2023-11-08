@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import { bring } from "./PhotoContext.js";
@@ -10,13 +10,18 @@ import './buttons/Button.scss';
 
 import { ReactComponent as MySvg } from './svg/dor/X.svg';
 
+import { fetchPhotos }from './functions/fetchPhotos.js';
+import { use } from 'i18next';
+
 const SliderWindow = memo( (props) => {
     const lang = document.documentElement.lang;
     const navigate = useNavigate();
     const setSliderWindowActive = props.setSliderWindowActive;
     const startSiderFrom = props.startSiderFrom;
     const selected = props.selected;
-
+  //  const [galleryUrls, setGalleryUrls] = useState([]);
+    const allPhotoNames = props.allPhotoNames;
+    /*
     const photoUrlsArray = {
         gal_1: bring("taczow"), 
         gal_2: bring("fundamenty"), 
@@ -24,6 +29,8 @@ const SliderWindow = memo( (props) => {
     };
 
     const photoUrls = photoUrlsArray[selected];
+    */
+
 
     const CustomPrevArrow = (props) => (
         <button {...props} className="universalBtn custom-prev-arrow">
@@ -82,8 +89,8 @@ const SliderWindow = memo( (props) => {
           <h2>{(lang === "pl") ? "Galeria" : "Gallery"}</h2>  
           <button onClick={ () => {setSliderWindowActive(false); navigate('/');}}><MySvg /></button>
             <Slider {...settings}>
-                {photoUrls.map((image, index) => (
-                    <div className='cont'><img key={index} src={photoUrls[index]} alt={`Image ${image}`} /></div>
+                {(allPhotoNames['gal_1'] !== "undefined") && allPhotoNames['gal_1'].map((image, index) => (
+                    <div className='cont'><img key={index} src={'http://localhost/recta2/recta2/puiblic/photos/MassGalleries/big/' + allPhotoNames['gal_1'][index]} alt={`Image ${image}`} /></div>
                 ))}
             </Slider>
         </section>

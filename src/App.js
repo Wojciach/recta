@@ -21,34 +21,45 @@ import { ImageIndexProvider } from './ImageIndexContext';
 import SliderWindow from './SliderWindow';
 
 import { fetchPhotos }from './functions/fetchPhotos.js';
+import { use } from 'i18next';
 
 function App() {
   //console.log("APP COMPONENT RE-RENDERED!!!!");
 
   const [selected, setSelected] = useState('gal_1');
-  const [galleryUrls, setGalleryUrls] = useState([]);
+  const [allPhotoNames, setAllPhotoNames] = useState({o: "o"});
   const [sliderWindowActive, setSliderWindowActive] = useState(false);
   const [startSiderFrom, setStartSiderFrom] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   const refArr = useRef([]);
 
   function selectThis(event) {
     setSelected(event.currentTarget.id);
-
-    const photoUrlsArray = {
-      gal_1: "taczow40", 
-      gal_2: "fundamenty40", 
-      gal_3: "moniuszki40"
-    };
-
-    fetchPhotos(photoUrlsArray[event.currentTarget.id])
-    .then(response => response.json())
-    .then((data) => {setGalleryUrls(data); console.log(galleryUrls);})
-    .catch((error) => {console.error('Error:', error)});
+    console.log("seleccccctorson: " + selected);
   }
+
+  useEffect(() => {
+    console.log("UUUSEEEEFFECT!!!!");
+    fetchPhotos()
+      .then(response => response.json())
+      .then((data) => {
+        setAllPhotoNames(data);
+        setIsLoading(false);
+        console.log("allPhotoNames after fetch: ", data);
+      })
+      .catch((error) => {console.error('Error:', error)});
+      setIsLoading(false);
+
+  }, []);
+
   
   const HomeScreen = React.memo(() => {
     console.log("HOME_SCREEN COMPONENT RE-RENDERED!!!!");
+
+    if (isLoading) {
+      return <div>Loading...</div>;
+    }
 
     return (
       <ProjectsProvider>
@@ -56,7 +67,13 @@ function App() {
         <CompanyDescription />
         <Opinions />
         <OurProjects selected={selected} selectThis={selectThis}/>
-        <MassGallery galleryUrls={galleryUrls} gallery={selected} setSliderWindowActive={setSliderWindowActive} setStartSiderFrom={setStartSiderFrom} />
+        <MassGallery
+          selected={selected}
+          allPhotoNames={allPhotoNames}
+          gallery={selected}
+          setSliderWindowActive={setSliderWindowActive}
+          setStartSiderFrom={setStartSiderFrom}
+        />
         <News />
       </ProjectsProvider>
     );
@@ -69,7 +86,13 @@ function App() {
       <ProjectsProvider>
         <SerDetails refArr={refArr}/>
         <OurProjects selected={selected} selectThis={selectThis} />
-        <MassGallery galleryUrls={galleryUrls} gallery={selected} setSliderWindowActive={setSliderWindowActive} setStartSiderFrom={setStartSiderFrom} />
+        <MassGallery
+          selected={selected}
+          allPhotoNamess={allPhotoNames}
+          gallery={selected}
+          setSliderWindowActive={setSliderWindowActive}
+          setStartSiderFrom={setStartSiderFrom}
+        />
       </ProjectsProvider>
     );
   });
@@ -86,7 +109,14 @@ function App() {
         <Routes>
           <Route exact path="/" element={<HomeScreen />} />
           <Route path="/services" element={<ServicesScreen />} />
-          <Route path="/photo-slider" element={<SliderWindow setSliderWindowActive={setSliderWindowActive} startSiderFrom={startSiderFrom} selected={selected} />} />
+          <Route path="/photo-slider" element={
+            <SliderWindow
+              allPhotoNames={allPhotoNames}
+              setSliderWindowActive={setSliderWindowActive}
+              startSiderFrom={startSiderFrom}
+              selected={selected}
+            />
+          }/>
         </Routes>
       </ImageIndexProvider>
       

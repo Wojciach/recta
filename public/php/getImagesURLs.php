@@ -4,12 +4,9 @@ header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Accept, Origin, Authorization');
 header('Content-Type: application/json');
 
-$postData = file_get_contents('php://input');
-$data = json_decode($postData, true);
-$directoryName = filter_var($data['directory'], FILTER_SANITIZE_STRING);;
 
 
-
+/*
 $filePaths = 
 [
     "moniuszki" => "../photos/MassGalleries/Moniuszki/",
@@ -19,6 +16,8 @@ $filePaths =
     "fundamenty" => "../photos/MassGalleries/Fundamenty/",
     "fundamenty40" => "../photos/MassGalleries/Fundamenty40/"
 ];
+
+ 
 
 
 //if (!array_key_exists($directoryName, $filePaths)) exit();
@@ -48,8 +47,36 @@ $filePaths =
 
    // $fileNames = array_map('basename', $images);
 
+*/
+
+$filePaths = [
+    "gal_1" => "../photos/MassGalleries/small/Taczow/",
+    "gal_2" => "../photos/MassGalleries/small/Fundamenty/",
+    "gal_3" => "../photos/MassGalleries/small/Moniuszki/",
+];
+
+$allImages = [];
+
+foreach ($filePaths as $key => $directory) {
+    // Define the pattern to look for image files
+    $pattern = $directory . '*.{jpg,jpeg,png,gif}';
+
+    // Use glob to get all image files
+    $images = glob($pattern, GLOB_BRACE);
+
+    // Use array_map and basename to get the file names
+    $fileNames = array_map('basename', $images);
+
+    // Add the images to the allImages array, grouped by directory
+    $allImages[$key] = $fileNames;
 
 
+}
+
+// Now $allImages is an associative array where each key is a directory name
+// and each value is an array of image paths in that directory
+
+echo json_encode($allImages);
 
 
 

@@ -3,11 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import "./MassGallery.scss";
 import { bring } from './PhotoContext';
 
-const MassGallery = ({galleryUrls, gallery, setSliderWindowActive, setStartSiderFrom}) => {
+const MassGallery = ({
+    allPhotoNames,
+    selected,
+    gallery,
+    setSliderWindowActive,
+    setStartSiderFrom
+}) => {
     //console.log("MASS-GALLERY COMPONENT RE-RENDERED!!!!");
-
+   console.log("MASS GALLERY: " , allPhotoNames)
+   console.log("MASS GALLERY SEELCTED: " + selected)
     const[photos, setPhotos] = useState([]);
-    console.log(galleryUrls) ;
+    
     const lang = document.documentElement.lang;
     const navigate = useNavigate();
     const setSlidergallery = (event) => {
@@ -20,6 +27,14 @@ const MassGallery = ({galleryUrls, gallery, setSliderWindowActive, setStartSider
         gal_1: bring("taczow40"), 
         gal_2: bring("fundamenty40"), 
         gal_3: bring("moniuszki40")
+    };
+
+    const baseUrlDev = "http://localhost/recta2/recta2/public/photos/MassGalleries/small/";
+
+    const folderName = {
+        gal_1: "Taczow",
+        gal_2: "Fundamenty",
+        gal_3: "Moniuszki"
     };
 
     const photoUrls = photoUrlsArray[gallery];
@@ -42,12 +57,12 @@ const MassGallery = ({galleryUrls, gallery, setSliderWindowActive, setStartSider
             )}
             {!isRolledUp && 
                 <div>
-                    {(typeof galleryUrls !== 'undefined') && galleryUrls.map((image, index) => (
+                    {allPhotoNames[selected] && allPhotoNames[selected].map((image, index) => (
                         <img
                             onClick={setSlidergallery}
                             data-index={index}
                             key={index}
-                            src={galleryUrls[index]}
+                            src={baseUrlDev + folderName[selected] + "/" + allPhotoNames[selected][index]}
                             alt={`Image ${image}`}
                         />
                     ))}
