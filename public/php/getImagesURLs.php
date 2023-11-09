@@ -69,14 +69,9 @@ foreach ($filePaths as $key => $directory) {
 
     // Add the images to the allImages array, grouped by directory
     $allImages[$key] = $fileNames;
-
-
 }
 
 // Now $allImages is an associative array where each key is a directory name
 // and each value is an array of image paths in that directory
 
 echo json_encode($allImages);
-
-
-

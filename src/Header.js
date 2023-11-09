@@ -14,7 +14,7 @@ const Header = () => {
   const handleSearch = (event) => {
     if (event.target.value.trim() === "") {
       setServiceList([]);
-      navigate("/")
+      navigate("/");
       return;
     }
     const searchResult = searchFunction(event.target.value);

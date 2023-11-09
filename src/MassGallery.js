@@ -11,8 +11,6 @@ const MassGallery = ({
     setStartSiderFrom
 }) => {
     //console.log("MASS-GALLERY COMPONENT RE-RENDERED!!!!");
-   console.log("MASS GALLERY: " , allPhotoNames)
-   console.log("MASS GALLERY SEELCTED: " + selected)
     const[photos, setPhotos] = useState([]);
     
     const lang = document.documentElement.lang;

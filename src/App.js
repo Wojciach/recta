@@ -2,21 +2,24 @@ import { Route, Routes } from 'react-router-dom';
 import React, { useState, useRef, useEffect } from 'react';
 import './App.scss';
 
+import HomeScreen from './HomeScreen.js';
+import ServicesScreen from './ServicesScreen.js';
+
 import Header from "./Header.js";
 import Menu from "./Menu.js";
-import Services from "./Services.js";
-import CompanyDescription from './CompanyDescription';
-import Opinions from "./Opinions.js";
-import OurProjects from './OurProjects.js';
-import News from './News.js';
+//import Services from "./Services.js";
+//import CompanyDescription from './CompanyDescription';
+//import Opinions from "./Opinions.js";
+//import OurProjects from './OurProjects.js';
+//import News from './News.js';
 import ContactForm from './ContactForm.js';
 import Map from './Map.js';
 import Footer from './Footer';
-import SerDetails from './SerDetails.js';
-import MassGallery from './MassGallery.js';
+//import SerDetails from './SerDetails.js';
+//import MassGallery from './MassGallery.js';
 import { TopScrollBtn } from './TopScrollBtn.js';
 
-import { ProjectsProvider } from './ProjectsContext';
+//import { ProjectsProvider } from './ProjectsContext';
 import { ImageIndexProvider } from './ImageIndexContext';
 import SliderWindow from './SliderWindow';
 
@@ -40,20 +43,18 @@ function App() {
   }
 
   useEffect(() => {
-    console.log("UUUSEEEEFFECT!!!!");
     fetchPhotos()
       .then(response => response.json())
       .then((data) => {
         setAllPhotoNames(data);
         setIsLoading(false);
-        console.log("allPhotoNames after fetch: ", data);
       })
       .catch((error) => {console.error('Error:', error)});
       setIsLoading(false);
 
   }, []);
 
-  
+  /*
   const HomeScreen = React.memo(() => {
     console.log("HOME_SCREEN COMPONENT RE-RENDERED!!!!");
 
@@ -78,7 +79,8 @@ function App() {
       </ProjectsProvider>
     );
   });
-
+*/
+/*
   const ServicesScreen = React.memo(() => {
     console.log("SERVICE_SCREEN COMPONENT RE-RENDERED!!!!");
 
@@ -97,6 +99,8 @@ function App() {
     );
   });
 
+  */
+
   return (
     <main className="App">
       { sliderWindowActive === false &&
@@ -107,8 +111,28 @@ function App() {
       }
       <ImageIndexProvider>
         <Routes>
-          <Route exact path="/" element={<HomeScreen />} />
-          <Route path="/services" element={<ServicesScreen />} />
+          <Route exact path="/" element={
+            <HomeScreen 
+              selected={selected}
+              selectThis={selectThis}
+              allPhotoNames={allPhotoNames}
+              isLoading={isLoading}
+              refArr={refArr}
+              setSliderWindowActive={setSliderWindowActive}
+              setStartSiderFrom={setStartSiderFrom}
+            />}
+          />
+          <Route path="/services" element={
+            <ServicesScreen
+              selected={selected}
+              selectThis={selectThis}
+              allPhotoNames={allPhotoNames}
+              isLoading={isLoading}
+              refArr={refArr}
+              setSliderWindowActive={setSliderWindowActive}
+              setStartSiderFrom={setStartSiderFrom}
+            />}
+          />
           <Route path="/photo-slider" element={
             <SliderWindow
               allPhotoNames={allPhotoNames}
