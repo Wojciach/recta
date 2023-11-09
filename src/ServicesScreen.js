@@ -7,6 +7,7 @@ import OurProjects from './OurProjects.js';
 import MassGallery from './MassGallery.js';
 
 const ServicesScreen = React.memo(({
+    isLoading,
     allPhotoNames,
     selected,
     setSliderWindowActive,
@@ -16,13 +17,19 @@ const ServicesScreen = React.memo(({
 }) => {
     console.log("SERVICE_SCREEN COMPONENT RE-RENDERED!!!!");
 
+    if (isLoading) {
+      return <div>Loading...</div>;
+    }
+
     return (
       <ProjectsProvider>
         <SerDetails refArr={refArr}/>
         <OurProjects selected={selected} selectThis={selectThis} />
         <MassGallery
+          isLoading={isLoading}
           selected={selected}
-          allPhotoNamess={allPhotoNames}
+          selectThis={selectThis}
+          allPhotoNames={allPhotoNames}
           gallery={selected}
           setSliderWindowActive={setSliderWindowActive}
           setStartSiderFrom={setStartSiderFrom}

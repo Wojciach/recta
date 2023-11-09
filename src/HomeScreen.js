@@ -31,7 +31,9 @@ const HomeScreen = React.memo(({
         <Opinions />
         <OurProjects selected={selected} selectThis={selectThis}/>
         <MassGallery
+          isLoading={isLoading}
           selected={selected}
+          selectThis={selectThis}
           allPhotoNames={allPhotoNames}
           gallery={selected}
           setSliderWindowActive={setSliderWindowActive}

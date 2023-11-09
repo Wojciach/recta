@@ -39,7 +39,7 @@ function App() {
 
   function selectThis(event) {
     setSelected(event.currentTarget.id);
-    console.log("seleccccctorson: " + selected);
+    console.log("seleccccctorson: " + event.currentTarget.id);
   }
 
   useEffect(() => {

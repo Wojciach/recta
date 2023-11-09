@@ -5,12 +5,14 @@ import { bring } from './PhotoContext';
 
 const MassGallery = ({
     allPhotoNames,
+    isLoading,
     selected,
     gallery,
     setSliderWindowActive,
     setStartSiderFrom
 }) => {
     //console.log("MASS-GALLERY COMPONENT RE-RENDERED!!!!");
+    console.log(allPhotoNames);
     const[photos, setPhotos] = useState([]);
     
     const lang = document.documentElement.lang;
@@ -36,10 +38,20 @@ const MassGallery = ({
     };
 
     const photoUrls = photoUrlsArray[gallery];
+
     const [isRolledUp, setIsRolledUp] = useState(false);
     const handleRollUp = () => {
         setIsRolledUp(!isRolledUp);
     }
+
+    useEffect(() => {
+        console.log(allPhotoNames[selected]);
+    }, [allPhotoNames, selected])
+
+    if (isLoading) {
+        return <div>Loading...</div>;
+      }
+
     
     return(
         <section id="massGallery">
@@ -55,7 +67,7 @@ const MassGallery = ({
             )}
             {!isRolledUp && 
                 <div>
-                    {allPhotoNames[selected] && allPhotoNames[selected].map((image, index) => (
+                    {(allPhotoNames[selected]) && allPhotoNames[selected].map((image, index) => (
                         <img
                             onClick={setSlidergallery}
                             data-index={index}
