@@ -11,7 +11,7 @@ const ContactForm = memo(() => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-    
+
         const formData = new FormData(event.target);
         const production = "./php/sendForm.php";
         const development = "http://localhost/recta2/recta2/public/php/sendForm.php";
@@ -29,7 +29,7 @@ const ContactForm = memo(() => {
         })
         .then(data => {
             console.log(data);
-            setAlertStatust('ok');
+            setAlertStatust(data);
             setAlert(true);
         })
         .catch(error => {

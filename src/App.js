@@ -26,10 +26,11 @@ function App() {
   const [sliderWindowActive, setSliderWindowActive] = useState(false);
   const [startSiderFrom, setStartSiderFrom] = useState(0);
 
+  const refArr = useRef([]);
   //where to fetch photos from
-  const imagesFolderDev = "http://localhost/recta2/recta2/public/photos/MassGalleries/";
+ // const imagesFolderDev = "http://localhost/recta2/recta2/public/photos/MassGalleries/";
   const imagesFolderProd = "https://recta.website/photos/MassGalleries/";
-  const baseUrlPhotos = imagesFolderDev;
+  const baseUrlPhotos = imagesFolderProd;
 
   const folderName = {
     gal_1: "Taczow",
@@ -37,8 +38,6 @@ function App() {
     gal_3: "Moniuszki"
   };
   
-  const refArr = useRef([]);
-
   function selectThis(event) {
     setSelected(event.currentTarget.id);
   }
