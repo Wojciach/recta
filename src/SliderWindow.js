@@ -13,16 +13,13 @@ const SliderWindow = memo(({
   setSliderWindowActive,
   startSiderFrom,
   selected,
-  allPhotoNames
+  allPhotoNames,
+  isLoading,
+  baseUrlPhotos,
+  folderName
 }) => {
     const lang = document.documentElement.lang;
     const navigate = useNavigate();
-
-    const folderName = {
-      gal_1: "Taczow",
-      gal_2: "Fundamenty",
-      gal_3: "Moniuszki"
-    };
 
     const CustomPrevArrow = (props) => (
         <button {...props} className="universalBtn custom-prev-arrow">
@@ -74,18 +71,22 @@ const SliderWindow = memo(({
             },
         },
         ], 
-    }; 
+    };
+
+    if (isLoading) {
+      return <div>Loading...</div>;
+  }
 
     return (
         <section id="sliderWindow">
           <h2>{(lang === "pl") ? "Galeria" : "Gallery"}</h2>  
           <button onClick={ () => {setSliderWindowActive(false); navigate('/');}}><MySvg /></button>
             <Slider {...settings}>
-                {(allPhotoNames[selected] !== "undefined") && allPhotoNames[selected].map((image, index) => (
+                {allPhotoNames[selected] && allPhotoNames[selected].map((image, index) => (
                   <div key={index} className='cont'>
                     <img
                       key={index}
-                      src={'http://localhost/recta2/recta2/public/photos/MassGalleries/big/' + folderName[selected] + "/" + allPhotoNames[selected][index]}
+                      src={baseUrlPhotos + "big/" + folderName[selected] + "/" + allPhotoNames[selected][index]}
                       alt={`Image ${image}`} 
                     />
                   </div>

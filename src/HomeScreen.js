@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 
 import { ProjectsProvider } from './ProjectsContext';
 
@@ -16,9 +16,13 @@ const HomeScreen = React.memo(({
     setSliderWindowActive,
     setStartSiderFrom,
     selectThis,
-    refArr
+    refArr,
+    baseUrlPhotos,
+    folderName
 }) => {
    // console.log("HOME_SCREEN COMPONENT RE-RENDERED!!!!");
+
+
 
     if (isLoading) {
       return <div>Loading...</div>;
@@ -35,9 +39,10 @@ const HomeScreen = React.memo(({
           selected={selected}
           selectThis={selectThis}
           allPhotoNames={allPhotoNames}
-          gallery={selected}
           setSliderWindowActive={setSliderWindowActive}
           setStartSiderFrom={setStartSiderFrom}
+          baseUrlPhotos={baseUrlPhotos}
+          folderName={folderName}
         />
         <News />
       </ProjectsProvider>

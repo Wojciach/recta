@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./MassGallery.scss";
-import { bring } from './PhotoContext';
 
 const MassGallery = ({
     allPhotoNames,
     isLoading,
     selected,
-    gallery,
     setSliderWindowActive,
-    setStartSiderFrom
+    setStartSiderFrom,
+    baseUrlPhotos,
+    folderName
 }) => {
     //console.log("MASS-GALLERY COMPONENT RE-RENDERED!!!!");
-    console.log(allPhotoNames);
-    const[photos, setPhotos] = useState([]);
     
     const lang = document.documentElement.lang;
     const navigate = useNavigate();
@@ -23,35 +21,15 @@ const MassGallery = ({
         navigate('/photo-slider');
     }
 
-    const photoUrlsArray = {
-        gal_1: bring("taczow40"), 
-        gal_2: bring("fundamenty40"), 
-        gal_3: bring("moniuszki40")
-    };
-
-    const baseUrlDev = "http://localhost/recta2/recta2/public/photos/MassGalleries/small/";
-
-    const folderName = {
-        gal_1: "Taczow",
-        gal_2: "Fundamenty",
-        gal_3: "Moniuszki"
-    };
-
-    const photoUrls = photoUrlsArray[gallery];
 
     const [isRolledUp, setIsRolledUp] = useState(false);
     const handleRollUp = () => {
         setIsRolledUp(!isRolledUp);
     }
 
-    useEffect(() => {
-        console.log(allPhotoNames[selected]);
-    }, [allPhotoNames, selected])
-
     if (isLoading) {
         return <div>Loading...</div>;
-      }
-
+    }
     
     return(
         <section id="massGallery">
@@ -67,12 +45,12 @@ const MassGallery = ({
             )}
             {!isRolledUp && 
                 <div>
-                    {(allPhotoNames[selected]) && allPhotoNames[selected].map((image, index) => (
+                    {allPhotoNames[selected] && allPhotoNames[selected].map((image, index) => (
                         <img
                             onClick={setSlidergallery}
                             data-index={index}
                             key={index}
-                            src={baseUrlDev + folderName[selected] + "/" + allPhotoNames[selected][index]}
+                            src={baseUrlPhotos + "small/" + folderName[selected] + "/" + image}
                             alt={`Image ${image}`}
                         />
                     ))}

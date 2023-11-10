@@ -12,7 +12,7 @@ class RequestDatabase
         require_once('getIP.php');
         require_once($databasePasses);
         $mysqli = new \mysqli($host, $user, $pass, $db_name);
-        $this->mysqli = $mysqli; //i wonder if i can put new mysqli() here (directly)
+        $this->mysqli = $mysqli;
         $this->ip = getIP();
     }
     public function howManyMessages() 

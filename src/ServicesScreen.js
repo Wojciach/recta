@@ -13,9 +13,11 @@ const ServicesScreen = React.memo(({
     setSliderWindowActive,
     setStartSiderFrom,
     selectThis,
-    refArr
+    refArr,
+    baseUrlPhotos,
+    folderName
 }) => {
-    console.log("SERVICE_SCREEN COMPONENT RE-RENDERED!!!!");
+   // console.log("SERVICE_SCREEN COMPONENT RE-RENDERED!!!!");
 
     if (isLoading) {
       return <div>Loading...</div>;
@@ -30,9 +32,10 @@ const ServicesScreen = React.memo(({
           selected={selected}
           selectThis={selectThis}
           allPhotoNames={allPhotoNames}
-          gallery={selected}
           setSliderWindowActive={setSliderWindowActive}
           setStartSiderFrom={setStartSiderFrom}
+          baseUrlPhotos={baseUrlPhotos}
+          folderName={folderName}
         />
       </ProjectsProvider>
     );

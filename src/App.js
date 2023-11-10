@@ -7,24 +7,14 @@ import ServicesScreen from './ServicesScreen.js';
 
 import Header from "./Header.js";
 import Menu from "./Menu.js";
-//import Services from "./Services.js";
-//import CompanyDescription from './CompanyDescription';
-//import Opinions from "./Opinions.js";
-//import OurProjects from './OurProjects.js';
-//import News from './News.js';
 import ContactForm from './ContactForm.js';
 import Map from './Map.js';
 import Footer from './Footer';
-//import SerDetails from './SerDetails.js';
-//import MassGallery from './MassGallery.js';
-import { TopScrollBtn } from './TopScrollBtn.js';
-
-//import { ProjectsProvider } from './ProjectsContext';
-import { ImageIndexProvider } from './ImageIndexContext';
 import SliderWindow from './SliderWindow';
 
+import { TopScrollBtn } from './TopScrollBtn.js';
+import { ImageIndexProvider } from './ImageIndexContext';
 import { fetchPhotos }from './functions/fetchPhotos.js';
-import { use } from 'i18next';
 
 function App() {
   //console.log("APP COMPONENT RE-RENDERED!!!!");
@@ -35,11 +25,21 @@ function App() {
   const [startSiderFrom, setStartSiderFrom] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
+  //where to fetch photos from
+  const imagesFolderDev = "http://localhost/recta2/recta2/public/photos/MassGalleries/";
+  const imagesFolderProd = "https://recta.website/photos/MassGalleries/";
+  const baseUrlPhotos = imagesFolderDev;
+
+  const folderName = {
+    gal_1: "Taczow",
+    gal_2: "Fundamenty",
+    gal_3: "Moniuszki"
+};
+  
   const refArr = useRef([]);
 
   function selectThis(event) {
     setSelected(event.currentTarget.id);
-    console.log("seleccccctorson: " + event.currentTarget.id);
   }
 
   useEffect(() => {
@@ -54,52 +54,7 @@ function App() {
 
   }, []);
 
-  /*
-  const HomeScreen = React.memo(() => {
-    console.log("HOME_SCREEN COMPONENT RE-RENDERED!!!!");
-
-    if (isLoading) {
-      return <div>Loading...</div>;
-    }
-
-    return (
-      <ProjectsProvider>
-        <Services refArr={refArr}/>
-        <CompanyDescription />
-        <Opinions />
-        <OurProjects selected={selected} selectThis={selectThis}/>
-        <MassGallery
-          selected={selected}
-          allPhotoNames={allPhotoNames}
-          gallery={selected}
-          setSliderWindowActive={setSliderWindowActive}
-          setStartSiderFrom={setStartSiderFrom}
-        />
-        <News />
-      </ProjectsProvider>
-    );
-  });
-*/
-/*
-  const ServicesScreen = React.memo(() => {
-    console.log("SERVICE_SCREEN COMPONENT RE-RENDERED!!!!");
-
-    return (
-      <ProjectsProvider>
-        <SerDetails refArr={refArr}/>
-        <OurProjects selected={selected} selectThis={selectThis} />
-        <MassGallery
-          selected={selected}
-          allPhotoNamess={allPhotoNames}
-          gallery={selected}
-          setSliderWindowActive={setSliderWindowActive}
-          setStartSiderFrom={setStartSiderFrom}
-        />
-      </ProjectsProvider>
-    );
-  });
-
-  */
+  console.log(allPhotoNames[selected]);
 
   return (
     <main className="App">
@@ -120,6 +75,8 @@ function App() {
               refArr={refArr}
               setSliderWindowActive={setSliderWindowActive}
               setStartSiderFrom={setStartSiderFrom}
+              baseUrlPhotos={baseUrlPhotos}
+              folderName={folderName}
             />}
           />
           <Route path="/services" element={
@@ -131,14 +88,19 @@ function App() {
               refArr={refArr}
               setSliderWindowActive={setSliderWindowActive}
               setStartSiderFrom={setStartSiderFrom}
+              baseUrlPhotos={baseUrlPhotos}
+              folderName={folderName}
             />}
           />
           <Route path="/photo-slider" element={
             <SliderWindow
+              selected={selected}
               allPhotoNames={allPhotoNames}
+              isLoading={isLoading}
               setSliderWindowActive={setSliderWindowActive}
               startSiderFrom={startSiderFrom}
-              selected={selected}
+              baseUrlPhotos={baseUrlPhotos}
+              folderName={folderName}
             />
           }/>
         </Routes>
