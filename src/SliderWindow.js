@@ -1,4 +1,4 @@
-import React, { memo, useState, useEffect } from 'react';
+import React, { memo, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import "./SliderWindow.scss";
@@ -7,17 +7,21 @@ import 'slick-carousel/slick/slick-theme.css';
 import { ReactComponent as ButtonSvg } from './buttons/button2.svg';
 import './buttons/Button.scss';
 
+import { UserContext } from './App';
+
 import { ReactComponent as MySvg } from './svg/dor/X.svg';
 
-const SliderWindow = memo(({
-  setSliderWindowActive,
-  startSiderFrom,
-  selected,
-  allPhotoNames,
-  isLoading,
-  baseUrlPhotos,
-  folderName
-}) => {
+const SliderWindow = memo(() => {
+
+  const {
+    setSliderWindowActive,
+    startSiderFrom,
+    selected,
+    allPhotoNames,
+    baseUrlPhotos,
+    folderName
+  } = useContext(UserContext);
+
     const lang = document.documentElement.lang;
     const navigate = useNavigate();
 
@@ -72,10 +76,6 @@ const SliderWindow = memo(({
         },
         ], 
     };
-
-    if (isLoading) {
-      return <div>Loading...</div>;
-  }
 
     return (
         <section id="sliderWindow">

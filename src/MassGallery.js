@@ -1,17 +1,20 @@
-import React, { useState} from 'react';
+import React, { useContext, createContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./MassGallery.scss";
-
-const MassGallery = ({
-    allPhotoNames,
-    isLoading,
-    selected,
-    setSliderWindowActive,
-    setStartSiderFrom,
-    baseUrlPhotos,
-    folderName
-}) => {
+import { UserContext } from './App.js';
+const MassGallery = () => {
     //console.log("MASS-GALLERY COMPONENT RE-RENDERED!!!!");
+
+    const {
+        selected,
+        allPhotoNames,
+        setSliderWindowActive,
+        setStartSiderFrom,
+        baseUrlPhotos,
+        folderName
+    } = useContext(UserContext);
+
+    console.log(allPhotoNames);
     
     const lang = document.documentElement.lang;
     const navigate = useNavigate();
@@ -25,10 +28,6 @@ const MassGallery = ({
     const [isRolledUp, setIsRolledUp] = useState(false);
     const handleRollUp = () => {
         setIsRolledUp(!isRolledUp);
-    }
-
-    if (isLoading) {
-        return <div>Loading...</div>;
     }
     
     return(

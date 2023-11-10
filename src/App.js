@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, createContext } from 'react';
 import './App.scss';
 
 import HomeScreen from './HomeScreen.js';
@@ -13,8 +13,9 @@ import Footer from './Footer';
 import SliderWindow from './SliderWindow';
 
 import { TopScrollBtn } from './TopScrollBtn.js';
-import { ImageIndexProvider } from './ImageIndexContext';
 import { fetchPhotos }from './functions/fetchPhotos.js';
+
+export const UserContext = createContext();
 
 function App() {
   //console.log("APP COMPONENT RE-RENDERED!!!!");
@@ -23,7 +24,6 @@ function App() {
   const [allPhotoNames, setAllPhotoNames] = useState({o: "o"});
   const [sliderWindowActive, setSliderWindowActive] = useState(false);
   const [startSiderFrom, setStartSiderFrom] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
 
   //where to fetch photos from
   const imagesFolderDev = "http://localhost/recta2/recta2/public/photos/MassGalleries/";
@@ -47,16 +47,24 @@ function App() {
       .then(response => response.json())
       .then((data) => {
         setAllPhotoNames(data);
-        setIsLoading(false);
       })
       .catch((error) => {console.error('Error:', error)});
-      setIsLoading(false);
-
   }, []);
 
-  console.log(allPhotoNames[selected]);
-
   return (
+    <UserContext.Provider 
+      value={{
+        selected,
+        setSelected,
+        allPhotoNames,
+        startSiderFrom,
+        setStartSiderFrom,
+        baseUrlPhotos,
+        folderName,
+        setSliderWindowActive,
+        selectThis
+
+      }}>
     <main className="App">
       { sliderWindowActive === false &&
           <header>
@@ -64,58 +72,28 @@ function App() {
             <Header />
           </header> 
       }
-      <ImageIndexProvider>
         <Routes>
           <Route exact path="/" element={
-            <HomeScreen 
-              selected={selected}
-              selectThis={selectThis}
-              allPhotoNames={allPhotoNames}
-              isLoading={isLoading}
-              refArr={refArr}
-              setSliderWindowActive={setSliderWindowActive}
-              setStartSiderFrom={setStartSiderFrom}
-              baseUrlPhotos={baseUrlPhotos}
-              folderName={folderName}
-            />}
+            <HomeScreen refArr={refArr} />}
           />
           <Route path="/services" element={
-            <ServicesScreen
-              selected={selected}
-              selectThis={selectThis}
-              allPhotoNames={allPhotoNames}
-              isLoading={isLoading}
-              refArr={refArr}
-              setSliderWindowActive={setSliderWindowActive}
-              setStartSiderFrom={setStartSiderFrom}
-              baseUrlPhotos={baseUrlPhotos}
-              folderName={folderName}
-            />}
+            <ServicesScreen refArr={refArr} />}
           />
           <Route path="/photo-slider" element={
-            <SliderWindow
-              selected={selected}
-              allPhotoNames={allPhotoNames}
-              isLoading={isLoading}
-              setSliderWindowActive={setSliderWindowActive}
-              startSiderFrom={startSiderFrom}
-              baseUrlPhotos={baseUrlPhotos}
-              folderName={folderName}
-            />
+            <SliderWindow />
           }/>
         </Routes>
-      </ImageIndexProvider>
-      
-      { sliderWindowActive === false && <ContactForm /> }
-      { sliderWindowActive === false && <Map /> }
+        { sliderWindowActive === false && <ContactForm /> }
+        { sliderWindowActive === false && <Map /> }
 
-      { sliderWindowActive === false &&
-        <footer>
-          <Footer />
-        </footer> 
-      }
-      <TopScrollBtn />
+        { sliderWindowActive === false &&
+          <footer>
+            <Footer />
+          </footer> 
+        }
+        <TopScrollBtn />
     </main>
+    </UserContext.Provider>
   );
 }
 
