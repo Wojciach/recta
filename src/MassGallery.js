@@ -13,8 +13,6 @@ const MassGallery = () => {
         baseUrlPhotos,
         folderName
     } = useContext(UserContext);
-
-    console.log(allPhotoNames);
     
     const lang = document.documentElement.lang;
     const navigate = useNavigate();

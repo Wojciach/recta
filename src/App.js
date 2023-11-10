@@ -13,7 +13,8 @@ import Footer from './Footer';
 import SliderWindow from './SliderWindow';
 
 import { TopScrollBtn } from './TopScrollBtn.js';
-import { fetchPhotos }from './functions/fetchPhotos.js';
+
+import useCustomFetch from './functions/useCustomFerch.js';
 
 export const UserContext = createContext();
 
@@ -21,7 +22,7 @@ function App() {
   //console.log("APP COMPONENT RE-RENDERED!!!!");
 
   const [selected, setSelected] = useState('gal_1');
-  const [allPhotoNames, setAllPhotoNames] = useState({o: "o"});
+  const [allPhotoNames, setAllPhotoNames] = useState({test: "test"});
   const [sliderWindowActive, setSliderWindowActive] = useState(false);
   const [startSiderFrom, setStartSiderFrom] = useState(0);
 
@@ -34,7 +35,7 @@ function App() {
     gal_1: "Taczow",
     gal_2: "Fundamenty",
     gal_3: "Moniuszki"
-};
+  };
   
   const refArr = useRef([]);
 
@@ -42,14 +43,12 @@ function App() {
     setSelected(event.currentTarget.id);
   }
 
+  const data = useCustomFetch();
   useEffect(() => {
-    fetchPhotos()
-      .then(response => response.json())
-      .then((data) => {
-        setAllPhotoNames(data);
-      })
-      .catch((error) => {console.error('Error:', error)});
-  }, []);
+    if(data !== null) {
+      setAllPhotoNames(data);
+    }
+  }, [data]);
 
   return (
     <UserContext.Provider 
