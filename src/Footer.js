@@ -1,16 +1,25 @@
 import "./Footer.scss";
-import { memo } from "react";
-import  {mItems, wyceny} from "./functions/navData.js";
+import { memo, useState } from "react";
+import  {mItems, mItems2} from "./functionsAndData/navData.js";
 import twatter_icon from "./svg/dor/twatter_icon.svg";
 import fb_icon from "./svg/dor/fb_icon.svg";
 import linkedin_icon from "./svg/dor/linkedin_icon.svg";
 import messenger_icon from "./svg/dor/messenger_icon.svg";
 import whatsapp_icon from "./svg/dor/whatsapp_icon.svg";
 
+import CustomAlert from "./CustomAlert";
+
 const Footer = memo(() => {
     //console.log("FOOTER COMPONENT RE-RENDERED!!!!");
 
     const lang = document.documentElement.lang;
+    const [alert, setAlert] = useState(false);
+    const [alertStatus, setAlertStatust] = useState('ok');
+
+    const handleAlert = () => {
+        setAlertStatust('underConstruction');
+        setAlert(true);
+    }
 
     return (
         <section id="footer">
@@ -25,9 +34,28 @@ const Footer = memo(() => {
                         </nav>
                         <nav>
                             <ul>
-                                {wyceny}
-                                <li>{(lang === "pl") ? "Polityka Prywatności" : "Privacy Policy"}</li>
-                                <li>FAQ</li>
+                                {mItems2}
+                                {(lang === "pl") && (
+                                    <li>
+                                        <a 
+                                            href={"https://recta.website/privacyPolicyPL.html"}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            >Polityka Prywatności
+                                        </a>
+                                    </li>
+                                )}
+                                {(lang === "en") && (
+                                    <li>
+                                        <a
+                                            href={"https://recta.website/privacyPolicyEN.html"}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            >Privacy Policy
+                                        </a>
+                                    </li>
+                                )}
+                                <li onClick={handleAlert}>FAQ</li>
                             </ul>
                         </nav>
                     </div>
@@ -57,6 +85,7 @@ const Footer = memo(() => {
                     </div>
                 </div>
             </div>
+            {alert && <CustomAlert setAlert={setAlert} alertStatus={alertStatus}/>}
         </section>
     )
 })

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.scss";
-import searchFunction from "./functions/searchFunction.js";
-import scrollTo from "./functions/scrollTo";
+import searchFunction from "./functionsAndData/searchFunction.js";
+import scrollTo from "./functionsAndData/scrollTo";
 
 const Header = () => {
   //console.log("HEADER COMPONENT RE-RENDERED!!!!");
@@ -14,7 +14,7 @@ const Header = () => {
   const handleSearch = (event) => {
     if (event.target.value.trim() === "") {
       setServiceList([]);
-      navigate("/")
+      navigate("/");
       return;
     }
     const searchResult = searchFunction(event.target.value);

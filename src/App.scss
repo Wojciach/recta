@@ -63,3 +63,20 @@
     }
   }
 }
+
+body, html, main {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: 360px !important;
+}
+
+header {
+  width: 100%;
+  display: flex;
+ // align-content: center;
+  //align-items: center;
+  justify-content: center;
+  min-width: 360px !important;
+}

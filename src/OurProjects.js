@@ -1,18 +1,25 @@
-import React, { memo } from 'react';
+import React, { memo, useContext } from 'react';
 import Slider from 'react-slick';
 import "./OurProjects.scss";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ReactComponent as ButtonSvg } from './buttons/button2.svg';
+import { UserContext } from './App';
 import './buttons/Button.scss';
 import photo1 from "./photos/MassGalleries/Fundamenty40/20221027_142832.jpg";
 import photo2 from "./photos/MassGalleries/Moniuszki40/20220617_163422.jpg";
 import photo3 from "./photos/MassGalleries/Taczow40/20200529_170847.jpg";
 
-const OurProjects = memo( ({selected, selectThis}) => {
+const OurProjects = memo(() => {
   //console.log("OUR-PROJECTS COMPONENT RE-RENDERED!!!!");
 
   const lang = document.documentElement.lang;
+
+  const {
+    selected,
+    selectThis
+  } = useContext(UserContext);
+  
   
   const CustomPrevArrow = (props) => (
     <button {...props} className="universalBtn custom-prev-arrow">

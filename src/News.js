@@ -1,7 +1,7 @@
 import "./News.scss";
 
-import newsDataEN from "./functions/newsDataEN";
-import newsDataPL from "./functions/newsDataPL";
+import newsDataEN from "./functionsAndData/newsDataEN";
+import newsDataPL from "./functionsAndData/newsDataPL";
 
 
 

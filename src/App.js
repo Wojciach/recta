@@ -1,68 +1,68 @@
 import { Route, Routes } from 'react-router-dom';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect, createContext } from 'react';
 import './App.scss';
+
+import HomeScreen from './HomeScreen.js';
+import ServicesScreen from './ServicesScreen.js';
 
 import Header from "./Header.js";
 import Menu from "./Menu.js";
-import Services from "./Services.js";
-import CompanyDescription from './CompanyDescription';
-import Opinions from "./Opinions.js";
-import OurProjects from './OurProjects.js';
-import News from './News.js';
 import ContactForm from './ContactForm.js';
 import Map from './Map.js';
 import Footer from './Footer';
-import SerDetails from './SerDetails.js';
-import MassGallery from './MassGallery';
-import { TopScrollBtn } from './TopScrollBtn.js';
-
-import { ProjectsProvider } from './ProjectsContext';
-import { ImageIndexProvider } from './ImageIndexContext';
 import SliderWindow from './SliderWindow';
 
+import { TopScrollBtn } from './TopScrollBtn.js';
 
+import useCustomFetch from './functionsAndData/useCustomFerch.js';
+
+export const UserContext = createContext();
 
 function App() {
   //console.log("APP COMPONENT RE-RENDERED!!!!");
 
   const [selected, setSelected] = useState('gal_1');
+  const [allPhotoNames, setAllPhotoNames] = useState({test: "test"});
   const [sliderWindowActive, setSliderWindowActive] = useState(false);
   const [startSiderFrom, setStartSiderFrom] = useState(0);
 
   const refArr = useRef([]);
+  //where to fetch photos from
+ // const imagesFolderDev = "http://localhost/recta2/recta2/public/photos/MassGalleries/";
+  const imagesFolderProd = "https://recta.website/photos/MassGalleries/";
+  const baseUrlPhotos = imagesFolderProd;
 
+  const folderName = {
+    gal_1: "Taczow",
+    gal_2: "Fundamenty",
+    gal_3: "Moniuszki"
+  };
+  
   function selectThis(event) {
     setSelected(event.currentTarget.id);
   }
-  
-  const HomeScreen = React.memo(() => {
-    console.log("HOME_SCREEN COMPONENT RE-RENDERED!!!!");
 
-    return (
-      <ProjectsProvider>
-        <Services refArr={refArr}/>
-        <CompanyDescription />
-        <Opinions />
-        <OurProjects selected={selected} selectThis={selectThis}/>
-        <MassGallery gallery={selected} setSliderWindowActive={setSliderWindowActive} setStartSiderFrom={setStartSiderFrom} />
-        <News />
-      </ProjectsProvider>
-    );
-  });
-
-  const ServicesScreen = React.memo(() => {
-    console.log("SERVICE_SCREEN COMPONENT RE-RENDERED!!!!");
-
-    return (
-      <ProjectsProvider>
-        <SerDetails refArr={refArr}/>
-        <OurProjects selected={selected} selectThis={selectThis} />
-        <MassGallery gallery={selected} setSliderWindowActive={setSliderWindowActive} setStartSiderFrom={setStartSiderFrom} />
-      </ProjectsProvider>
-    );
-  });
+  const data = useCustomFetch();
+  useEffect(() => {
+    if(data !== null) {
+      setAllPhotoNames(data);
+    }
+  }, [data]);
 
   return (
+    <UserContext.Provider 
+      value={{
+        selected,
+        setSelected,
+        allPhotoNames,
+        startSiderFrom,
+        setStartSiderFrom,
+        baseUrlPhotos,
+        folderName,
+        setSliderWindowActive,
+        selectThis
+
+      }}>
     <main className="App">
       { sliderWindowActive === false &&
           <header>
@@ -70,24 +70,28 @@ function App() {
             <Header />
           </header> 
       }
-      <ImageIndexProvider>
         <Routes>
-          <Route exact path="/" element={<HomeScreen />} />
-          <Route path="/services" element={<ServicesScreen />} />
-          <Route path="/photo-slider" element={<SliderWindow setSliderWindowActive={setSliderWindowActive} startSiderFrom={startSiderFrom} selected={selected} />} />
+          <Route exact path="/" element={
+            <HomeScreen refArr={refArr} />}
+          />
+          <Route path="/services" element={
+            <ServicesScreen refArr={refArr} />}
+          />
+          <Route path="/photo-slider" element={
+            <SliderWindow />
+          }/>
         </Routes>
-      </ImageIndexProvider>
-      
-      { sliderWindowActive === false && <ContactForm /> }
-      { sliderWindowActive === false && <Map /> }
+        { sliderWindowActive === false && <ContactForm /> }
+        { sliderWindowActive === false && <Map /> }
 
-      { sliderWindowActive === false &&
-        <footer>
-          <Footer />
-        </footer> 
-      }
-      <TopScrollBtn />
+        { sliderWindowActive === false &&
+          <footer>
+            <Footer />
+          </footer> 
+        }
+        <TopScrollBtn />
     </main>
+    </UserContext.Provider>
   );
 }
 

@@ -1,11 +1,11 @@
 import React  from 'react';
 import { Link } from "react-router-dom";
 import "./Services.scss";
-import ofertaPL from "./functions/ofertaPL.js";
-import ofertaEN from "./functions/ofertaEN.js";
-import icons from "./functions/servicesIcons";
-import { serTitPL, serDescPL, serHashPL } from "./functions/servicesDataPL";
-import { serTitEN, serDescEN, serHashEN } from "./functions/servicesDataEN";
+import ofertaPL from "./functionsAndData/ofertaPL.js";
+import ofertaEN from "./functionsAndData/ofertaEN.js";
+import icons from "./functionsAndData/servicesIcons";
+import { serTitPL, serDescPL, serHashPL } from "./functionsAndData/servicesDataPL";
+import { serTitEN, serDescEN, serHashEN } from "./functionsAndData/servicesDataEN";
 import {ReactComponent as Decor } from "./svg/dor/btnR.svg";
 
 function Services({refArr}) {
@@ -31,19 +31,19 @@ function Services({refArr}) {
       <section id="services">
         <div className="sBackground"></div>
         <div id="servicesList">
-              {oferta.map((item, index)=>{
-                const Icon = icons[index];
-                  return (
-                    <Link to={`/services/#${serHash[index]}`} key={index} onClick={()=>{scrollToRef(index)}}>
-                      <div className='serviceItem'>
-                        <div className='serviceIcon'> <Icon /> </div>
-                        <h5> {serTit[index]}  </h5>
-                        <p>{serDesc[index]}</p>
-                        <div className='decor'> <Decor /> </div>
-                      </div>
-                    </Link>
-                  )
-              })}
+          {oferta.map((item, index)=>{
+            const Icon = icons[index];
+              return (
+                <Link to={`/services/#${serHash[index]}`} key={index} onClick={()=>{scrollToRef(index)}}>
+                  <div className='serviceItem'>
+                    <div className='serviceIcon'> <Icon /> </div>
+                    <h5> {serTit[index]}  </h5>
+                    <p>{serDesc[index]}</p>
+                    <div className='decor'> <Decor /> </div>
+                  </div>
+                </Link>
+              )
+          })}
         </div>
       </section>
     );

@@ -1,29 +1,29 @@
-import React, { memo } from 'react';
+import React, { memo, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
-import { bring } from "./PhotoContext.js";
 import "./SliderWindow.scss";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { ReactComponent as ButtonSvg } from './buttons/button2.svg';
 import './buttons/Button.scss';
 
+import { UserContext } from './App';
+
 import { ReactComponent as MySvg } from './svg/dor/X.svg';
 
-const SliderWindow = memo( (props) => {
+const SliderWindow = memo(() => {
+
+  const {
+    setSliderWindowActive,
+    startSiderFrom,
+    selected,
+    allPhotoNames,
+    baseUrlPhotos,
+    folderName
+  } = useContext(UserContext);
+
     const lang = document.documentElement.lang;
     const navigate = useNavigate();
-    const setSliderWindowActive = props.setSliderWindowActive;
-    const startSiderFrom = props.startSiderFrom;
-    const selected = props.selected;
-
-    const photoUrlsArray = {
-        gal_1: bring("taczow"), 
-        gal_2: bring("fundamenty"), 
-        gal_3: bring("moniuszki")
-    };
-
-    const photoUrls = photoUrlsArray[selected];
 
     const CustomPrevArrow = (props) => (
         <button {...props} className="universalBtn custom-prev-arrow">
@@ -31,15 +31,15 @@ const SliderWindow = memo( (props) => {
             <ButtonSvg />
           </div>
         </button>
-      );
+    );
     
-      const CustomNextArrow = (props) => (
-        <button {...props} className="universalBtn custom-next-arrow">
-          <div style={{transform: 'rotate(180deg)'}}>
-            <ButtonSvg />
-          </div>
-        </button>
-      );
+    const CustomNextArrow = (props) => (
+      <button {...props} className="universalBtn custom-next-arrow">
+        <div style={{transform: 'rotate(180deg)'}}>
+          <ButtonSvg />
+        </div>
+      </button>
+    );
 
     const settings = {
         dots: true,
@@ -75,15 +75,21 @@ const SliderWindow = memo( (props) => {
             },
         },
         ], 
-    }; 
+    };
 
     return (
         <section id="sliderWindow">
           <h2>{(lang === "pl") ? "Galeria" : "Gallery"}</h2>  
           <button onClick={ () => {setSliderWindowActive(false); navigate('/');}}><MySvg /></button>
             <Slider {...settings}>
-                {photoUrls.map((image, index) => (
-                    <div className='cont'><img key={index} src={photoUrls[index]} alt={`Image ${image}`} /></div>
+                {allPhotoNames[selected] && allPhotoNames[selected].map((image, index) => (
+                  <div key={index} className='cont'>
+                    <img
+                      key={index}
+                      src={baseUrlPhotos + "big/" + folderName[selected] + "/" + allPhotoNames[selected][index]}
+                      alt={`Image ${image}`} 
+                    />
+                  </div>
                 ))}
             </Slider>
         </section>

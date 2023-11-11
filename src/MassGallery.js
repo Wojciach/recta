@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, createContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./MassGallery.scss";
-import { bring } from './PhotoContext';
-
-const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
+import { UserContext } from './App.js';
+const MassGallery = () => {
     //console.log("MASS-GALLERY COMPONENT RE-RENDERED!!!!");
+
+    const {
+        selected,
+        allPhotoNames,
+        setSliderWindowActive,
+        setStartSiderFrom,
+        baseUrlPhotos,
+        folderName
+    } = useContext(UserContext);
     
     const lang = document.documentElement.lang;
     const navigate = useNavigate();
@@ -14,13 +22,7 @@ const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
         navigate('/photo-slider');
     }
 
-    const photoUrlsArray = {
-        gal_1: bring("taczow40"), 
-        gal_2: bring("fundamenty40"), 
-        gal_3: bring("moniuszki40")
-    };
 
-    const photoUrls = photoUrlsArray[gallery];
     const [isRolledUp, setIsRolledUp] = useState(false);
     const handleRollUp = () => {
         setIsRolledUp(!isRolledUp);
@@ -40,12 +42,12 @@ const MassGallery = ({gallery, setSliderWindowActive, setStartSiderFrom}) => {
             )}
             {!isRolledUp && 
                 <div>
-                    {photoUrls.map((image, index) => (
+                    {allPhotoNames[selected] && allPhotoNames[selected].map((image, index) => (
                         <img
                             onClick={setSlidergallery}
                             data-index={index}
                             key={index}
-                            src={photoUrls[index]}
+                            src={baseUrlPhotos + "small/" + folderName[selected] + "/" + image}
                             alt={`Image ${image}`}
                         />
                     ))}

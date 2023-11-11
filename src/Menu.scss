@@ -2,12 +2,14 @@
 
 section#menu {
     position: absolute;
+    width: 80%;
+    min-width: 360px !important;
     margin-top: 14px;
     display: flex;
     align-content: center;
     align-items: center;
     justify-items: center;
-    justify-content: center;
+   // justify-content: space-between;
     text-transform: uppercase;
     color: $orange-1;
     font-weight: 400;
@@ -15,8 +17,9 @@ section#menu {
     nav {
         position: relative;
         display: flex;
+        justify-content: space-between;
         flex-direction: column;
-        width: 80%;
+        width: 100%;
         .topRow {
             display: flex;
             flex-direction: row;
@@ -70,6 +73,9 @@ section#menu {
             border-top: 2px solid $orange-1;
             li {
                 width: 100px;
+              //  display: flex;
+              //  align-self: center;
+              //  justify-self: center;
                 a {
                     position: relative;
                     display: block;
