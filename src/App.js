@@ -14,7 +14,7 @@ import SliderWindow from './SliderWindow';
 
 import { TopScrollBtn } from './TopScrollBtn.js';
 
-import useCustomFetch from './functions/useCustomFerch.js';
+import useCustomFetch from './functionsAndData/useCustomFerch.js';
 
 export const UserContext = createContext();
 

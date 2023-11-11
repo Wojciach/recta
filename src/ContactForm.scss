@@ -70,6 +70,15 @@ section#contactForm {
                             font-size: 0.6em;
                             display: flex;
                             flex-direction: row;
+                            >p > a {
+                                color: $orange-5;
+                                text-decoration: none;
+                                padding-left: 3px;
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            
+                            }
                         }
                         >button {
                             cursor: pointer;

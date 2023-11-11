@@ -1,10 +1,10 @@
 import { memo } from "react";
 import "./SerDetails.scss";
-import icons from "./functions/servicesIcons";
-import { serTitPL, serDescPL, serBulletsPL, serHashPL } from "./functions/servicesDataPL";
-import { serTitEN, serDescEN, serBulletsEN, serHashEN } from "./functions/servicesDataEN";
-import hashtagsPL from "./functions/hashtagsPL";
-import hashtagsEN from "./functions/hashtagsEN";
+import icons from "./functionsAndData/servicesIcons";
+import { serTitPL, serDescPL, serBulletsPL, serHashPL } from "./functionsAndData/servicesDataPL";
+import { serTitEN, serDescEN, serBulletsEN, serHashEN } from "./functionsAndData/servicesDataEN";
+import hashtagsPL from "./functionsAndData/hashtagsPL";
+import hashtagsEN from "./functionsAndData/hashtagsEN";
 
 const SerDetails = memo(({refArr}) => {
     //console.log("SER_DETAILS COMPONENT RE-RENDERED!!!!");

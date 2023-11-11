@@ -82,12 +82,26 @@ const ContactForm = memo(() => {
                                     <input type="checkbox" required/>
                                     {(lang === "pl") && (
                                         <p>
-                                            Dane wpisane w formularzu kontaktowym będą przetwarzane w celu udzielenia odpowiedzi na przesłane zapytanie zgodnie z naszą Polityką Prywatności.
+                                            Dane wpisane w formularzu kontaktowym będą przetwarzane w celu udzielenia odpowiedzi na przesłane zapytanie zgodnie z naszą 
+                                            <a
+                                                href={"https://recta.website/privacyPolicyPL.html"}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                             Polityką Prywatności.
+                                            </a>
                                         </p>
                                     )}
                                     {(lang === "en") && (
                                         <p>
-                                            The data entered in the contact form will be processed to provide a response to the submitted inquiry in accordance with our Privacy Policy.
+                                            The data entered in the contact form will be processed to provide a response to the submitted inquiry in accordance with our 
+                                            <a
+                                                href={"https://recta.website/privacyPolicyEN.html"}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                             Privacy Policy.
+                                            </a>
                                         </p>
                                     )}
                                 </div>

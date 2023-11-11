@@ -1,11 +1,11 @@
 import React  from 'react';
 import { Link } from "react-router-dom";
 import "./Services.scss";
-import ofertaPL from "./functions/ofertaPL.js";
-import ofertaEN from "./functions/ofertaEN.js";
-import icons from "./functions/servicesIcons";
-import { serTitPL, serDescPL, serHashPL } from "./functions/servicesDataPL";
-import { serTitEN, serDescEN, serHashEN } from "./functions/servicesDataEN";
+import ofertaPL from "./functionsAndData/ofertaPL.js";
+import ofertaEN from "./functionsAndData/ofertaEN.js";
+import icons from "./functionsAndData/servicesIcons";
+import { serTitPL, serDescPL, serHashPL } from "./functionsAndData/servicesDataPL";
+import { serTitEN, serDescEN, serHashEN } from "./functionsAndData/servicesDataEN";
 import {ReactComponent as Decor } from "./svg/dor/btnR.svg";
 
 function Services({refArr}) {

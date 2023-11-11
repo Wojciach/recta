@@ -2,6 +2,7 @@
 
 section#header {
     position: relative;
+    width: 100%;
     @include flexCenter;
     margin: 0;
     height: 450px;
@@ -9,6 +10,7 @@ section#header {
     .st2{color:$orange-1;}
     >div#slogan {
         position: relative;
+        width: 90%;
         margin: 20px;
         font-size: 1.4em;
         font-family: 'Bitter', serif;
