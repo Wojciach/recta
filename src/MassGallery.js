@@ -22,7 +22,6 @@ const MassGallery = () => {
         navigate('/photo-slider');
     }
 
-
     const [isRolledUp, setIsRolledUp] = useState(false);
     const handleRollUp = () => {
         setIsRolledUp(!isRolledUp);
