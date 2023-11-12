@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 
 const useCustomFetch = () => {
 
-    const production = 'https://www.recta.website/php/getImagesURLs.php';
-    const development = 'http://localhost/recta2/recta2/public/php/getImagesURLs.php';
+    //const developmentAddress = 'http://localhost/recta2/recta2/public/php/getImagesURLs.php';
+    const productionAddress = 'https://www.recta.website/php/getImagesURLs.php';
 
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        fetch(development, {
+        fetch(productionAddress, {
             method: 'POST',
             mode: 'cors',
             cache: 'no-store',

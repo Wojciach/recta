@@ -13,10 +13,9 @@ const ContactForm = memo(() => {
         event.preventDefault();
 
         const formData = new FormData(event.target);
-        const production = "./php/sendForm.php";
-        const development = "http://localhost/recta2/recta2/public/php/sendForm.php";
-        const experiment = "https://www.recta.website/newphp/php/sendForm.php";
-        fetch(experiment, {
+      //const developmentAddress = "http://localhost/recta2/recta2/public/php/sendForm.php";
+        const productionAddress = "https://www.recta.website/php/sendForm.php";
+        fetch(productionAddress, {
           method: 'POST',
           body: formData
         })
@@ -28,12 +27,12 @@ const ContactForm = memo(() => {
             return response.text();
         })
         .then(data => {
-            console.log(data);
+           // console.log(data);
             setAlertStatust(data);
             setAlert(true);
         })
         .catch(error => {
-            console.log(error);
+          //  console.log(error);
             setAlertStatust('error');
             setAlert(true);
         });

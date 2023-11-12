@@ -13,7 +13,8 @@ use Wojciach\Wojciach\PHPMailerEmail;
 use Wojciach\Wojciach\RequestDatabase;
 use Wojciach\Wojciach\EmailBody;
 
-$RequestDatabase = new RequestDatabase("db_passDev.php");
+try {
+$RequestDatabase = new RequestDatabase("./passes/db_passProd.php");
 
 if($RequestDatabase->howManyMessages() >= 5) {
   echo 'tooMany';
@@ -34,3 +35,7 @@ if($RequestDatabase->howManyMessages() < 5) {
   exit();
 }
 $RequestDatabase->close();
+} catch (Exception $e) {
+ // echo 'An error occurred: ' . $e->getMessage();
+ echo 'error';
+}

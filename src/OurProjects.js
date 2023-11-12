@@ -6,9 +6,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import { ReactComponent as ButtonSvg } from './buttons/button2.svg';
 import { UserContext } from './App';
 import './buttons/Button.scss';
-import photo1 from "./photos/MassGalleries/Fundamenty40/20221027_142832.jpg";
-import photo2 from "./photos/MassGalleries/Moniuszki40/20220617_163422.jpg";
-import photo3 from "./photos/MassGalleries/Taczow40/20200529_170847.jpg";
 
 const OurProjects = memo(() => {
   //console.log("OUR-PROJECTS COMPONENT RE-RENDERED!!!!");
@@ -78,7 +75,7 @@ const settings = {
               <div id='gal_1' className={`my-div ${"gal_1" === selected ? 'selected' : ''}`} 
                     onClick={selectThis}>
                   <div className='tint'>
-                    <img src={photo1} alt="Image 1" />
+                    <img src="https://recta.website/photos/MassGalleries/small/Fundamenty/20221027_142832.jpg" alt="Image 1" />
                     <div className='overlay'></div>
                   </div>
                   <h4>{(lang === "pl") ? "Budowa Taczów" : "Taczów Construction"}</h4>
@@ -86,7 +83,7 @@ const settings = {
               <div id='gal_2' className={`my-div ${"gal_2" === selected ? 'selected' : ''}`} 
                     onClick={selectThis}>
                   <div className='tint'>
-                    <img src={photo2} alt="Image 2" />
+                    <img src="https://recta.website/photos/MassGalleries/small/Moniuszki/20220617_163422.jpg" alt="Image 2" />
                     <div className='overlay'></div>
                   </div>
                   <h4>{(lang === "pl") ? "Fundamenty" : "Foundations"}</h4>
@@ -94,7 +91,7 @@ const settings = {
               <div id='gal_3' className={`my-div ${"gal_3" === selected ? 'selected' : ''}`} 
                     onClick={selectThis}>
                   <div className='tint'>
-                    <img src={photo3} alt="Image 3" />
+                    <img src="https://recta.website/photos/MassGalleries/small/Taczow/20200529_170847.jpg" alt="Image 3" />
                     <div className='overlay'></div>
                   </div>
                   <h4>{(lang === "pl") ? "Budowa Moniuszki" : "Moniuszki Construction"}</h4>
