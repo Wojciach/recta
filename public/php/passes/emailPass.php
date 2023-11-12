@@ -1,6 +1,6 @@
 <?php
 $eHost = 'smtp.hostinger.com';
 $eUserName ='formularz@recta.website';
-$ePassword ='5Vx$Zv5?zAH@#nc';
+$ePassword ='%PRp?fvDvHJ4863';
 //verify_peer_name must be set to false for local dev and true for production
-$verify_peer = false;
+$verify_peer = true;
