@@ -54,6 +54,7 @@ const SliderWindow = memo(() => {
         centerMode: true,
         centerPadding: '0px',
         adaptiveHeight: true,
+        lazyLoad: 'progressive',
         prevArrow: <CustomPrevArrow />,
         nextArrow: <CustomNextArrow />,
         responsive: [
