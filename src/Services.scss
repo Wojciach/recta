@@ -37,12 +37,9 @@ section#services {
             .serviceItem {
                 transform: translateY(-80px);
                 display: flex;
-               // flex-grow: 1.2;
                 flex-direction: column;
                 cursor: pointer;
                 height: 200px;
-             //   min-height: min-content;
-               // min-width: min-content;
                 background-color: $orange-3;
                 margin: 5px;   
                 color: $blue-4;
@@ -50,10 +47,6 @@ section#services {
                 flex-basis: 25%;
                 z-index: 5;
                 .decor {z-index: 20;}
-            //    @media screen and (max-width: 800px) {
-               //    flex-basis: 45%;
-             //       min-width: 45% !important;
-             //   }
                 &:hover {
                     background-color: $orange-4;
                     color: $orange-1;
