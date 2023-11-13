@@ -1,4 +1,4 @@
-import React, { useContext, createContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./MassGallery.scss";
 import { UserContext } from './App.js';
@@ -47,7 +47,7 @@ const MassGallery = () => {
                             data-index={index}
                             key={index}
                             src={baseUrlPhotos + "small/" + folderName[selected] + "/" + image}
-                            alt={`Image ${image}`}
+                            alt=""
                         />
                     ))}
                 </div>

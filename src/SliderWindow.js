@@ -88,7 +88,7 @@ const SliderWindow = memo(() => {
                     <img
                       key={index}
                       src={baseUrlPhotos + "big/" + folderName[selected] + "/" + image}
-                      alt={`Image ${image}`} 
+                      alt=""
                     />
                   </div>
                 ))}
