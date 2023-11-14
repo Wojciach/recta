@@ -6,7 +6,7 @@
 .pnp.js
 
 #passes
-/public/php/passes/
+passes/*
 
 # testing
 /coverage
