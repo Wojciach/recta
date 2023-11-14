@@ -6,8 +6,10 @@
 .pnp.js
 
 #passes
-passes/*
-mainDomainFiles/php/passes/*
+passes/
+passes2/
+
+
 
 # testing
 /coverage
