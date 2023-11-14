@@ -6,7 +6,8 @@
 .pnp.js
 
 #passes
-passes/*
+passes/
+
 
 
 # testing
