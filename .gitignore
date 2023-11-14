@@ -7,7 +7,7 @@
 
 #passes
 passes/*
-mainDomainFiles/php/passes/*
+
 
 # testing
 /coverage
